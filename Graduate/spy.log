@@ -247,3 +247,450 @@
  2022-07-06 23:09:12 | 执行耗时 1 ms 
  SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
 
+ 2022-07-07 10:19:53 | 执行耗时 8 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 10:19:53 | 执行耗时 0 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 10:19:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 10:20:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 10:20:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 10:20:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_dep LIKE '%计算机系%') LIMIT 4;
+
+ 2022-07-07 10:20:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 10:20:14 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 10:20:14 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 10:20:23 | 执行耗时 12 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 10:20:23 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 10:20:30 | 执行耗时 7 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 10:20:34 | 执行耗时 4 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:20:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 10:20:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'abcd' AND user_pwd = 'abcd');
+
+ 2022-07-07 10:20:47 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'ok' AND user_pwd = 'no');
+
+ 2022-07-07 10:20:51 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:21:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:21:23 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 10:21:23 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:21:23 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'abcd' AND user_pwd = 'abcd');
+
+ 2022-07-07 10:21:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 10:21:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 10:21:24 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 10:21:24 | 执行耗时 11 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 10:21:24 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 10:21:24 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 10:21:24 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 10:21:24 | 执行耗时 3 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_dep LIKE '%计算机系%') LIMIT 4;
+
+ 2022-07-07 10:21:24 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 10:21:24 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 10:21:24 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 10:21:24 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 10:22:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 10:22:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'abcd' AND user_pwd = 'abcd');
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'ok' AND user_pwd = 'no');
+
+ 2022-07-07 10:22:11 | 执行耗时 9 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 10:22:11 | 执行耗时 9 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 10:22:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 10:22:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_dep LIKE '%计算机系%') LIMIT 4;
+
+ 2022-07-07 10:22:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 10:22:11 | 执行耗时 9 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 10:22:11 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 10:22:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 10:34:48 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 10:34:48 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 10:46:58 | 执行耗时 14 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632501');
+
+ 2022-07-07 10:49:26 | 执行耗时 5 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632501%');
+
+ 2022-07-07 10:49:26 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632501%') LIMIT 4;
+
+ 2022-07-07 10:49:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 10:49:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 10:57:46 | 执行耗时 14 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632501%' OR student_name LIKE '%1632501%');
+
+ 2022-07-07 10:58:01 | 执行耗时 11 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163250%' OR student_name LIKE '%163250%');
+
+ 2022-07-07 10:58:31 | 执行耗时 14 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%张%' OR student_name LIKE '%张%');
+
+ 2022-07-07 11:00:04 | 执行耗时 6 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163250%' OR student_name LIKE '%163250%');
+
+ 2022-07-07 11:00:19 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163%' OR student_name LIKE '%163%');
+
+ 2022-07-07 11:00:47 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%张%' OR student_name LIKE '%张%');
+
+ 2022-07-07 11:07:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = '1632505' AND user_pwd = '1632505');
+
+ 2022-07-07 11:08:48 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632505');
+
+ 2022-07-07 11:15:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 11:18:02 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 11:18:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 11:18:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = '1632505' AND user_pwd = '1632505');
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'ok' AND user_pwd = 'no');
+
+ 2022-07-07 11:18:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 11:18:29 | 执行耗时 3 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 11:18:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 11:18:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 11:18:29 | 执行耗时 7 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163%' OR student_name LIKE '%163%');
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%张%' OR student_name LIKE '%张%');
+
+ 2022-07-07 11:18:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 11:18:55 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 11:18:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 11:18:55 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 11:18:55 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = '1632505' AND user_pwd = '1632505');
+
+ 2022-07-07 11:18:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'ok' AND user_pwd = 'no');
+
+ 2022-07-07 11:18:55 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 11:18:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 11:18:55 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 11:18:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 11:18:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 11:18:56 | 执行耗时 6 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 11:18:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 11:18:56 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 11:18:56 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 11:18:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 11:18:56 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 11:18:56 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 11:18:56 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163%' OR student_name LIKE '%163%');
+
+ 2022-07-07 11:18:56 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%张%' OR student_name LIKE '%张%');
+
+ 2022-07-07 11:18:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 11:39:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 11:41:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 11:41:12 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 11:41:12 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 11:43:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 11:43:57 | 执行耗时 0 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 11:43:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 11:56:03 | 执行耗时 6 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 11:56:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 12:05:49 | 执行耗时 11 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 12:05:49 | 执行耗时 2 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 12:06:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 12:06:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 12:06:14 | 执行耗时 7 ms 
+ SQL 语句：UPDATE tb_student SET note='' WHERE student_id='1632504';
+
+ 2022-07-07 12:06:39 | 执行耗时 15 ms 
+ SQL 语句：UPDATE tb_student WHERE student_id='1632504';
+
+ 2022-07-07 12:07:29 | 执行耗时 8 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 12:07:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 12:08:16 | 执行耗时 2 ms 
+ SQL 语句：UPDATE tb_student WHERE student_id='';
+
+ 2022-07-07 12:08:34 | 执行耗时 1 ms 
+ SQL 语句：UPDATE tb_student WHERE student_id='1';
+
+ 2022-07-07 13:08:30 | 执行耗时 7 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 13:08:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 13:08:39 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 13:08:39 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 13:08:44 | 执行耗时 5 ms 
+ SQL 语句：UPDATE tb_student SET note='' WHERE student_id='1632504';
+
+ 2022-07-07 13:08:46 | 执行耗时 1 ms 
+ SQL 语句：UPDATE tb_student SET note='' WHERE student_id='1632504';
+
+ 2022-07-07 13:09:01 | 执行耗时 3 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 13:09:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 13:09:06 | 执行耗时 2 ms 
+ SQL 语句：UPDATE tb_student SET note='' WHERE student_id='1';
+
+ 2022-07-07 13:09:16 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 13:09:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163%' OR student_name LIKE '%163%');
+
+ 2022-07-07 13:09:26 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%张%' OR student_name LIKE '%张%');
+
+ 2022-07-07 13:09:30 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 13:09:30 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 13:09:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 13:09:58 | 执行耗时 9 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 13:09:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 13:10:13 | 执行耗时 12 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 13:10:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = '1632505' AND user_pwd = '1632505');
+
+ 2022-07-07 13:10:36 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'ok' AND user_pwd = 'no');
+
+ 2022-07-07 13:11:10 | 执行耗时 6 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 13:11:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 13:11:18 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+

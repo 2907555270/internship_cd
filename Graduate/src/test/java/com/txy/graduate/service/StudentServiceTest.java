@@ -30,4 +30,13 @@ public class StudentServiceTest {
         System.out.println(studentService.findGlobalStatus());
     }
 
+    @Test
+    public void test_findById(){
+        System.out.println(studentService.findById("1632501"));
+    }
+
+    @Test
+    public void test_findByIdOrName(){
+        System.out.println(studentService.findByIdOrName("张"));
+    }
 }

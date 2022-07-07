@@ -45,15 +45,12 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @Override
     public Map<String, Object> findGlobalStatus() {
         HashMap<String, Object> map = new HashMap<>();
-
         List<Statistic> statisticList = new ArrayList<>();
 
         //查询总人数
         Integer total = mapper.selectCount(null);
-
         //查询每个状态的人数
         List<Statistic> list = mapper.countStatus();
-
         //获取所有状态的完成、未完成情况
         int index = 0;
         for (Statistic s : list) {
@@ -66,17 +63,39 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
                         sum += statistic.getCompleted();
                     }
                 }
-                statisticList.add(new Statistic(String.valueOf(index+1), sum, total - sum));
+                statisticList.add(new Statistic(String.valueOf(index + 1), sum, total - sum));
                 index++;
             }
         }
         map.put("statisticList", statisticList);
-
         //查询地址改派的人数
         QueryWrapper<Student> wrapper = new QueryWrapper<>();
         wrapper.eq("note", "地址改派");
         map.put("changeAddress", mapper.selectCount(wrapper));
 
         return map;
+    }
+
+    @Override
+    public Student findById(String student_id) {
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.eq("student_id", student_id);
+        return mapper.selectOne(wrapper);
+    }
+
+    @Override
+    public List<Student> findByIdOrName(String content) {
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.like("student_id", content);
+        wrapper.or();
+        wrapper.like("student_name", content);
+        return mapper.selectList(wrapper);
+    }
+
+    @Override
+    public Boolean updateStatus(Student student) {
+        if (student == null)
+            return false;
+        return mapper.updateById(student)>0;
     }
 }

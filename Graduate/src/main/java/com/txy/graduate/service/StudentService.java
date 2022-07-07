@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.txy.graduate.config.StudentPage;
 import com.txy.graduate.domain.Student;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -17,4 +18,11 @@ public interface StudentService extends IService<Student>{
 
     //统计所有状态的全局情况
     Map<String,Object> findGlobalStatus();
+
+    //根据student_id获取学生的所有信息
+    Student findById(String student_id);
+
+    List<Student> findByIdOrName(String content);
+
+    Boolean updateStatus(Student student);
 }
