@@ -1,6 +1,5 @@
 package com.txy.graduate.util;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.StudentPage;
 import com.txy.graduate.domain.Student;
@@ -10,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
@@ -31,6 +32,15 @@ public class QueryWrapperUtilTest {
     }
 
     @Test
+    public void test_map2obj() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("studentId","1632501");
+        map.put("studentName","胡佳绩");
+        Student student = QueryWrapperUtil.map2obj(map, Student.class);
+        System.out.println(student);
+    }
+
+    @Test
     public void test_ManyLike() {
         student.setStudentDep("计算机系");
         System.out.println(student);
@@ -38,4 +48,5 @@ public class QueryWrapperUtilTest {
         IPage<Student> pageInfo = studentService.findByConditionsAndPage(studentPage);
         System.out.println(pageInfo.getRecords());
     }
+
 }

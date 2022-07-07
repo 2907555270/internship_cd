@@ -5,4 +5,16 @@
         select * from graduate.tb_role
         where role_id = (select role_id from graduate.user_role where user_id=#{user_id})
     </select>
+
+    <insert id="saveUserAndRole" parameterType="map">
+        insert into graduate.user_role(user_id, role_id) values (#{user_id},#{role_id})
+    </insert>
+
+    <delete id="removeUserAndRoleByUId" parameterType="String">
+        delete from graduate.user_role where user_id = #{user_id}
+    </delete>
+
+    <delete id="removeUserAndRoleByRId" parameterType="int">
+        delete from graduate.user_role where role_id = #{role_id}
+    </delete>
 </mapper>

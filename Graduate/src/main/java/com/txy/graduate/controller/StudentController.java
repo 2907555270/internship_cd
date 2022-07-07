@@ -3,8 +3,12 @@ package com.txy.graduate.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.Result;
 import com.txy.graduate.config.StudentPage;
+import com.txy.graduate.domain.Role;
 import com.txy.graduate.domain.Student;
+import com.txy.graduate.domain.User;
+import com.txy.graduate.service.RoleService;
 import com.txy.graduate.service.StudentService;
+import com.txy.graduate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +21,12 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
 
     /**
      ************************************ 查询相关接口 ***************************************
@@ -52,8 +62,9 @@ public class StudentController {
         return new Result(flag,student,flag?null:"该学生信息丢失 -_-");
     }
 
+
     /**
-     ************************************ 查询相关接口 ***************************************
+     ************************************ 状态数统计相关接口 ***************************************
      */
 
     //获取 学生的毕业手续 所有状态的 完成和未完成人数
@@ -62,10 +73,62 @@ public class StudentController {
         return new Result(true, studentService.findGlobalStatus());
     }
 
-    //修改 离校手续进度状态
-    @PostMapping("status")
+
+    /**
+     ************************************ 带业务逻辑的增删改查相关接口 ***************************************
+     */
+    //添加 学生信息：同时为学生开通user账户
+    @PutMapping()
+    public Result save(@RequestBody Student student){
+
+        //学号重复
+        if(studentService.findById(student.getStudentId())!=null)
+            return new Result(false,null,"添加失败,当前学号已存在 -_-");
+
+        //添加学生student信息
+        boolean flag1 = studentService.save(student);
+
+        //根据学生信息生成User信息
+        User user = new User();
+        user.setUserId(student.getStudentId());
+        user.setUserPwd(student.getStudentId());
+        user.setUserName(student.getStudentName());
+        user.setCardNum(student.getStudentId());
+
+        //注册学生用户user信息
+        boolean flag2 = userService.save(user);
+
+        //根据学生信息生成Role_User信息
+        Role role = roleService.findByName("学生");
+        //添加学生User对应的权限信息 user_role
+        boolean flag3 = roleService.saveUserAndRole(user.getUserId(), role.getRoleId());
+
+        return new Result(flag1&&flag2&&flag3,null,flag1&&flag2&&flag3?"添加成功 ^_^":"添加失败 -_-");
+    }
+
+    //删除 学生信息：同时删除学生user账户以及学生的权限信息
+    @DeleteMapping("{student_id}")
+    public Result deleteById(@PathVariable String student_id){
+        //删除学生student信息
+        boolean flag1 = studentService.removeById(student_id);
+
+        //删除用户权限表 user_role
+        boolean flag2 = roleService.removeUserAndRoleByUId(student_id);
+
+        //删除用户user信息
+        boolean flag3 = userService.removeById(student_id);
+
+        return new Result(flag1&&flag2&&flag3,null,flag1&&flag2&&flag3?"删除成功 ^_^":"删除失败 -_-");
+    }
+
+    /**
+     ************************************ 简单增删改查相关接口 ***************************************
+     */
+    //修改 学生信息
+    @PostMapping()
     public Result updateStatus(@RequestBody Student student){
-        Boolean flag = studentService.updateStatus(student);
-        return new Result(flag,null,flag?"操作成功 ^_^":"操作失败 -_-");
+        Boolean flag = studentService.updateById(student);
+        return new Result(flag,null,flag?"修改成功 ^_^":"修改失败 -_-");
     }
 }
+

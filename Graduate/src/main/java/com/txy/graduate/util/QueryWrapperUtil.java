@@ -3,6 +3,7 @@ package com.txy.graduate.util;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +38,23 @@ public class QueryWrapperUtil {
             }
         }
         return map;
+    }
+
+    /**
+     * 将 map反射为数据对象
+     * @param map
+     * @param tClass
+     * @param <T>
+     */
+    public static <T> T map2obj(Map<String,Object> map,Class<T> tClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        //通过反射机制创建一个T对象
+        T t = tClass.getConstructor().newInstance();
+        Field[] fields = tClass.getDeclaredFields();
+        for (Field field:fields ) {
+            field.setAccessible(true);
+            field.set(t,map.get(field.getName()));
+        }
+        return t;
     }
 
     /**

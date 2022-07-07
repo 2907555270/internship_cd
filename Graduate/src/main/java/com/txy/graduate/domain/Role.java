@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Role {
     @TableId
-    private String roleId;
+    private int roleId;
     private String roleName;
     @TableField("createtime")
     private Date createTime;
