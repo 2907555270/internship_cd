@@ -22,7 +22,9 @@ public interface StudentService extends IService<Student>{
     //根据student_id获取学生的所有信息
     Student findById(String student_id);
 
+    //将输入内容作为 学号或姓名进行匹配
     List<Student> findByIdOrName(String content);
 
+    //更新指定学生的离校状态
     Boolean updateStatus(Student student);
 }

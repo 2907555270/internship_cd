@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.Role;
 import com.txy.graduate.domain.User;
-import com.txy.graduate.mapper.RoleMapper;
 import com.txy.graduate.mapper.UserMapper;
 import com.txy.graduate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private UserMapper userMapper;
-    @Autowired
-    private RoleMapper roleMapper;
 
     @Override
     public IPage<User> findAllByPage(int currentPage,int pageSize) {

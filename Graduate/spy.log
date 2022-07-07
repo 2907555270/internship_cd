@@ -694,3 +694,309 @@
  2022-07-07 13:11:18 | 执行耗时 1 ms 
  SQL 语句：SELECT COUNT(*) FROM tb_role;
 
+ 2022-07-07 15:50:21 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process;
+
+ 2022-07-07 16:07:20 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process;
+
+ 2022-07-07 16:08:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE (title = '报到证领取');
+
+ 2022-07-07 16:09:27 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=1 ;
+
+ 2022-07-07 16:09:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=2 ;
+
+ 2022-07-07 16:11:18 | 执行耗时 1 ms 
+ SQL 语句：UPDATE tb_process SET note='备注' WHERE id=1;
+
+ 2022-07-07 16:11:33 | 执行耗时 6 ms 
+ SQL 语句：UPDATE tb_process SET note='备注修改' WHERE id=1;
+
+ 2022-07-07 16:13:35 | 执行耗时 6 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, note ) VALUES ( 1, 'test', 'test' );
+
+ 2022-07-07 16:25:01 | 执行耗时 11 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id='9';
+
+ 2022-07-07 16:26:28 | 执行耗时 11 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 1544961028236591105, 'test', 'test', 'test' );
+
+ 2022-07-07 16:40:21 | 执行耗时 33 ms 
+ SQL 语句：insert into tb_process(title, start_time, end_time, place, phone, img, note) values('test',NULL,NULL,'test',NULL,NULL,'test');
+
+ 2022-07-07 16:40:32 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=9 ;
+
+ 2022-07-07 16:40:36 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=10 ;
+
+ 2022-07-07 16:40:41 | 执行耗时 6 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id='10';
+
+ 2022-07-07 16:57:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process;
+
+ 2022-07-07 16:57:03 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=10 ;
+
+ 2022-07-07 16:57:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=6 ;
+
+ 2022-07-07 16:57:27 | 执行耗时 6 ms 
+ SQL 语句：UPDATE tb_process SET note='备注已经修改' WHERE id=1;
+
+ 2022-07-07 16:57:35 | 执行耗时 6 ms 
+ SQL 语句：insert into tb_process(title, start_time, end_time, place, phone, img, note) values('test',NULL,NULL,'test',NULL,NULL,'test');
+
+ 2022-07-07 16:58:40 | 执行耗时 7 ms 
+ SQL 语句：insert into tb_process(title, start_time, end_time, place, phone, img, note) values('test',NULL,NULL,'test',NULL,NULL,'test');
+
+ 2022-07-07 17:02:23 | 执行耗时 9 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 1544970067947360258, 'test', 'test', 'test' );
+
+ 2022-07-07 17:03:04 | 执行耗时 6 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 1544970243634171906, 'test', 'test', 'test' );
+
+ 2022-07-07 17:14:24 | 执行耗时 16 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:17:30 | 执行耗时 1 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:21:46 | 执行耗时 14 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:23:26 | 执行耗时 19 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:23:32 | 执行耗时 17 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:24:09 | 执行耗时 12 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:24:13 | 执行耗时 18 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:25:09 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process;
+
+ 2022-07-07 17:25:14 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=6 ;
+
+ 2022-07-07 17:25:18 | 执行耗时 1 ms 
+ SQL 语句：UPDATE tb_process SET note='备注已经修改' WHERE id=1;
+
+ 2022-07-07 17:25:22 | 执行耗时 15 ms 
+ SQL 语句：INSERT INTO tb_process ( id, title, place, note ) VALUES ( 0, 'test', 'test', 'test' );
+
+ 2022-07-07 17:25:29 | 执行耗时 13 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id=9;
+
+ 2022-07-07 17:26:15 | 执行耗时 6 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 3;
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = '1632505' AND user_pwd = '1632505');
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user WHERE (user_id = 'ok' AND user_pwd = 'no');
+
+ 2022-07-07 17:26:15 | 执行耗时 6 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 17:26:15 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 17:26:15 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632%');
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632%') LIMIT 4;
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：UPDATE tb_student SET note='' WHERE student_id='1632504';
+
+ 2022-07-07 17:26:15 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_dep LIKE '%计算机系%');
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：UPDATE tb_student SET note='' WHERE student_id='1';
+
+ 2022-07-07 17:26:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632504');
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%163%' OR student_name LIKE '%163%');
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%张%' OR student_name LIKE '%张%');
+
+ 2022-07-07 17:26:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-07 17:26:16 | 执行耗时 34 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-07 17:26:16 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-07 17:26:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process;
+
+ 2022-07-07 17:26:16 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,start_time,end_time,place,phone,img,note FROM tb_process WHERE id=6 ;
+
+ 2022-07-07 17:37:56 | 执行耗时 9 ms 
+ SQL 语句：INSERT INTO tb_role ( role_id, role_name ) VALUES ( 0, 'test' );
+
+ 2022-07-07 17:39:06 | 执行耗时 8 ms 
+ SQL 语句：UPDATE tb_role SET role_name='update_test' WHERE role_id=4;
+
+ 2022-07-07 17:40:05 | 执行耗时 8 ms 
+ SQL 语句：DELETE FROM tb_role WHERE role_id=4;
+
+ 2022-07-07 17:50:54 | 执行耗时 9 ms 
+ SQL 语句：UPDATE tb_student SET note='修改' WHERE student_id='1632504';
+
+ 2022-07-07 17:52:22 | 执行耗时 6 ms 
+ SQL 语句：UPDATE tb_student SET note='地址改派' WHERE student_id='1632504';
+
+ 2022-07-07 18:51:06 | 执行耗时 7 ms 
+ SQL 语句：INSERT INTO tb_student ( student_id, student_name, student_dep, student_pre, student_class, student_status, note ) VALUES ( '1632506', 'test', 'test', 'test', 'test', 0, 'test' );
+
+ 2022-07-07 19:04:31 | 执行耗时 8 ms 
+ SQL 语句：DELETE FROM tb_student WHERE student_id='1632506';
+
+ 2022-07-07 20:22:11 | 执行耗时 7 ms 
+ SQL 语句：INSERT INTO tb_user ( user_id, user_name, user_pwd, card_num ) VALUES ( 'test_user', 'test_user', 'test_user', 'test_user' );
+
+ 2022-07-07 20:22:11 | 执行耗时 5 ms 
+ SQL 语句：insert into graduate.user_role(user_id, role_id) values ('test_user',1);
+
+ 2022-07-07 20:30:30 | 执行耗时 8 ms 
+ SQL 语句：delete from graduate.user_role where user_id = 'test_user';
+
+ 2022-07-07 20:30:30 | 执行耗时 6 ms 
+ SQL 语句：DELETE FROM tb_user WHERE user_id='test_user';
+
+ 2022-07-07 20:31:51 | 执行耗时 7 ms 
+ SQL 语句：INSERT INTO tb_user ( user_id, user_name, user_pwd, card_num ) VALUES ( 'test_user', 'test_user', 'test_user', 'test_user' );
+
+ 2022-07-07 20:31:51 | 执行耗时 5 ms 
+ SQL 语句：insert into graduate.user_role(user_id, role_id) values ('test_user',1);
+
+ 2022-07-07 20:32:20 | 执行耗时 6 ms 
+ SQL 语句：UPDATE tb_user SET user_name='test_user_update', user_pwd='test_user', card_num='test_user' WHERE user_id='test_user';
+
+ 2022-07-07 20:33:06 | 执行耗时 4 ms 
+ SQL 语句：delete from graduate.user_role where user_id = 'test_user';
+
+ 2022-07-07 20:33:06 | 执行耗时 6 ms 
+ SQL 语句：DELETE FROM tb_user WHERE user_id='test_user';
+
+ 2022-07-07 20:40:42 | 执行耗时 5 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 20:40:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 2;
+
+ 2022-07-07 20:40:45 | 执行耗时 11 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 20:40:45 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 10;
+
+ 2022-07-07 20:40:53 | 执行耗时 7 ms 
+ SQL 语句：INSERT INTO tb_role ( role_id, role_name ) VALUES ( 0, 'test' );
+
+ 2022-07-07 20:40:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 20:40:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 10;
+
+ 2022-07-07 20:41:07 | 执行耗时 10 ms 
+ SQL 语句：UPDATE tb_role SET role_name='update_test' WHERE role_id=5;
+
+ 2022-07-07 20:41:10 | 执行耗时 7 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 20:41:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 10;
+
+ 2022-07-07 20:41:38 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_user;
+
+ 2022-07-07 20:41:38 | 执行耗时 0 ms 
+ SQL 语句：SELECT user_id,user_name,user_pwd,card_num,createtime FROM tb_user LIMIT 10;
+
+ 2022-07-07 20:42:18 | 执行耗时 6 ms 
+ SQL 语句：INSERT INTO tb_user ( user_id, user_name, user_pwd, card_num ) VALUES ( 'test_user', 'test_user', 'test_user', 'test_user' );
+
+ 2022-07-07 20:42:18 | 执行耗时 5 ms 
+ SQL 语句：insert into graduate.user_role(user_id, role_id) values ('test_user',5);
+
+ 2022-07-07 20:42:29 | 执行耗时 3 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_role;
+
+ 2022-07-07 20:42:29 | 执行耗时 0 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role LIMIT 10;
+
+ 2022-07-07 20:42:48 | 执行耗时 10 ms 
+ SQL 语句：delete from graduate.user_role where user_id = 5;
+
+ 2022-07-07 20:45:10 | 执行耗时 11 ms 
+ SQL 语句：delete from graduate.user_role where role_id = 5;
+
+ 2022-07-07 20:45:10 | 执行耗时 5 ms 
+ SQL 语句：DELETE FROM tb_role WHERE role_id=5;
+
+ 2022-07-07 20:55:32 | 执行耗时 7 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632505');
+
+ 2022-07-07 20:55:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id = '1632506');
+
+ 2022-07-07 20:55:40 | 执行耗时 6 ms 
+ SQL 语句：INSERT INTO tb_student ( student_id, student_name, student_dep, student_pre, student_class, student_status, note ) VALUES ( '1632506', 'test', 'test', 'test', 'test', 0, 'test' );
+
+ 2022-07-07 20:55:40 | 执行耗时 5 ms 
+ SQL 语句：INSERT INTO tb_user ( user_id, user_name, user_pwd, card_num ) VALUES ( '1632506', 'test', '1632506', '1632506' );
+
+ 2022-07-07 20:55:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT role_id,role_name,createtime FROM tb_role WHERE (role_name = '学生');
+
+ 2022-07-07 20:55:40 | 执行耗时 5 ms 
+ SQL 语句：insert into graduate.user_role(user_id, role_id) values ('1632506',3);
+
+ 2022-07-07 20:57:07 | 执行耗时 5 ms 
+ SQL 语句：DELETE FROM tb_student WHERE student_id='1632506';
+
+ 2022-07-07 20:57:07 | 执行耗时 6 ms 
+ SQL 语句：delete from graduate.user_role where user_id = '1632506';
+
+ 2022-07-07 20:57:07 | 执行耗时 5 ms 
+ SQL 语句：DELETE FROM tb_user WHERE user_id='1632506';
+
