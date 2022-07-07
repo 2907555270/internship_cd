@@ -1,0 +1,249 @@
+ 2022-07-06 18:13:25 | 执行耗时 28 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-06 18:13:25 | 执行耗时 4 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 2;
+
+ 2022-07-06 18:13:25 | 执行耗时 12 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-06 18:13:25 | 执行耗时 2 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student LIMIT 1;
+
+ 2022-07-06 18:13:25 | 执行耗时 14 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%1632501%' AND student_name LIKE '%胡佳绩%' AND student_dep LIKE '%计算机系%' AND student_pre LIKE '%计算机应用技术%' AND student_class LIKE '%22级应用1班%' AND student_status LIKE '%0%');
+
+ 2022-07-06 18:13:25 | 执行耗时 2 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student WHERE (student_id LIKE '%1632501%' AND student_name LIKE '%胡佳绩%' AND student_dep LIKE '%计算机系%' AND student_pre LIKE '%计算机应用技术%' AND student_class LIKE '%22级应用1班%' AND student_status LIKE '%0%') LIMIT 4;
+
+ 2022-07-06 19:58:07 | 执行耗时 19 ms 
+ SQL 语句：select * from graduate.tb_role where role_id = (select role_id from graduate.user_role where user_id=1);
+
+ 2022-07-06 19:59:12 | 执行耗时 13 ms 
+ SQL 语句：select * from graduate.tb_role where role_id = (select role_id from graduate.user_role where user_id='abcd');
+
+ 2022-07-06 20:10:08 | 执行耗时 13 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status = 2);
+
+ 2022-07-06 20:10:43 | 执行耗时 22 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status = 0);
+
+ 2022-07-06 20:17:56 | 执行耗时 12 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 4);
+
+ 2022-07-06 20:17:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 4);
+
+ 2022-07-06 20:18:25 | 执行耗时 17 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 6);
+
+ 2022-07-06 20:18:25 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 6);
+
+ 2022-07-06 20:19:22 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5);
+
+ 2022-07-06 20:19:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 7);
+
+ 2022-07-06 20:20:51 | 执行耗时 15 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5);
+
+ 2022-07-06 20:20:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 6);
+
+ 2022-07-06 20:22:40 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 0);
+
+ 2022-07-06 20:22:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 1);
+
+ 2022-07-06 20:30:06 | 执行耗时 8 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5);
+
+ 2022-07-06 20:30:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 6);
+
+ 2022-07-06 20:30:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 6 AND note = '地址改派');
+
+ 2022-07-06 20:31:07 | 执行耗时 9 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5);
+
+ 2022-07-06 20:31:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5 AND note = '地址改派');
+
+ 2022-07-06 20:31:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 6);
+
+ 2022-07-06 20:31:48 | 执行耗时 7 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5);
+
+ 2022-07-06 20:31:48 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 5 AND note = '地址改派');
+
+ 2022-07-06 20:31:48 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 6);
+
+ 2022-07-06 20:33:40 | 执行耗时 5 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 0);
+
+ 2022-07-06 20:33:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status > 0 AND note = '地址改派');
+
+ 2022-07-06 20:33:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (student_status < 1);
+
+ 2022-07-06 20:52:05 | 执行耗时 7 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student;
+
+ 2022-07-06 20:52:24 | 执行耗时 10 ms 
+ SQL 语句：SELECT student_id,student_name,student_dep,student_pre,student_class,student_status,note FROM tb_student;
+
+ 2022-07-06 21:05:35 | 执行耗时 9 ms 
+ SQL 语句：select student_status,count(student_status) from graduate.tb_student group by student_status;
+
+ 2022-07-06 21:07:39 | 执行耗时 7 ms 
+ SQL 语句：select student_status,count(student_status) from graduate.tb_student group by student_status;
+
+ 2022-07-06 21:08:03 | 执行耗时 9 ms 
+ SQL 语句：select student_status,count(student_status) from graduate.tb_student group by student_status;
+
+ 2022-07-06 21:08:38 | 执行耗时 13 ms 
+ SQL 语句：select student_status,count(student_status) from graduate.tb_student group by student_status;
+
+ 2022-07-06 21:27:10 | 执行耗时 17 ms 
+ SQL 语句：select student_status, count(student_status) from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 21:27:10 | 执行耗时 3 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 21:27:10 | 执行耗时 17 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 21:34:49 | 执行耗时 7 ms 
+ SQL 语句：select student_status, count(student_status) from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 21:34:49 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 21:34:49 | 执行耗时 5 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 21:35:31 | 执行耗时 7 ms 
+ SQL 语句：select student_status, count(student_status) from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 21:36:18 | 执行耗时 7 ms 
+ SQL 语句：select student_status, count(student_status) from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 21:38:09 | 执行耗时 7 ms 
+ SQL 语句：select student_status, count(student_status) from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 21:39:24 | 执行耗时 6 ms 
+ SQL 语句：select student_status, count(student_status) from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:06:32 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:06:32 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:38:36 | 执行耗时 11 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:38:36 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:43:23 | 执行耗时 9 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:43:23 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:44:41 | 执行耗时 8 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:47:43 | 执行耗时 6 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status limit 0,1;
+
+ 2022-07-06 22:48:01 | 执行耗时 10 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status limit 0,2;
+
+ 2022-07-06 22:48:17 | 执行耗时 7 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status limit 0,3;
+
+ 2022-07-06 22:49:05 | 执行耗时 11 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:49:31 | 执行耗时 11 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:49:31 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:49:31 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 22:50:49 | 执行耗时 11 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:50:49 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:50:49 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 22:54:17 | 执行耗时 20 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:54:17 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:54:17 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 22:54:47 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:54:47 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:54:47 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 22:59:56 | 执行耗时 15 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 22:59:56 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 22:59:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 23:01:19 | 执行耗时 12 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 23:01:19 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 23:01:19 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 23:02:58 | 执行耗时 24 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 23:02:58 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 23:02:58 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+
+ 2022-07-06 23:09:12 | 执行耗时 8 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student;
+
+ 2022-07-06 23:09:12 | 执行耗时 1 ms 
+ SQL 语句：select student_status status, count(student_status) completed from graduate.tb_student group by student_status order by student_status;
+
+ 2022-07-06 23:09:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT( * ) FROM tb_student WHERE (note = '地址改派');
+

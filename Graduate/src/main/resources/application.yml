@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://172.20.0.2:3306/graduate
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://172.20.0.2:3306/graduate
+#    username: root
+#    password: root
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tb_
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.txy.graduate.domain
