@@ -1,27 +1,30 @@
 package com.txy.graduate.service;
 
-import com.txy.graduate.domain.User;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.txy.graduate.domain.SysUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.HashMap;
 
 
 @SpringBootTest
 public class UserServiceTest {
     @Autowired
-    private UserService userService;
+    private ISysUserService userService;
 
-    @Test
-    public void test_findAllByPage(){
-        System.out.println(userService.findAllByPage(1,2).getRecords());
+    public HashMap<String,Object> map = new HashMap<>();
+    {
+        map.put("currentPage",1);
+        map.put("pageSize",2);
+        map.put("status",1);
+        //map.put("username","zhangsan");
     }
 
     @Test
-    public void test_login(){
-        User user = new User();
-        user.setUserId("abcd");
-        user.setUserPwd("abcd");
-        User login = userService.login(user);
-        System.out.println(login);
+    public void test_findAllByPage(){
+        IPage<SysUser> sysUser = userService.findSysUser(map);
+        System.out.println(sysUser.getRecords());
     }
 }

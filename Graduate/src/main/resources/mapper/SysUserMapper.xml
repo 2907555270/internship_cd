@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.txy.graduate.mapper.SysUserMapper">
+    <select id="getMenuByUserId" resultType="java.lang.String">
+        SELECT DISTINCT sm.perms
+        FROM levelSchool.sys_user_role ur
+                 left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id
+                 left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id
+        where sm.perms is not null
+    </select>
+
+    <select id="ListByMenuId" resultType="com.txy.graduate.domain.SysUserRole">
+        select ur.*
+        from levelSchool.sys_role_menu rm
+                 left join levelSchool.sys_user_role ur
+                           on rm.role_id = ur.role_id
+        where rm.menu_id = #{menuId}
+    </select>
+
+    <select id="getMenuIdByUserId" resultType="java.lang.Long">
+        SELECT distinct rm.menu_id
+        FROM levelSchool.sys_user_role ur
+                 left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id
+        where rm.menu_id is not null
+    </select>
+</mapper>
