@@ -1,22 +1,16 @@
 package com.txy.graduate.service.Impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.config.StudentPage;
-import com.txy.graduate.domain.Statistic;
+import com.txy.graduate.domain.Status;
 import com.txy.graduate.domain.Student;
+import com.txy.graduate.domain.vo.StatisticVo;
 import com.txy.graduate.mapper.StudentMapper;
 import com.txy.graduate.service.StudentService;
-import com.txy.graduate.util.QueryWrapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.math.BigInteger;
+import java.util.*;
 
 @Service
 public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> implements StudentService {
@@ -42,39 +36,35 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     //    return mapper.selectPage(page, wrapper);
     //}
     //
-    //@Override
-    //public Map<String, Object> findGlobalStatus() {
-    //    HashMap<String, Object> map = new HashMap<>();
-    //    List<Statistic> statisticList = new ArrayList<>();
-    //
-    //    //查询总人数
-    //    Integer total = mapper.selectCount(null);
-    //    //查询每个状态的人数
-    //    List<Statistic> list = mapper.countStatus();
-    //    //获取所有状态的完成、未完成情况
-    //    int index = 0;
-    //    for (Statistic s : list) {
-    //        String status = s.getStatus();
-    //        while (index < (Integer.parseInt(status))) {
-    //            int sum = 0;
-    //            for (Statistic statistic : list) {
-    //                //找到比index大且不为空的数据
-    //                if (Integer.parseInt(statistic.getStatus()) > index) {
-    //                    sum += statistic.getCompleted();
-    //                }
-    //            }
-    //            statisticList.add(new Statistic(String.valueOf(index + 1), sum, total - sum));
-    //            index++;
-    //        }
-    //    }
-    //    map.put("statisticList", statisticList);
-    //    //查询地址改派的人数
-    //    QueryWrapper<Student> wrapper = new QueryWrapper<>();
-    //    wrapper.eq("note", "地址改派");
-    //    map.put("changeAddress", mapper.selectCount(wrapper));
-    //
-    //    return map;
-    //}
+
+    @Override
+    public List<Status> findGlobalStatus() {
+        ArrayList<Status> statuses = new ArrayList<>();
+
+        //获取每个状态的完成人数
+        Map<String, Object> statusMap = mapper.selectStatusCount();
+
+        //获取note的数据
+        Map<String, Object> noteMap = mapper.selectNoteCount();
+
+        //获取总人数
+        Long total = Long.parseLong(statusMap.get("total").toString());
+        statusMap.remove("total");
+
+        //构建各个状态的统计结果
+        statusMap.forEach((key, val) -> {
+            Long value = Long.parseLong(val.toString());
+            Status status = new Status();
+            status.setTitle(key);
+            status.setCompleted(value);
+            status.setTotal(total);
+            status.setUnfinished(total-value);
+            status.setNoteNum(Long.parseLong(noteMap.get(key).toString()));
+            statuses.add(status);
+        });
+
+        return statuses;
+    }
     //
     //@Override
     //public Student findById(String student_id) {

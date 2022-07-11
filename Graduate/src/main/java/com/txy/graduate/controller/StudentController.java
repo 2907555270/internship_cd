@@ -1,18 +1,10 @@
 package com.txy.graduate.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.txy.graduate.config.Result;
-import com.txy.graduate.config.StudentPage;
-import com.txy.graduate.domain.SysRole;
-import com.txy.graduate.domain.Student;
-import com.txy.graduate.domain.SysUser;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.StudentService;
 import com.txy.graduate.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 
 @RestController

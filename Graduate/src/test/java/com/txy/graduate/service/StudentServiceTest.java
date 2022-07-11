@@ -25,10 +25,10 @@ public class StudentServiceTest {
     //    System.out.println(pageInfo.getRecords());
     //}
     //
-    //@Test
-    //public void test_findGlobalStatus() {
-    //    System.out.println(studentService.findGlobalStatus());
-    //}
+    @Test
+    public void test_findGlobalStatus() {
+        System.out.println(studentService.findGlobalStatus());
+    }
     //
     //@Test
     //public void test_findById(){

@@ -9,7 +9,7 @@
         where sm.perms is not null
     </select>
 
-    <select id="ListByMenuId" resultType="com.txy.graduate.domain.SysUserRole">
+    <select id="ListByMenuId" resultType="com.txy.graduate.domain.sys.SysUserRole">
         select ur.*
         from levelSchool.sys_role_menu rm
                  left join levelSchool.sys_user_role ur

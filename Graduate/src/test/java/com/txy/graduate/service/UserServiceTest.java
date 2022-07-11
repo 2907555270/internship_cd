@@ -1,7 +1,7 @@
 package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.txy.graduate.domain.SysUser;
+import com.txy.graduate.domain.sys.SysUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

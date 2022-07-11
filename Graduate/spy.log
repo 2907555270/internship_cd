@@ -55,3 +55,123 @@
  2022-07-11 15:16:32 | 执行耗时 6 ms 
  SQL 语句：INSERT INTO sys_role ( name, code, status ) VALUES ( 'test', 'test', 1 );
 
+ 2022-07-11 17:00:20 | 执行耗时 10 ms 
+ SQL 语句：select sum(report_status), sum(graduation_status), sum(owe_status), sum(book_status), sum(archives_status), sum(dormitory_status), sum(diploma_status) from levelSchool.tb_student;;
+
+ 2022-07-11 17:00:40 | 执行耗时 11 ms 
+ SQL 语句：select sum(report_status), sum(graduation_status), sum(owe_status), sum(book_status), sum(archives_status), sum(dormitory_status), sum(diploma_status) from levelSchool.tb_student;;
+
+ 2022-07-11 17:03:21 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 17:22:32 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 19:46:15 | 执行耗时 12 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 19:47:18 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 19:48:19 | 执行耗时 15 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 20:24:41 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:45:15 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:45:15 | 执行耗时 0 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:48:47 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:48:47 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:53:04 | 执行耗时 9 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:53:04 | 执行耗时 0 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:53:44 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:53:44 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:54:35 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:54:35 | 执行耗时 0 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:55:38 | 执行耗时 9 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:55:38 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:55:56 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:55:56 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:57:47 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 21:57:47 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:03:30 | 执行耗时 13 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:03:30 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:04:23 | 执行耗时 10 ms 
+ SQL 语句：select count(id) 'total', sum(report_status) 'report', sum(audit_status) 'graduation', sum(owe_status) 'owe', sum(book_status) 'book', sum(archives_status) 'archive', sum(dormitory_status) 'dormitory', sum(diploma_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:04:23 | 执行耗时 1 ms 
+ SQL 语句：select sum(report_note_status) 'report', sum(audit_note_status) 'graduation', sum(owe_note_status) 'owe', sum(book_note_status) 'book', sum(archives_note_status) 'archive', sum(dormitory_note_status) 'dormitory', sum(diploma_note_status) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:08:24 | 执行耗时 9 ms 
+ SQL 语句：select count(id) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:08:24 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:11:05 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:11:05 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:13:43 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:13:43 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:16:03 | 执行耗时 9 ms 
+ SQL 语句：select count(id) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:16:03 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:17:42 | 执行耗时 7 ms 
+ SQL 语句：select count(id) 'total', cast(sum(report_status) as signed ) 'report', cast(sum(audit_status) as signed ) 'graduation', cast(sum(owe_status) as signed ) 'owe', cast(sum(book_status) as signed ) 'book', cast(sum(archives_status) as signed ) 'archive', cast(sum(dormitory_status) as signed ) 'dormitory', cast(sum(diploma_status) as signed ) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:17:42 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:22:00 | 执行耗时 15 ms 
+ SQL 语句：select count(id) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-11 22:22:00 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
