@@ -40,13 +40,13 @@ public class QueryWrapperUtilTest {
         System.out.println(student);
     }
 
-    @Test
-    public void test_ManyLike() {
-        student.setStudentDep("计算机系");
-        System.out.println(student);
-        StudentPage studentPage = new StudentPage(1, 2, student);
-        IPage<Student> pageInfo = studentService.findByConditionsAndPage(studentPage);
-        System.out.println(pageInfo.getRecords());
-    }
+    //@Test
+    //public void test_ManyLike() {
+    //    student.setStudentDep("计算机系");
+    //    System.out.println(student);
+    //    StudentPage studentPage = new StudentPage(1, 2, student);
+    //    IPage<Student> pageInfo = studentService.findByConditionsAndPage(studentPage);
+    //    System.out.println(pageInfo.getRecords());
+    //}
 
 }

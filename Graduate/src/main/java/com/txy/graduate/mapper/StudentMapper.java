@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface StudentMapper extends BaseMapper<Student> {
-
-    //分组查询每个状态的完成人数
-    List<Statistic> countStatus();
+    //
+    ////分组查询每个状态的完成人数
+    //List<Statistic> countStatus();
 }

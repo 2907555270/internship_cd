@@ -1,6 +1,7 @@
 package com.txy.graduate.util;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -11,6 +12,31 @@ import java.util.Map;
  * 对Mybatis-plus的QueryWrapper进一步封装，增强功能
  */
 public class QueryWrapperUtil {
+
+    /**
+     * 根据分页信息，构造map
+     * @param currentPage
+     * @param pageSize
+     * @return
+     */
+    public static Map<String,Object> getMapFromPage(int currentPage,int pageSize){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("currentPage",currentPage);
+        map.put("pageSize",pageSize);
+        return map;
+    }
+
+    /**
+     * 从map提取分页信息，并封装为Page
+     * @param map
+     * @param <T>
+     * @return
+     */
+    public static <T> Page<T> getPageFromMap(Map<String,Object> map){
+        Integer currentPage = (Integer) map.get("currentPage");
+        Integer pageSize = (Integer) map.get("pageSize");
+        return new Page<T>(currentPage,pageSize);
+    }
 
     /**
      * 将数据对象映射为map

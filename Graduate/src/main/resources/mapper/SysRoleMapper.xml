@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.txy.graduate.mapper.SysRoleMapper">
+    <!--user_role表-->
+    <select id="selectRoleByUid" parameterType="int" resultType="sysRole">
+        select * from levelSchool.sys_role
+        where id in (select role_id from levelSchool.sys_user_role where user_id=#{user_id})
+    </select>
+
+    <insert id="insertUserAndRole" parameterType="sysUserRole">
+        insert into levelSchool.sys_user_role(user_id, role_id) values (#{userId},#{roleId})
+    </insert>
+
+    <delete id="deleteUserAndRoleByUId" parameterType="int">
+        delete from levelSchool.sys_user_role where user_id = #{user_id}
+    </delete>
+
+    <delete id="deleteUserAndRoleByRId" parameterType="int">
+        delete from levelSchool.sys_user_role where role_id = #{role_id}
+    </delete>
+
+    <update id="updateUByUserAndRoleId" parameterType="sysUserRole">
+        update levelSchool.sys_user_role
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userId != null" >
+                user_id=#{userId},
+            </if>
+            <if test="roleId != null">
+                role_id=#{roleId},
+            </if>
+        </trim>
+        where id=#{id}
+    </update>
+
+
+    <!--role_menu表-->
+    <select id="selectRoleByMenuId" resultType="sysRole">
+        select * from levelSchool.sys_role
+        where id in (select role_id from levelSchool.sys_role_menu where menu_id=#{menu_id})
+    </select>
+
+    <insert id="insertRoleAndMenu" parameterType="sysRoleMenu">
+        insert into levelSchool.sys_role_menu(role_id, menu_id) values(#{roleId},#{menuId})
+    </insert>
+
+    <delete id="deleteRoleAndMenuByRId" parameterType="int">
+        delete from levelSchool.sys_role_menu where role_id=#{role_id}
+    </delete>
+
+    <delete id="deleteRoleAndMenuByMId" parameterType="int">
+        delete from levelSchool.sys_role_menu where menu_id=#{menu_id}
+    </delete>
+
+    <update id="updateMByUserAndRoleId" parameterType="sysRoleMenu">
+        update levelSchool.sys_role_menu
+        <trim prefix="set" suffixOverrides=",">
+            <if test="roleId != null">
+                role_id = #{roleId},
+            </if>
+            <if test="menuId != null">
+                menu_id = #{menuId},
+            </if>
+        </trim>
+        where id=#{id}
+    </update>
+</mapper>
