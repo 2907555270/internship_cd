@@ -72,7 +72,7 @@ public class RoleController {
     @PreAuthorize("hasRole('admin')")
     //根据id删除角色：同时需要解绑用户的角色信息,以及解绑菜单的角色信息
     @DeleteMapping("{role_id}")
-    public Result deleteById(@PathVariable Integer role_id){
+    public Result deleteById(@PathVariable Long role_id){
         boolean flag = roleService.removeRoleByRid(role_id);
         return Result.result(flag,null,flag?"删除成功 ^_^":"删除失败 -_-");
     }
@@ -83,7 +83,7 @@ public class RoleController {
     @PreAuthorize("hasAuthority('sys:role:list')")
     //根据用户的user_id查询用户的角色
     @GetMapping("user/{user_id}")
-    public Result getRoleByUid(@PathVariable Integer user_id){
+    public Result getRoleByUid(@PathVariable Long user_id){
         List<SysRole> roles = roleService.queryRoleByUid(user_id);
         return Result.result(roles.size()>0,roles,roles.size()>0?null:"暂未获取到任何数据 -_-");
     }
@@ -99,7 +99,7 @@ public class RoleController {
     @PreAuthorize("hasAuthority('sys:role:delete')")
     //为用户解绑角色:按user_id
     @DeleteMapping("user/{user_id}")
-    public Result unBindUserRole(@PathVariable Integer user_id){
+    public Result unBindUserRole(@PathVariable Long user_id){
         boolean flag = roleService.removeUserAndRoleByUId(user_id);
         return Result.result(flag,null,flag?"解绑成功 ^_^":"解绑失败 -_-");
     }
@@ -119,7 +119,7 @@ public class RoleController {
     @PreAuthorize("hasAuthority('sys:role:list')")
     //根据menu_id查询角色信息
     @GetMapping("menu/{menu_id}")
-    public Result getRoleByMId(@PathVariable Integer menu_id){
+    public Result getRoleByMId(@PathVariable Long menu_id){
         List<SysRole> roles = roleService.queryRoleByMid(menu_id);
         boolean flag = roles.size()>0;
         return Result.result(flag,roles,null);
@@ -136,7 +136,7 @@ public class RoleController {
     @PreAuthorize("hasAuthority('sys:role:delete')")
     //为menu解绑role : 按menu_id
     @DeleteMapping("menu/{menu_id}")
-    public Result UnbindRoleMenuByMid(@PathVariable Integer menu_id){
+    public Result UnbindRoleMenuByMid(@PathVariable Long menu_id){
         boolean flag = roleService.removeRoleAndMenuByMid(menu_id);
         return Result.result(flag,null,flag?"解绑成功 ^_^":"解绑失败 -_-");
     }

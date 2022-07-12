@@ -23,4 +23,8 @@
                  left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id
         where rm.menu_id is not null
     </select>
+
+    <delete id="deleteByUserName" parameterType="String">
+        delete from levelSchool.sys_user where username = #{username}
+    </delete>
 </mapper>

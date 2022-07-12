@@ -21,7 +21,7 @@ public interface ISysMenuService extends IService<SysMenu> {
      * menu role_menu表
      */
     //按menu_id删除菜单信息
-    boolean deleteSysMenuById(Integer menu_id);
+    boolean deleteSysMenuById(Long menu_id);
 
     /**
      * user_role + role_menu表

@@ -1,7 +1,10 @@
 package com.txy.graduate.util;
 
+import ch.qos.logback.core.pattern.ConverterUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -78,7 +81,15 @@ public class QueryWrapperUtil {
         Field[] fields = tClass.getDeclaredFields();
         for (Field field:fields ) {
             field.setAccessible(true);
-            field.set(t,map.get(field.getName()));
+            //获取属性在map中的对应值
+            Object attr = map.get(field.getName());
+            //若没有获取到，则不注入属性
+            if(attr!=null){
+                //属性类型强制转换
+                Object convertValue = ConvertUtils.convert(attr, field.getType());
+                //设置属性
+                field.set(t,convertValue);
+            }
         }
         return t;
     }

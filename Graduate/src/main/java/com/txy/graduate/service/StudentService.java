@@ -24,4 +24,10 @@ public interface StudentService extends IService<Student>{
 
     //统计所有状态的全局情况
     List<Status> queryGlobalStatus();
+
+    //新增学生信息：同时注册新用户，绑定普通用户角色
+    boolean saveStudent(Student student);
+
+    //删除学生信息：同时删除用户，解绑用户角色
+    boolean removeStudent(Long id);
 }

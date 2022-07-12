@@ -1,9 +1,11 @@
 package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.Process;
 import com.txy.graduate.mapper.ProcessMapper;
 import com.txy.graduate.service.ProcessService;
+import com.txy.graduate.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
 
     @Autowired
     private ProcessMapper mapper;
+
+    @Autowired
+    private FileUtil fileUtil;
 
     @Override
     public List<Process> queryAll() {
@@ -34,12 +39,45 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
 
     @Override
     public boolean saveProcess(Process process) {
+        //为数据添加图片存放的根路径
+        String baseImgPath = fileUtil.getRootPath(Process.class);
+        if(baseImgPath==null||baseImgPath.equals("")){
+            return false;
+        }
+        //设置图片存放的根目录
+        process.setBaseImgPath(baseImgPath);
+        //执行添加操作
         return mapper.insert(joinData(process).get(0)) > 0;
     }
 
     @Override
     public boolean updateProcessById(Process process) {
+        //为process添加BaseImgPath
+        process.setBaseImgPath(fileUtil.getRootPath(Process.class));
+
+        //查询新的process中的imgPaths
+        List<String> imgPaths = process.getImgPaths();
+        //查询旧的process中的imgPaths
+        List<String> imgPathsOld = queryById(process.getId()).getImgPaths();
+        //删除的旧的图片
+        imgPathsOld.forEach(i->{
+            if(!imgPaths.contains(i)){
+                fileUtil.removeFiles(i);
+            }
+        });
+
         return mapper.updateById(joinData(process).get(0))>0;
+    }
+
+    @Override
+    public boolean removeProcessById(Long id) {
+        //查询对应的process，获取到对应的图片路径信息
+        Process process = queryById(id);
+        //删除这些图片
+        fileUtil.removeFiles(process.getImgPaths().toArray(String[]::new));
+
+        //删除数据库中的数据
+        return mapper.deleteById(id)>0;
     }
 
 

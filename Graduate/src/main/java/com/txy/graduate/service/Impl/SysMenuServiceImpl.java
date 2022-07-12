@@ -60,7 +60,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      */
     @Transactional
     @Override
-    public boolean deleteSysMenuById(Integer menu_id) {
+    public boolean deleteSysMenuById(Long menu_id) {
         //解绑menu_role
         roleService.removeRoleAndMenuByMid(menu_id);
         //删除menu

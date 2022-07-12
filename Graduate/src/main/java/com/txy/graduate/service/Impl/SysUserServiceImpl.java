@@ -39,7 +39,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @SneakyThrows
     @Override
-    public IPage<SysUser> findSysUser(Map<String, Object> map) {
+    public IPage<SysUser> querySysUser(Map<String, Object> map) {
         //获取user查询条件
         SysUser sysUser = QueryWrapperUtil.map2obj(map, SysUser.class);
         QueryWrapper<SysUser> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(sysUser);
@@ -75,7 +75,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             //2.获取权限信息
             List<String> menus = userMapper.getMenuByUserId(userId);
             if (menus.size() > 0) {
-                String menuCode = menus.stream().collect(Collectors.joining(","));
+                String menuCode = String.join(",", menus);
                 authority = authority.concat(menuCode);
             }
 
@@ -86,28 +86,34 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Transactional
     @Override
-    public boolean deleteUserAndUserRoleByUid(Integer user_id) {
+    public boolean deleteUserAndUserRoleByUid(Long user_id) {
         //解绑用户的角色信息
         boolean flag1 = roleService.removeUserAndRoleByUId(user_id);
         //删除用户信息
-        boolean flag2 = userMapper.deleteById(user_id)>0;
-        return flag1&&flag2;
+        boolean flag2 = userMapper.deleteById(user_id) > 0;
+        return flag1 && flag2;
     }
 
     @SneakyThrows
     @Transactional
     @Override
-    public boolean saveUserAndUserRole(Map<String,Object> map) {
+    public boolean saveUserAndUserRole(Map<String, Object> map) {
         //map中获取user信息
-        SysUserRole sysUserRole = QueryWrapperUtil.map2obj(map, SysUserRole.class);
+        SysUserRole sysUserRole = QueryWrapperUtil.map2obj((Map<String, Object>) map.get("role"), SysUserRole.class);
+
         //map中获取user_role信息
-        SysUser sysUser = QueryWrapperUtil.map2obj(map, SysUser.class);
+        SysUser sysUser = QueryWrapperUtil.map2obj((Map<String, Object>) map.get("user"), SysUser.class);
 
         //添加user信息
-        boolean flag1 = userMapper.insert(sysUser)>0;
+        boolean flag1 = userMapper.insert(sysUser) > 0;
+
+        System.out.println(sysUser);
+
+        sysUserRole.setUserId(sysUser.getId());
+
         //为user绑定role信息
         boolean flag2 = roleService.saveUserAndRole(sysUserRole);
 
-        return flag1&&flag2;
+        return flag1 && flag2;
     }
 }

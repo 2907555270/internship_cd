@@ -730,3 +730,274 @@
  2022-07-12 17:42:22 | 执行耗时 6 ms 
  SQL 语句：DELETE FROM tb_process WHERE id=13;
 
+ 2022-07-12 18:23:26 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:23:26 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-12 18:23:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:00 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:00 | 执行耗时 7 ms 
+ SQL 语句：INSERT INTO tb_process ( title, content, address, type, phone, note, img, base_img_path ) VALUES ( 'test1', 'test1', 'tes1t', 1, '17390201035', 'test', '/1657621425044126.png;/1657621425050135.png;/1657621425051452.jpg', '/home/flyme/file_system/graduate/img/Process' );
+
+ 2022-07-12 18:24:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:06 | 执行耗时 4 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-12 18:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-12 18:24:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-12 18:24:32 | 执行耗时 7 ms 
+ SQL 语句：UPDATE tb_process SET title='test', note='图片已更新', img='/1657621425044126.png;/1657621425050135.png;/1657621425051452.jpg', base_img_path='/home/flyme/file_system/graduate/img/Process' WHERE id=14;
+
+ 2022-07-12 18:25:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:25:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-12 18:25:04 | 执行耗时 6 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id=14;
+
+ 2022-07-12 20:47:54 | 执行耗时 10 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 20:47:55 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 1));
+
+ 2022-07-12 20:47:55 | 执行耗时 2 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-12 20:47:55 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_user;
+
+ 2022-07-12 20:47:55 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user LIMIT 10;
+
+ 2022-07-12 20:58:06 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 20:58:33 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 20:59:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:01:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:02:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:05:41 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:05:48 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:05:49 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%3%');
+
+ 2022-07-12 21:05:49 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (student_id LIKE '%3%') LIMIT 4;
+
+ 2022-07-12 21:06:25 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:09:09 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:09:09 | 执行耗时 11 ms 
+ SQL 语句：INSERT INTO sys_user ( id ) VALUES ( 1546844111000928257 );
+
+
+ 2022-07-12 21:10:30 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:10:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:19:40 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:19:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (student_id LIKE '%3%');
+
+ 2022-07-12 21:19:40 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (student_id LIKE '%3%') LIMIT 4;
+
+ 2022-07-12 21:19:45 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:24:02 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:34:54 | 执行耗时 10 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:36:47 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:36:47 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (id LIKE '%1%');
+
+ 2022-07-12 21:36:47 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (id LIKE '%1%') LIMIT 4;
+
+ 2022-07-12 21:37:17 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:37:17 | 执行耗时 1 ms 
+ SQL 语句：INSERT INTO sys_user ( username, password ) VALUES ( 'test_user', 'test_user' );
+
+ 2022-07-12 21:37:17 | 执行耗时 1 ms 
+ SQL 语句：insert into levelSchool.sys_user_role(user_id, role_id) values (5,5);
+
+ 2022-07-12 21:41:33 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:41:33 | 执行耗时 5 ms 
+ SQL 语句：UPDATE sys_user SET username='test_user_update', password='test_user' WHERE id=5;
+
+ 2022-07-12 21:43:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:43:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:43:45 | 执行耗时 2 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 5;
+
+ 2022-07-12 21:43:45 | 执行耗时 1 ms 
+ SQL 语句：DELETE FROM sys_user WHERE id=5;
+
+ 2022-07-12 21:44:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:44:03 | 执行耗时 1 ms 
+ SQL 语句：INSERT INTO sys_user ( username, password ) VALUES ( 'test_user', 'test_user' );
+
+ 2022-07-12 21:44:03 | 执行耗时 1 ms 
+ SQL 语句：insert into levelSchool.sys_user_role(user_id, role_id) values (6,5);
+
+ 2022-07-12 21:44:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:44:22 | 执行耗时 2 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 6;
+
+ 2022-07-12 21:44:22 | 执行耗时 2 ms 
+ SQL 语句：DELETE FROM sys_user WHERE id=6;
+
+ 2022-07-12 21:46:17 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:46:17 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (student_id = '1632506');
+
+ 2022-07-12 21:46:17 | 执行耗时 1 ms 
+ SQL 语句：INSERT INTO tb_student ( student_id, student_name, student_dep, student_pre, student_class, student_status, note ) VALUES ( '1632506', 'test', 'test', 'test', 'test', 0, 'test' );
+
+ 2022-07-12 21:46:17 | 执行耗时 1 ms 
+ SQL 语句：INSERT INTO sys_user ( username, password ) VALUES ( '1632506', '1632506' );
+
+ 2022-07-12 21:46:17 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (code = 'normal');
+
+ 2022-07-12 21:46:17 | 执行耗时 0 ms 
+ SQL 语句：insert into levelSchool.sys_user_role(user_id, role_id) values (7,1);
+
+ 2022-07-12 21:55:46 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:55:46 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 1));
+
+ 2022-07-12 21:55:46 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-12 21:55:46 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE id=17 ;
+
+ 2022-07-12 21:55:46 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = '1632506');
+
+ 2022-07-12 21:55:46 | 执行耗时 2 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 7;
+
+ 2022-07-12 21:55:46 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_user where username = '1632506';
+
+ 2022-07-12 21:55:46 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.tb_student where student_id=17;
+
+ 2022-07-12 21:58:44 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:58:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (student_id = '1632506');
+
+ 2022-07-12 21:58:44 | 执行耗时 2 ms 
+ SQL 语句：INSERT INTO tb_student ( student_id, student_name, student_dep, student_pre, student_class, student_status, note ) VALUES ( '1632506', 'test', 'test', 'test', 'test', 0, 'test' );
+
+ 2022-07-12 21:58:44 | 执行耗时 1 ms 
+ SQL 语句：INSERT INTO sys_user ( username, password ) VALUES ( '1632506', '1632506' );
+
+ 2022-07-12 21:58:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (code = 'normal');
+
+ 2022-07-12 21:58:44 | 执行耗时 1 ms 
+ SQL 语句：insert into levelSchool.sys_user_role(user_id, role_id) values (8,1);
+
+ 2022-07-12 21:59:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:59:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE id=18 ;
+
+ 2022-07-12 21:59:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = '1632506');
+
+ 2022-07-12 21:59:09 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 8;
+
+ 2022-07-12 21:59:09 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_user where username = '1632506';
+
+ 2022-07-12 21:59:09 | 执行耗时 1 ms 
+ SQL 语句：DELETE FROM tb_student WHERE id=18;
+
+ 2022-07-12 21:59:27 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:59:27 | 执行耗时 21 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student;
+
+ 2022-07-12 21:59:27 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student LIMIT 3;
+
+ 2022-07-12 21:59:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 21:59:30 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM tb_student WHERE (id LIKE '%1%');
+
+ 2022-07-12 21:59:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (id LIKE '%1%') LIMIT 4;
+

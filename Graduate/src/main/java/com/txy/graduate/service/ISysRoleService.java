@@ -23,16 +23,16 @@ public interface ISysRoleService extends IService<SysRole> {
      * User_Role表
      */
     //按user_id查询用户对应的权限信息
-    List<SysRole> queryRoleByUid(Integer user_id);
+    List<SysRole> queryRoleByUid(Long user_id);
 
     //为user绑定role
     boolean saveUserAndRole(SysUserRole sysUserRole);
 
     //按role_id 解绑role对应的所有user_role信息
-    boolean removeUserAndRoleByRId(Integer role_id);
+    boolean removeUserAndRoleByRId(Long role_id);
 
     //按user_id 解绑user对应的所有user_role信息
-    boolean removeUserAndRoleByUId(Integer user_id);
+    boolean removeUserAndRoleByUId(Long user_id);
 
     //改绑 某个 用户———角色 绑定信息
     boolean updateUByUserRoleId(SysUserRole sysUserRole);
@@ -41,16 +41,16 @@ public interface ISysRoleService extends IService<SysRole> {
      * Menu_Role表
      */
     //按照menu_id查询权限信息
-    List<SysRole> queryRoleByMid(Integer menu_id);
+    List<SysRole> queryRoleByMid(Long menu_id);
 
     //为menu绑定role
     boolean saveRoleAndMenu(SysRoleMenu sysRoleMenu);
 
     //按role_id 解绑 role和menu
-    boolean removeRoleAndMenuByRid(Integer role_id);
+    boolean removeRoleAndMenuByRid(Long role_id);
 
     //按menu_id 解绑 role和menu
-    boolean removeRoleAndMenuByMid(Integer menu_id);
+    boolean removeRoleAndMenuByMid(Long menu_id);
 
     //改绑 某个 菜单————角色 绑定信息
     boolean updateMByUserRoleId(SysRoleMenu sysRoleMenu);
@@ -60,7 +60,7 @@ public interface ISysRoleService extends IService<SysRole> {
      * User_Role Menu_Role
      */
     //删除role,同时解绑该role对应的user和menu信息
-    boolean removeRoleByRid(Integer role_id);
+    boolean removeRoleByRid(Long role_id);
 
 
 }

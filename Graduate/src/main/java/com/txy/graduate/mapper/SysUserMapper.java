@@ -17,4 +17,8 @@ public interface SysUserMapper extends BaseMapper<SysUser>{
 
     //通过menuId查询
     List<SysUserRole> ListByMenuId(Long menuId);
+
+    //通过user_id删除user
+    int deleteByUserName(String username);
+
 }

@@ -2,7 +2,9 @@ package com.txy.graduate.domain.sys;
 
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +25,7 @@ public class SysUser {
     /**
     * 主键Id
     */
-    @TableField("id")
+    @TableId(value = "id",type = IdType.AUTO)
     private Long id;
 
     /**
