@@ -1,7 +1,5 @@
 package com.txy.graduate.util;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.txy.graduate.config.StudentPage;
 import com.txy.graduate.domain.Student;
 import com.txy.graduate.service.StudentService;
 import org.junit.jupiter.api.Test;

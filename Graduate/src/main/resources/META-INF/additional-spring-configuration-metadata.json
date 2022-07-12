@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "process.file.path",
+      "type": "java.lang.String",
+      "description": "Description for process.file.path.",
+      "defaultValue": "/home/flyme/file_system/{{spring.application.name}}/process"
+    },
+    {
+      "name": "process.file.name",
+      "type": "java.lang.String",
+      "description": "Description for process.file.name.",
+      "defaultValue": "/home/flyme/file_system/{{spring.application.name}}/process"
+    }
+  ]
+}

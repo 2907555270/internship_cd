@@ -1,15 +1,17 @@
 package com.txy.graduate.service.Impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.Status;
 import com.txy.graduate.domain.Student;
-import com.txy.graduate.domain.vo.StatisticVo;
 import com.txy.graduate.mapper.StudentMapper;
 import com.txy.graduate.service.StudentService;
+import com.txy.graduate.util.QueryWrapperUtil;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigInteger;
 import java.util.*;
 
 @Service
@@ -18,27 +20,54 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @Autowired
     private StudentMapper mapper;
 
-    //@Override
-    //public IPage<Student> findAllByPage(int currentPage, int pageSize) {
-    //    //创建分页对象
-    //    IPage<Student> page = new Page<>(currentPage, pageSize);
-    //    return mapper.selectPage(page, null);
-    //}
-    //
-    //@Override
-    //public IPage<Student> findByConditionsAndPage(StudentPage studentPage) {
-    //    //创建分页对象
-    //    IPage<Student> page = new Page<>(studentPage.getCurrentPage(), studentPage.getPageSize());
-    //    //获取student对象
-    //    Student student = studentPage.getStudent();
-    //    //处理模糊查询条件
-    //    QueryWrapper<Student> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(student);
-    //    return mapper.selectPage(page, wrapper);
-    //}
-    //
+    /**
+     * 查询
+     */
+
+    @SneakyThrows
+    @Override
+    public IPage<Student> queryStudent(Map<String, Object> map) {
+        //判断map是否为空
+        if (map==null){
+            return null;
+        }
+
+        Student student = null;
+
+        //判断map的结构中是否有student层级
+        Object obj = map.get("student");
+        //根据map层级判断封装方式
+        if(obj==null)
+            student = QueryWrapperUtil.map2obj(map,Student.class);
+        else
+            student = QueryWrapperUtil.map2obj((Map<String, Object>) map.get("student"), Student.class);
+
+        //获取查询条件
+        QueryWrapper<Student> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(student);
+
+        return mapper.selectPage(QueryWrapperUtil.getPageFromMap(map),wrapper);
+    }
 
     @Override
-    public List<Status> findGlobalStatus() {
+    public List<Student> queryByIdOrName(String content) {
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.like("student_id", content);
+        //TODO:尽量避免使用or,采用union all
+        wrapper.or();
+        wrapper.like("student_name", content);
+        return mapper.selectList(wrapper);
+    }
+
+    @Override
+    public Student queryStudentById(String studentId) {
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.eq("student_id",studentId);
+        return mapper.selectOne(wrapper);
+    }
+
+
+    @Override
+    public List<Status> queryGlobalStatus() {
         ArrayList<Status> statuses = new ArrayList<>();
 
         //获取每个状态的完成人数
@@ -65,27 +94,4 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
 
         return statuses;
     }
-    //
-    //@Override
-    //public Student findById(String student_id) {
-    //    QueryWrapper<Student> wrapper = new QueryWrapper<>();
-    //    wrapper.eq("student_id", student_id);
-    //    return mapper.selectOne(wrapper);
-    //}
-    //
-    //@Override
-    //public List<Student> findByIdOrName(String content) {
-    //    QueryWrapper<Student> wrapper = new QueryWrapper<>();
-    //    wrapper.like("student_id", content);
-    //    wrapper.or();
-    //    wrapper.like("student_name", content);
-    //    return mapper.selectList(wrapper);
-    //}
-    //
-    //@Override
-    //public Boolean updateStatus(Student student) {
-    //    if (student == null)
-    //        return false;
-    //    return mapper.updateById(student)>0;
-    //}
 }

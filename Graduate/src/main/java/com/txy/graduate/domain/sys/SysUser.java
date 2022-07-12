@@ -1,44 +1,79 @@
 package com.txy.graduate.domain.sys;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+/**
+* 用户信息表（账号状态默认为1）
+*/
 @Data
-@TableName(value = "sys_user")
-public class SysUser implements Serializable {
-    @TableId(value = "id", type = IdType.AUTO)
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("sys_user")
+public class SysUser {
+    /**
+    * 主键Id
+    */
+    @TableField("id")
     private Long id;
 
-    @TableField(value = "username")
+    /**
+    * 用户名
+    */
+    @TableField("username")
+    @NotBlank(message = "用户名不能为空或空字符串")
     private String username;
 
-    @TableField(value = "password")
+    /**
+    * 密码
+    */
+    @TableField("password")
+    @NotBlank(message = "密码不能为空或空字符串")
     private String password;
 
-    @TableField(value = "avatar")
+    /**
+    * 头像Url
+    */
+    @TableField("avatar")
     private String avatar;
 
-    @TableField(value = "email")
+    /**
+    * 邮箱
+    */
+    @TableField("email")
     private String email;
 
-    @TableField(value = "city")
+    /**
+    * 所在城市
+    */
     private String city;
 
-    @TableField(value = "created")
+    /**
+    * 创建时间
+    */
     private Date created;
 
-    @TableField(value = "updated")
+    /**
+    * 更新时间
+    */
     private Date updated;
 
-    @TableField(value = "last_login")
+    /**
+    * 上次登录时间
+    */
     private Date lastLogin;
 
-    @TableField(value = "status")
+    /**
+    * 账号状态
+    */
     private Integer status;
 }
