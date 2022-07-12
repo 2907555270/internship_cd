@@ -2,7 +2,7 @@ package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.txy.graduate.domain.SysUser;
+import com.txy.graduate.domain.sys.SysUser;
 
 import java.util.Map;
 

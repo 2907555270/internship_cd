@@ -2,11 +2,10 @@ package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.domain.SysRole;
-import com.txy.graduate.domain.SysUser;
-import com.txy.graduate.domain.SysUserRole;
+import com.txy.graduate.domain.sys.SysRole;
+import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.sys.SysUserRole;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;

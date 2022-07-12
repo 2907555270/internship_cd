@@ -1,4 +1,4 @@
-package com.txy.graduate.domain;
+package com.txy.graduate.domain.sys;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

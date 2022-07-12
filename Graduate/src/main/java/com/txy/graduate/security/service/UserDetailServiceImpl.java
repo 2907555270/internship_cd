@@ -1,7 +1,7 @@
 package com.txy.graduate.security.service;
 
 import com.txy.graduate.security.entity.SecurityUser;
-import com.txy.graduate.domain.SysUser;
+import com.txy.graduate.domain.sys.SysUser;
 import com.txy.graduate.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

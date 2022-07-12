@@ -2,9 +2,9 @@ package com.txy.graduate.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.SysRole;
-import com.txy.graduate.domain.SysRoleMenu;
-import com.txy.graduate.domain.SysUserRole;
+import com.txy.graduate.domain.sys.SysRole;
+import com.txy.graduate.domain.sys.SysRoleMenu;
+import com.txy.graduate.domain.sys.SysUserRole;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.util.QueryWrapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;

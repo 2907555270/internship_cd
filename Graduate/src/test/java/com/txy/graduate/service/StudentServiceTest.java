@@ -1,8 +1,5 @@
 package com.txy.graduate.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.txy.graduate.config.StudentPage;
-import com.txy.graduate.domain.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,10 +22,10 @@ public class StudentServiceTest {
     //    System.out.println(pageInfo.getRecords());
     //}
     //
-    //@Test
-    //public void test_findGlobalStatus() {
-    //    System.out.println(studentService.findGlobalStatus());
-    //}
+    @Test
+    public void test_findGlobalStatus() {
+        System.out.println(studentService.queryGlobalStatus());
+    }
     //
     //@Test
     //public void test_findById(){

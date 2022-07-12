@@ -3,7 +3,10 @@ server:
   servlet:
     context-path: /graduate
 
+
 spring:
+  application:
+    name: graduate
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     url: jdbc:p6spy:mysql://172.20.0.2:3306/levelSchool
@@ -45,13 +48,17 @@ spring:
     timeout: 10000
 
 
+
 mybatis-plus:
   type-aliases-package: com.txy.graduate.domain
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 
 markerhub:
   jwt:
     secret: hfjshgohirehigtiuuoighrehuir13fe
     header: Authorization
     expireTime: 604800 #7t天
+
+

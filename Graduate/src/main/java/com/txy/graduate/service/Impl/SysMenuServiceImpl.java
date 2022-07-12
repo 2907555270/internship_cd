@@ -4,8 +4,8 @@ package com.txy.graduate.service.Impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.domain.SysMenu;
-import com.txy.graduate.domain.SysUser;
+import com.txy.graduate.domain.sys.SysMenu;
+import com.txy.graduate.domain.sys.SysUser;
 import com.txy.graduate.mapper.SysMenuMapper;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.security.config.ConstConfig;
@@ -21,7 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 

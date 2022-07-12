@@ -1,8 +1,8 @@
 package com.txy.graduate.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.txy.graduate.domain.SysUser;
-import com.txy.graduate.domain.SysUserRole;
+import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.sys.SysUserRole;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

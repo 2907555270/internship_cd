@@ -2,4 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.txy.graduate.mapper.StudentMapper">
 
+
+    <select id="selectStatusCount" resultType="java.util.Map">
+        select count(id)                               'total',
+               cast(sum(report_status) as unsigned)    'report',
+               cast(sum(audit_status) as unsigned)     'graduation',
+               cast(sum(owe_status) as unsigned)       'owe',
+               cast(sum(book_status) as unsigned)      'book',
+               cast(sum(archives_status) as unsigned)  'archive',
+               cast(sum(dormitory_status) as unsigned) 'dormitory',
+               cast(sum(diploma_status) as unsigned)   'diploma'
+        from levelSchool.tb_student;
+    </select>
+
+    <select id="selectNoteCount" resultType="map">
+        select cast(sum(report_note_status) as unsigned)    'report',
+               cast(sum(audit_note_status) as unsigned)     'graduation',
+               cast(sum(owe_note_status) as unsigned)       'owe',
+               cast(sum(book_note_status) as unsigned)      'book',
+               cast(sum(archives_note_status) as unsigned)  'archive',
+               cast(sum(dormitory_note_status) as unsigned) 'dormitory',
+               cast(sum(diploma_note_status) as unsigned)   'diploma'
+        from levelSchool.tb_student;
+    </select>
 </mapper>

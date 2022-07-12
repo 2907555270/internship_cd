@@ -1,12 +1,11 @@
 package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.txy.graduate.domain.SysRole;
+import com.txy.graduate.domain.sys.SysRole;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.servlet.ServletOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -51,6 +51,12 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <!--校验组件-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -133,6 +139,8 @@
             <artifactId>jaxb-impl</artifactId>
             <version>2.2.5-b10</version>
         </dependency>
+
+
 
     </dependencies>
 
