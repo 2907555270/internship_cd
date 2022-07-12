@@ -25,4 +25,8 @@
                cast(sum(diploma_note_status) as unsigned)   'diploma'
         from levelSchool.tb_student;
     </select>
+
+    <delete id="deleteByStudentId" parameterType="long">
+        delete from levelSchool.tb_student where student_id=#{student_id}
+    </delete>
 </mapper>

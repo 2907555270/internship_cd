@@ -18,7 +18,7 @@ public interface ISysUserService extends IService<SysUser> {
      *  1. 无查询条件时就是查询所有，按照分页
      *  2. 有查询条件时就是多条件+分页组合查询
      */
-    IPage<SysUser> findSysUser(Map<String,Object> map);
+    IPage<SysUser> querySysUser(Map<String,Object> map);
 
     //根据username查询用户信息
     SysUser getUserByUserName(String username);
@@ -31,7 +31,7 @@ public interface ISysUserService extends IService<SysUser> {
     String getUserAuthorityInfo(Long userId);
 
     //按user_id删除用户信息：同时解绑用户的角色信息
-    boolean deleteUserAndUserRoleByUid(Integer user_id);
+    boolean deleteUserAndUserRoleByUid(Long user_id);
 
     //新增user：同时绑定用户的角色信息
     boolean saveUserAndUserRole(Map<String,Object> map);

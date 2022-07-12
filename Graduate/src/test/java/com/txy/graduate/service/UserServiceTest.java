@@ -24,7 +24,7 @@ public class UserServiceTest {
 
     @Test
     public void test_findAllByPage(){
-        IPage<SysUser> sysUser = userService.findSysUser(map);
+        IPage<SysUser> sysUser = userService.querySysUser(map);
         System.out.println(sysUser.getRecords());
     }
 }

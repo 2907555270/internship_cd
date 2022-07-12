@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.txy.graduate.mapper.SysRoleMapper">
     <!--user_role表-->
-    <select id="selectRoleByUid" parameterType="int" resultType="sysRole">
+    <select id="selectRoleByUid" parameterType="long" resultType="sysRole">
         select * from levelSchool.sys_role
         where id in (select role_id from levelSchool.sys_user_role where user_id=#{user_id})
     </select>
@@ -11,11 +11,11 @@
         insert into levelSchool.sys_user_role(user_id, role_id) values (#{userId},#{roleId})
     </insert>
 
-    <delete id="deleteUserAndRoleByUId" parameterType="int">
+    <delete id="deleteUserAndRoleByUId" parameterType="long">
         delete from levelSchool.sys_user_role where user_id = #{user_id}
     </delete>
 
-    <delete id="deleteUserAndRoleByRId" parameterType="int">
+    <delete id="deleteUserAndRoleByRId" parameterType="long">
         delete from levelSchool.sys_user_role where role_id = #{role_id}
     </delete>
 
@@ -43,11 +43,11 @@
         insert into levelSchool.sys_role_menu(role_id, menu_id) values(#{roleId},#{menuId})
     </insert>
 
-    <delete id="deleteRoleAndMenuByRId" parameterType="int">
+    <delete id="deleteRoleAndMenuByRId" parameterType="long">
         delete from levelSchool.sys_role_menu where role_id=#{role_id}
     </delete>
 
-    <delete id="deleteRoleAndMenuByMId" parameterType="int">
+    <delete id="deleteRoleAndMenuByMId" parameterType="long">
         delete from levelSchool.sys_role_menu where menu_id=#{menu_id}
     </delete>
 

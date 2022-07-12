@@ -53,7 +53,7 @@ public class MenuController {
     }
 
     @DeleteMapping("{menu_id}")
-    public Result deleteSysMenuByMid(@PathVariable Integer menu_id){
+    public Result deleteSysMenuByMid(@PathVariable Long menu_id){
         boolean flag = menuService.deleteSysMenuById(menu_id);
         return Result.result(flag,null,flag?"删除成功 ^_^":"删除失败 -_-");
     }
@@ -72,9 +72,7 @@ public class MenuController {
 
         // 获取权限信息
         String authorityInfo = userService.getUserAuthorityInfo(sysUser.getId());
-        //if (authorityInfo.endsWith(",")){
-        //    authorityInfo = authorityInfo.substring(0,authorityInfo.length());
-        //}
+
         String[] authorityArr = authorityInfo.split(",");
 
         // 获取导航栏

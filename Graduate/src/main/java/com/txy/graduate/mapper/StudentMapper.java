@@ -15,6 +15,6 @@ public interface StudentMapper extends BaseMapper<Student> {
     //统计每个状态中备注中的人数
     Map<String, Object> selectNoteCount();
 
-    //新增Student
-    int insertStudent(Student student);
+    //根据studentId删除student信息
+    int deleteByStudentId(Long student_id);
 }

@@ -42,7 +42,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
      * user_role表
      */
     @Override
-    public List<SysRole> queryRoleByUid(Integer user_id) {
+    public List<SysRole> queryRoleByUid(Long user_id) {
         return roleMapper.selectRoleByUid(user_id);
     }
 
@@ -52,12 +52,12 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     }
 
     @Override
-    public boolean removeUserAndRoleByRId(Integer role_id) {
+    public boolean removeUserAndRoleByRId(Long role_id) {
         return roleMapper.deleteUserAndRoleByRId(role_id) > 0;
     }
 
     @Override
-    public boolean removeUserAndRoleByUId(Integer user_id) {
+    public boolean removeUserAndRoleByUId(Long user_id) {
         return roleMapper.deleteUserAndRoleByUId(user_id) > 0;
     }
 
@@ -71,7 +71,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
      * role_menu表
      */
     @Override
-    public List<SysRole> queryRoleByMid(Integer menu_id) {
+    public List<SysRole> queryRoleByMid(Long menu_id) {
         return roleMapper.selectRoleByMenuId(menu_id);
     }
 
@@ -81,12 +81,12 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     }
 
     @Override
-    public boolean removeRoleAndMenuByMid(Integer menu_id) {
+    public boolean removeRoleAndMenuByMid(Long menu_id) {
         return roleMapper.deleteRoleAndMenuByMId(menu_id) > 0;
     }
 
     @Override
-    public boolean removeRoleAndMenuByRid(Integer role_id) {
+    public boolean removeRoleAndMenuByRid(Long role_id) {
         return roleMapper.deleteRoleAndMenuByRId(role_id) > 0;
     }
 
@@ -100,7 +100,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
      */
     @Transactional
     @Override
-    public boolean removeRoleByRid(Integer role_id) {
+    public boolean removeRoleByRid(Long role_id) {
         //解绑user_role
         removeUserAndRoleByRId(role_id);
         //解绑role_menu
