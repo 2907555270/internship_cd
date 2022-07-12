@@ -15,6 +15,9 @@ public interface ProcessService extends IService<Process> {
     //插入一个新的process：主要是图片处理
     boolean saveProcess(Process process);
 
-    //更新一个新的process: 主要是图片处理
+    //更新process: 主要是图片处理
     boolean updateProcessById(Process process);
+
+    //删除process: 主要是图片处理
+    boolean removeProcessById(Long id);
 }

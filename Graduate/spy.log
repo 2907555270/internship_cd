@@ -730,3 +730,48 @@
  2022-07-12 17:42:22 | 执行耗时 6 ms 
  SQL 语句：DELETE FROM tb_process WHERE id=13;
 
+ 2022-07-12 18:23:26 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:23:26 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-12 18:23:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:00 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:00 | 执行耗时 7 ms 
+ SQL 语句：INSERT INTO tb_process ( title, content, address, type, phone, note, img, base_img_path ) VALUES ( 'test1', 'test1', 'tes1t', 1, '17390201035', 'test', '/1657621425044126.png;/1657621425050135.png;/1657621425051452.jpg', '/home/flyme/file_system/graduate/img/Process' );
+
+ 2022-07-12 18:24:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:06 | 执行耗时 4 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-12 18:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-12 18:24:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:24:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-12 18:24:32 | 执行耗时 7 ms 
+ SQL 语句：UPDATE tb_process SET title='test', note='图片已更新', img='/1657621425044126.png;/1657621425050135.png;/1657621425051452.jpg', base_img_path='/home/flyme/file_system/graduate/img/Process' WHERE id=14;
+
+ 2022-07-12 18:25:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 18:25:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-12 18:25:04 | 执行耗时 6 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id=14;
+

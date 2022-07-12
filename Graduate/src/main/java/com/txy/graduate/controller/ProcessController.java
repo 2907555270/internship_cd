@@ -62,13 +62,6 @@ public class ProcessController {
             return Result.result(false, null, fieldErrors.get(0).getDefaultMessage());
         }
 
-        //为数据添加图片存放的根路径
-        String baseImgPath = fileUtil.getRootPath(Process.class);
-        if(baseImgPath==null||baseImgPath.equals("")){
-            return Result.result(false,null,"存储服务器异常，无法获取baseImgPath");
-        }
-        process.setBaseImgPath(baseImgPath);
-
         //添加数据到数据库
         boolean flag = processService.saveProcess(process);
         return Result.result(flag, null, flag ? "添加成功 ^_^" : "添加失败 -_-");
@@ -77,8 +70,6 @@ public class ProcessController {
     //按process_id更新流程信息：可以更新保存的图片信息
     @PostMapping()
     public Result update(@RequestBody Process process) {
-        //为process添加BaseImgPath
-        process.setBaseImgPath(fileUtil.getRootPath(Process.class));
         //修改流程配置对应的图片+修改流程配置信息===放在service中进行操作
         boolean flag = processService.updateProcessById(process);
         return Result.result(flag, null, flag ? "修改成功 ^_^" : "修改失败 -_-");
@@ -87,15 +78,10 @@ public class ProcessController {
     //按process_id删除流程信息：同时删除保存的图片信息
     @DeleteMapping("{id}")
     public Result deleteById(@PathVariable Long id) {
-        //查询对应的process，获取到对应的图片路径信息
-        Process process = processService.queryById(id);
-        //删除这些图片
-        fileUtil.removeFiles(process.getImgPaths().toArray(String[]::new));
         //删除该流程配置信息 == 放在service中进行，对上层透明
-        boolean flag = processService.removeById(id);
+        boolean flag = processService.removeProcessById(id);
         return Result.result(flag, null, flag ? "删除成功 ^_^" : "删除失败 -_-");
     }
-
 
 }
 
