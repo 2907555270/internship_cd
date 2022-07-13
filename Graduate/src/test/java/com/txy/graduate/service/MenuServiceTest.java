@@ -1,6 +1,6 @@
 package com.txy.graduate.service;
 
-import com.txy.graduate.security.entity.MenuDTO;
+import com.txy.graduate.domain.dto.MenuDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ public class MenuServiceTest {
 
     @Test
     public void test(){
-        List<MenuDTO> userNav = sysMenuService.getCurrentUserNav();
+        List<MenuDTO> userNav = sysMenuService.getCurrentUserNav("");
         System.out.println(userNav.toString());
     }
 }

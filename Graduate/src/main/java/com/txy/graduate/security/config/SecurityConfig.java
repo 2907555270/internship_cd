@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.LogoutFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -33,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailServiceImpl userDetailService;
     @Autowired
-    private JwtLogoutSuccecsHandler logoutSuccessHandler;
+    private JwtLogoutSuccessHandler logoutSuccessHandler;
 
     @Bean
     JWTFilter jwtFilter() throws Exception {
@@ -91,6 +92,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //配置自定义过滤器
                 .and()
+                //.addFilterBefore(jwtFilter(), LogoutFilter.class) //需要在LogoutFilter之前配置上下文信息
                 .addFilter(jwtFilter())
                 .addFilterBefore(captcheFilter, UsernamePasswordAuthenticationFilter.class)
         ;

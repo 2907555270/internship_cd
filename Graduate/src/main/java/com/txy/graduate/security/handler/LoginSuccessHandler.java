@@ -1,7 +1,6 @@
 package com.txy.graduate.security.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.sys.SysRole;
 import com.txy.graduate.domain.sys.SysUser;
@@ -31,12 +30,16 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
     @Autowired
     JwtUtil jwtUtil;
+
     @Autowired
     private ISysRoleService roleService;
+
     @Autowired
     private ISysUserService userService;
+
     @Autowired
     private RedisUtil redisUtil;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
 
@@ -49,11 +52,12 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         // 获取当前用户角色并返回，前端根据角色跳对应页面
         String username = authentication.getName();
         SysUser sysUser = userService.getUserByUserName(username);
+
         // 将用户的信息存放在redis中
-        redisUtil.set(ConstConfig.USER_KEY,sysUser,3600 * 72);
+        redisUtil.set(ConstConfig.USER_KEY+":"+username,sysUser,3600 * 72);
 
         // 获取用户的权限
-        List<SysRole> roles = roleService.list(new QueryWrapper<SysRole>().inSql("id", "select role_id from sys_user_role where user_id = " + sysUser.getId()));
+        List<SysRole> roles = roleService.queryRoleByUid(sysUser.getId());
 
         // 响应登录成功请求
         httpServletResponse.setHeader(jwtUtil.getHeader(),jwt);

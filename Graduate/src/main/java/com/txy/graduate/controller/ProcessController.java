@@ -5,6 +5,7 @@ import com.txy.graduate.domain.Process;
 import com.txy.graduate.service.ProcessService;
 import com.txy.graduate.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 
+//TODO:暂时没有分配流程管理的相关人员，以管理员进行分配
 @RestController
 @RequestMapping("/process")
 public class ProcessController {
@@ -27,7 +29,7 @@ public class ProcessController {
 
 
     //查询所有的流程配置信息
-    @GetMapping()
+    @GetMapping("/list")
     public Result findAll() {
         List<Process> list = processService.queryAll();
         boolean flag = list.size() > 0;
@@ -35,7 +37,7 @@ public class ProcessController {
     }
 
     //根据id查询某个流程的详细信息
-    @GetMapping("{id}")
+    @GetMapping("/one/{id}")
     public Result findById(@PathVariable Long id) {
         Process process = processService.queryById(id);
         boolean flag = process != null;
@@ -43,7 +45,8 @@ public class ProcessController {
     }
 
     //上传流程对应的地点图片
-    @PostMapping("upload")
+    @PreAuthorize("hasRole('admin')")
+    @PostMapping("/upload")
     public Result upload(@RequestParam("pics") MultipartFile[] multipartFiles) {
         try {
             return fileUtil.uploadPics(multipartFiles, Process.class);
@@ -54,7 +57,8 @@ public class ProcessController {
     }
 
     //添加新的流程信息
-    @PutMapping()
+    @PreAuthorize("hasRole('admin')")
+    @PutMapping("/save")
     public Result save(@RequestBody @Validated Process process, BindingResult result) {
         //效验配置信息数据是否有错
         List<FieldError> fieldErrors = result.getFieldErrors();
@@ -68,7 +72,8 @@ public class ProcessController {
     }
 
     //按process_id更新流程信息：可以更新保存的图片信息
-    @PostMapping()
+    @PreAuthorize("hasRole('admin')")
+    @PostMapping("/update")
     public Result update(@RequestBody Process process) {
         //修改流程配置对应的图片+修改流程配置信息===放在service中进行操作
         boolean flag = processService.updateProcessById(process);
@@ -76,7 +81,8 @@ public class ProcessController {
     }
 
     //按process_id删除流程信息：同时删除保存的图片信息
-    @DeleteMapping("{id}")
+    @PreAuthorize("hasRole('admin')")
+    @DeleteMapping("/delete/{id}")
     public Result deleteById(@PathVariable Long id) {
         //删除该流程配置信息 == 放在service中进行，对上层透明
         boolean flag = processService.removeProcessById(id);

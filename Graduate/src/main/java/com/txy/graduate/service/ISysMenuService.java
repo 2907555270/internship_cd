@@ -4,7 +4,7 @@ package com.txy.graduate.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.txy.graduate.domain.sys.SysMenu;
-import com.txy.graduate.security.entity.MenuDTO;
+import com.txy.graduate.domain.dto.MenuDTO;
 
 import java.util.List;
 import java.util.Map;
@@ -27,6 +27,6 @@ public interface ISysMenuService extends IService<SysMenu> {
      * user_role + role_menu表
      */
     //从redis或上下文中获取当前用户的信息 ---> 当前用户可使用的Menu
-    List<MenuDTO> getCurrentUserNav();
+    List<MenuDTO> getCurrentUserNav(String username);
 
 }

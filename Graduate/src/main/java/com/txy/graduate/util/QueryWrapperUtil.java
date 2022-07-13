@@ -1,10 +1,8 @@
 package com.txy.graduate.util;
 
-import ch.qos.logback.core.pattern.ConverterUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.commons.beanutils.ConvertUtils;
-import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -18,9 +16,6 @@ public class QueryWrapperUtil {
 
     /**
      * 根据分页信息，构造map
-     * @param currentPage
-     * @param pageSize
-     * @return
      */
     public static Map<String,Object> getMapFromPage(int currentPage,int pageSize){
         HashMap<String, Object> map = new HashMap<>();
@@ -31,20 +26,19 @@ public class QueryWrapperUtil {
 
     /**
      * 从map提取分页信息，并封装为Page
-     * @param map
-     * @param <T>
-     * @return
      */
     public static <T> Page<T> getPageFromMap(Map<String,Object> map){
         Integer currentPage = (Integer) map.get("currentPage");
         Integer pageSize = (Integer) map.get("pageSize");
-        return new Page<T>(currentPage,pageSize);
+        if(!(currentPage!=null&&pageSize!=null)) {
+            currentPage = 1;
+            pageSize = 1;
+        }
+        return new Page<>(currentPage,pageSize);
     }
 
     /**
      * 将数据对象映射为map
-     * @param obj
-     * @return
      */
     public static Map<String,Object> obj2map(Object obj){
         HashMap<String, Object> map = new HashMap<>();
@@ -71,9 +65,6 @@ public class QueryWrapperUtil {
 
     /**
      * 将 map反射为数据对象
-     * @param map
-     * @param tClass
-     * @param <T>
      */
     public static <T> T map2obj(Map<String,Object> map,Class<T> tClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         //通过反射机制创建一个T对象
@@ -96,9 +87,6 @@ public class QueryWrapperUtil {
 
     /**
      * 对wrapper进一步封装，使其能够自动添加多个模糊查询条件
-     * @param obj
-     * @param <T>
-     * @return
      */
     public static <T> QueryWrapper<T> queryWrapper_LikeMany(T obj){
         QueryWrapper<T> wrapper = new QueryWrapper<>();

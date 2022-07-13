@@ -1,9 +1,11 @@
 package com.txy.graduate.security.filter;
 import cn.hutool.core.util.StrUtil;
 import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.security.service.UserDetailServiceImpl;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.JwtUtil;
+import com.txy.graduate.util.RedisUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +34,12 @@ public class JWTFilter extends BasicAuthenticationFilter {
     @Autowired
     private ISysUserService sysUserService;
 
+    @Autowired
+    private RedisUtil redisUtil;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        //获取jwt令牌
+        //从Header请求中获取jwt令牌
         String jwt = request.getHeader(jwtUtil.getHeader());
 
         //jwt令牌检验
@@ -57,6 +62,9 @@ public class JWTFilter extends BasicAuthenticationFilter {
         // 可以获取用户信息，权限等交由security,然后继续往下走
         SysUser sysUser = sysUserService.getUserByUserName(userName);
 
+        //将用户的身份信息保存在redis中
+        redisUtil.set(ConstConfig.USER_KEY+":"+userName,sysUser);
+
         // 参数：用户名，密码，权限信息 ---> 生成jwt token
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userName, null, userDetailsService.getAuthority(sysUser.getId()));
 
@@ -64,6 +72,5 @@ public class JWTFilter extends BasicAuthenticationFilter {
         SecurityContextHolder.getContext().setAuthentication(token);
 
         chain.doFilter(request,response);
-
     }
 }

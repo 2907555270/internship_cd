@@ -6,7 +6,7 @@
         FROM levelSchool.sys_user_role ur
                  left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id
                  left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id
-        where sm.perms is not null
+        where sm.perms is not null and ur.user_id=#{userId}
     </select>
 
     <select id="ListByMenuId" resultType="com.txy.graduate.domain.sys.SysUserRole">
@@ -18,13 +18,16 @@
     </select>
 
     <select id="getMenuIdByUserId" resultType="java.lang.Long">
-        SELECT distinct rm.menu_id
-        FROM levelSchool.sys_user_role ur
-                 left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id
-        where rm.menu_id is not null
+        select distinct srm.menu_id
+        from levelSchool.sys_user_role ur
+                 left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id
+        where ur.user_id = #{userId}
+          and srm.menu_id is not null
     </select>
 
     <delete id="deleteByUserName" parameterType="String">
-        delete from levelSchool.sys_user where username = #{username}
+        delete
+        from levelSchool.sys_user
+        where username = #{username}
     </delete>
 </mapper>

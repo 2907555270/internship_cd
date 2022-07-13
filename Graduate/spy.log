@@ -1001,3 +1001,1548 @@
  2022-07-12 21:59:30 | 执行耗时 1 ms 
  SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (id LIKE '%1%') LIMIT 4;
 
+ 2022-07-12 22:13:59 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 22:14:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-12 22:14:26 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-12 22:14:26 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 3));
+
+ 2022-07-12 22:14:26 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 09:25:48 | 执行耗时 12 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 09:25:48 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 3));
+
+ 2022-07-13 09:25:48 | 执行耗时 4 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 09:25:48 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 09:25:48 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 3));
+
+ 2022-07-13 09:26:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 09:27:08 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:27:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 1));
+
+ 2022-07-13 09:27:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 09:27:08 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:27:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 1));
+
+ 2022-07-13 09:27:43 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:29:37 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:29:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:30:05 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:30:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 09:30:39 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 1));
+
+ 2022-07-13 09:30:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 09:30:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT distinct rm.menu_id FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id where rm.menu_id is not null;
+
+ 2022-07-13 09:30:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,9,10,11,12,13,3,7,14,15,16,4,17,18,19,5,6));
+
+ 2022-07-13 09:36:18 | 执行耗时 9 ms 
+ SQL 语句：SELECT distinct rm.menu_id FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id where rm.menu_id is not null;
+
+ 2022-07-13 09:36:18 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,9,10,11,12,13,3,7,14,15,16,4,17,18,19,5,6));
+
+ 2022-07-13 10:10:26 | 执行耗时 11 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:10:26 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:16:13 | 执行耗时 10 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN ('[Ljava.lang.Long;@64a4739'));
+
+ 2022-07-13 10:17:01 | 执行耗时 14 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (3,6,7,8,9));
+
+ 2022-07-13 10:17:55 | 执行耗时 11 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:17:55 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:20:42 | 执行耗时 13 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:20:42 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:21:36 | 执行耗时 15 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:21:36 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:26:24 | 执行耗时 14 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:26:24 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:27:28 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 10:27:29 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:27:29 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:28:10 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 10:28:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 3));
+
+ 2022-07-13 10:28:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 10:29:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 10:29:50 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:29:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 10:51:42 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 10:51:45 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 10:51:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 1));
+
+ 2022-07-13 10:51:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 10:51:45 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 10:51:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 11:33:41 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:35:42 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 11:35:42 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=3);
+
+ 2022-07-13 11:35:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 11:35:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 11:35:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 3));
+
+ 2022-07-13 11:36:17 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:36:39 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:36:39 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 11:39:52 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:39:52 | 执行耗时 7 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 11:43:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:43:09 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 11:55:46 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:55:56 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 11:55:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 11:56:07 | 执行耗时 10 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 11:56:14 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:56:24 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 11:56:24 | 执行耗时 2 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 11:56:34 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 11:57:01 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:57:09 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 11:57:09 | 执行耗时 2 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 11:57:09 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 11:57:20 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 11:57:20 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (children LIKE '%[]%');
+
+ 2022-07-13 12:06:53 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 12:06:53 | 执行耗时 4 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu;
+
+ 2022-07-13 12:06:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu LIMIT 2;
+
+ 2022-07-13 12:07:01 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 12:07:01 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu;
+
+ 2022-07-13 12:07:01 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu LIMIT 4;
+
+ 2022-07-13 12:08:35 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 12:08:35 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (name LIKE '%系统%');
+
+ 2022-07-13 12:08:35 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (name LIKE '%系统%') LIMIT 2;
+
+ 2022-07-13 12:10:24 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:10:24 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (name LIKE '%系统%');
+
+ 2022-07-13 12:10:24 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (name LIKE '%系统%') LIMIT 2;
+
+ 2022-07-13 12:11:03 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:11:03 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=3);
+
+ 2022-07-13 12:11:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 12:11:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (name LIKE '%系统%');
+
+ 2022-07-13 12:11:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (name LIKE '%系统%') LIMIT 2;
+
+ 2022-07-13 12:11:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 12:11:50 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 12:11:50 | 执行耗时 3 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 12:12:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:12:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:12:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 3));
+
+ 2022-07-13 12:13:04 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:13:04 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 3 and srm.menu_id is not null;
+
+ 2022-07-13 12:13:04 | 执行耗时 14 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN ());
+
+ 2022-07-13 12:13:36 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:13:36 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 3 and srm.menu_id is not null;
+
+ 2022-07-13 12:13:36 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN ());
+
+ 2022-07-13 12:15:07 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'zhangsan');
+
+ 2022-07-13 12:15:07 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 3 and srm.menu_id is not null;
+
+ 2022-07-13 12:15:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN ());
+
+ 2022-07-13 13:15:28 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:15:28 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 13:15:28 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 13:15:34 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:16:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:16:50 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:16:50 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 2));
+
+ 2022-07-13 13:17:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:17:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:17:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (id IN (select role_id from sys_user_role where user_id = 2));
+
+ 2022-07-13 13:17:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:17:44 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 13:17:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 13:17:58 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:17:58 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 13:17:58 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 13:19:13 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:19:13 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 13:19:13 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 13:19:38 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:19:38 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (name LIKE '%系统%');
+
+ 2022-07-13 13:19:38 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (name LIKE '%系统%') LIMIT 2;
+
+ 2022-07-13 13:21:42 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:21:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:21:51 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_role_menu where menu_id=20;
+
+ 2022-07-13 13:21:51 | 执行耗时 1 ms 
+ SQL 语句：DELETE FROM sys_menu WHERE id=20;
+
+ 2022-07-13 13:22:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:22:21 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 13:22:21 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 13:22:37 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:22:37 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 13:22:37 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null;
+
+ 2022-07-13 13:22:37 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 13:22:37 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 13:27:04 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:27:04 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 13:27:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 13:33:28 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 13:33:29 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 13:33:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 13:45:38 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:20:43 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:20:43 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:20:43 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:20:43 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:20:43 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:21:46 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:21:46 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:21:46 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:21:46 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:21:46 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:22:13 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:22:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:22:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:22:59 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:24:37 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:38:07 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:38:07 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:38:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:38:07 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:38:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:38:08 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:38:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:10 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:10 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:10 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:10 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:18 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:18 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:18 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:18 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:18 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:18 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:18 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:19 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:19 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:19 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:19 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:19 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:19 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:19 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:20 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:20 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:20 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:20 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:20 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:20 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:20 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:21 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:21 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:21 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:21 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:39:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:39:21 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:22 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:39:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:39:22 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:39:22 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:42:00 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:42:00 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:42:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:42:00 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:42:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:42:00 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:42:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:42:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:42:11 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:42:11 | 执行耗时 2 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:42:11 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:42:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:42:11 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:42:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:42:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:42:57 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:42:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:42:57 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:42:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:42:57 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:42:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:45:59 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:45:59 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:45:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:45:59 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:45:59 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:45:59 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:45:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:47:12 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:47:12 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:47:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:47:12 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:47:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:47:12 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:47:12 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:49:43 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:49:43 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:49:43 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:49:43 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:49:43 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:49:43 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:49:43 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:54:23 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:54:23 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:54:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:54:23 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:54:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:54:23 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:54:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 14:56:38 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 14:56:38 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:56:38 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:56:38 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 14:56:38 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 14:56:38 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 14:56:38 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 15:01:14 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:01:15 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:01:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:01:15 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:01:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:01:15 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 15:01:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 15:08:54 | 执行耗时 5 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:08:54 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:08:54 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:08:54 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:11:39 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:11:39 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:11:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:11:39 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:11:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:11:39 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 15:11:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 15:11:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:11:44 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:11:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:11:44 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:11:55 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:11:55 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:11:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:11:58 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:11:58 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:11:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:12:11 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:12:11 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:12:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:12:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu;
+
+ 2022-07-13 15:12:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu LIMIT 4;
+
+ 2022-07-13 15:12:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:12:50 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:12:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:12:50 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:12:50 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:12:50 | 执行耗时 1 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 1 and srm.menu_id is not null;
+
+ 2022-07-13 15:12:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18));
+
+ 2022-07-13 15:13:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:13:07 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:13:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:13:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_menu WHERE (name LIKE '%系统%');
+
+ 2022-07-13 15:13:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (name LIKE '%系统%') LIMIT 2;
+
+ 2022-07-13 15:13:22 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:13:22 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:13:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:13:22 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:13:30 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:13:30 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:13:30 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:13:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:25:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:25:56 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:25:56 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:25:56 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:25:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:25:56 | 执行耗时 0 ms 
+ SQL 语句：select distinct srm.menu_id from levelSchool.sys_user_role ur left join levelSchool.sys_role_menu srm on ur.role_id = srm.role_id where ur.user_id = 2 and srm.menu_id is not null;
+
+ 2022-07-13 15:25:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,parent_id,name,path,perms,component,type,icon,orderNum,created,updated,status FROM sys_menu WHERE (id IN (2,3,6,7,8,9));
+
+ 2022-07-13 15:37:13 | 执行耗时 4 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:37:13 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:37:13 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:37:13 | 执行耗时 9 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-13 15:37:32 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:37:32 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:37:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:37:32 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=14 ;
+
+ 2022-07-13 15:39:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:39:06 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:39:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:39:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=8 ;
+
+ 2022-07-13 15:39:25 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:39:25 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:39:25 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:39:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:39:42 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:39:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:39:51 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:39:51 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:39:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:39:51 | 执行耗时 6 ms 
+ SQL 语句：INSERT INTO tb_process ( title, content, address, type, phone, note, img, base_img_path ) VALUES ( 'test1', 'test1', 'tes1t', 1, '17390201035', 'test', '/1657697965586453.png;/1657697965591523.png;/1657697965592978.jpg', '/home/flyme/file_system/graduate/img/Process' );
+
+ 2022-07-13 15:40:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:40:09 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:40:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:40:09 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=15 ;
+
+ 2022-07-13 15:40:35 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:40:35 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:40:35 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:40:42 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:40:42 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:40:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:40:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=15 ;
+
+ 2022-07-13 15:40:42 | 执行耗时 8 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id=15;
+
+ 2022-07-13 15:54:10 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:54:11 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:54:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:54:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:54:34 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:54:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:54:34 | 执行耗时 2 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_role;
+
+ 2022-07-13 15:54:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role LIMIT 10;
+
+ 2022-07-13 15:54:47 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:54:47 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:54:47 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:54:47 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_role WHERE (code LIKE '%admin%');
+
+ 2022-07-13 15:54:47 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role WHERE (code LIKE '%admin%') LIMIT 2;
+
+ 2022-07-13 15:55:05 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:55:05 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:55:05 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:55:05 | 执行耗时 6 ms 
+ SQL 语句：INSERT INTO sys_role ( name, code, status ) VALUES ( 'test', 'test', 1 );
+
+ 2022-07-13 15:55:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:55:56 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:55:56 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:56:04 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:56:04 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:56:04 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:56:04 | 执行耗时 9 ms 
+ SQL 语句：UPDATE sys_role SET remark='测试role Controller' WHERE id=7;
+
+ 2022-07-13 15:56:47 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:56:47 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:56:47 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:57:05 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:57:05 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:57:05 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:57:25 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:57:25 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:57:25 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:57:25 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where role_id = 7;
+
+ 2022-07-13 15:57:25 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_role_menu where role_id=7;
+
+ 2022-07-13 15:57:25 | 执行耗时 0 ms 
+ SQL 语句：DELETE FROM sys_role WHERE id=7;
+
+ 2022-07-13 15:57:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:57:57 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:57:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:57:57 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=3);
+
+ 2022-07-13 15:58:21 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 15:58:21 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 15:58:21 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 15:58:28 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 15:58:28 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 15:58:28 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 15:58:28 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=3);
+
+ 2022-07-13 16:03:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:03:57 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:03:57 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:03:57 | 执行耗时 5 ms 
+ SQL 语句：insert into levelSchool.sys_user_role(user_id, role_id) values (9,9);
+
+ 2022-07-13 16:05:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:05:07 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:05:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:05:32 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:05:33 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:05:33 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:05:33 | 执行耗时 6 ms 
+ SQL 语句：update levelSchool.sys_user_role set role_id=8 where id=12;
+
+ 2022-07-13 16:06:23 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:06:23 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:06:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:06:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:06:40 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:06:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:06:40 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 12;
+
+ 2022-07-13 16:07:13 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:07:13 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:07:13 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:07:13 | 执行耗时 61 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 9;
+
+ 2022-07-13 16:07:31 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:07:31 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:07:31 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:07:31 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_role_menu where menu_id=1);
+
+ 2022-07-13 16:07:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'test');
+
+ 2022-07-13 16:07:42 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=2);
+
+ 2022-07-13 16:07:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=2;
+
+ 2022-07-13 16:09:16 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:09:16 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:09:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:09:16 | 执行耗时 6 ms 
+ SQL 语句：insert into levelSchool.sys_role_menu(role_id, menu_id) values(10,10);
+
+ 2022-07-13 16:12:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:12:34 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:12:34 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:12:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:12:45 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:12:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:12:45 | 执行耗时 6 ms 
+ SQL 语句：update levelSchool.sys_role_menu set role_id = 10, menu_id = 12 where id=54;
+
+ 2022-07-13 16:13:01 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:13:01 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:13:01 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:13:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:13:12 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:13:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:13:12 | 执行耗时 6 ms 
+ SQL 语句：delete from levelSchool.sys_role_menu where menu_id=12;
+
+ 2022-07-13 16:21:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:21:09 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:21:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:36:52 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:36:53 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:36:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:36:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_user;
+
+ 2022-07-13 16:36:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user LIMIT 10;
+
+ 2022-07-13 16:38:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:38:39 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:38:39 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:40:05 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:40:05 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:40:05 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:42:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:42:51 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:42:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:43:02 | 执行耗时 7 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:43:03 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:43:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:43:03 | 执行耗时 0 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_user;
+
+ 2022-07-13 16:43:03 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user LIMIT 1;
+
+ 2022-07-13 16:43:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:43:59 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:43:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:43:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_user WHERE (username LIKE '%admin%');
+
+ 2022-07-13 16:43:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username LIKE '%admin%') LIMIT 3;
+
+ 2022-07-13 16:44:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:44:08 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:44:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:44:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT COUNT(*) FROM sys_user WHERE (username LIKE '%a%');
+
+ 2022-07-13 16:44:08 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username LIKE '%a%') LIMIT 3;
+
+ 2022-07-13 16:44:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:44:59 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:44:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:44:59 | 执行耗时 3 ms 
+ SQL 语句：INSERT INTO sys_user ( username, password ) VALUES ( 'test_user', 'test_user' );
+
+ 2022-07-13 16:44:59 | 执行耗时 1 ms 
+ SQL 语句：insert into levelSchool.sys_user_role(user_id, role_id) values (9,5);
+
+ 2022-07-13 16:45:35 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:45:35 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:45:35 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:45:35 | 执行耗时 6 ms 
+ SQL 语句：UPDATE sys_user SET username='test_user_update', password='test_user' WHERE id=9;
+
+ 2022-07-13 16:45:48 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-13 16:45:48 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-13 16:45:48 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-13 16:45:48 | 执行耗时 1 ms 
+ SQL 语句：delete from levelSchool.sys_user_role where user_id = 9;
+
+ 2022-07-13 16:45:48 | 执行耗时 0 ms 
+ SQL 语句：DELETE FROM sys_user WHERE id=9;
+

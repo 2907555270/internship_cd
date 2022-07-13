@@ -9,16 +9,16 @@ import com.txy.graduate.domain.sys.SysUser;
 import com.txy.graduate.mapper.SysMenuMapper;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.security.config.ConstConfig;
-import com.txy.graduate.security.entity.MenuDTO;
+import com.txy.graduate.domain.dto.MenuDTO;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysRoleService;
-import com.txy.graduate.service.ISysUserService;
 
 import com.txy.graduate.util.QueryWrapperUtil;
 import com.txy.graduate.util.RedisUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
@@ -37,9 +37,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     private RedisUtil redisUtil;
 
     @Autowired
-    private ISysUserService userService;
-
-    @Autowired
     private ISysRoleService roleService;
 
     /**
@@ -50,6 +47,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     public IPage<SysMenu> findSysMenu(Map<String, Object> map) {
         //封装查询条件的对象
         SysMenu sysMenu = QueryWrapperUtil.map2obj(map, SysMenu.class);
+
         QueryWrapper<SysMenu> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(sysMenu);
 
         return menuMapper.selectPage(QueryWrapperUtil.getPageFromMap(map),wrapper);
@@ -58,7 +56,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     /**
      * menu role_menu表
      */
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public boolean deleteSysMenuById(Long menu_id) {
         //解绑menu_role
@@ -73,16 +71,15 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      * user_role role_menu表
      */
     @Override
-    public List<MenuDTO> getCurrentUserNav() {
-        ////从上下文中获取用户信息
-        // String username = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        // SysUser user = userService.getSysUserByUserName(username);
-
+    public List<MenuDTO> getCurrentUserNav(String username) {
         //从redis中获取用户信息
-        SysUser user = (SysUser) redisUtil.get(ConstConfig.USER_KEY);
+        SysUser user = (SysUser) redisUtil.get(ConstConfig.USER_KEY+":"+username);
+
         //查询 user_id --> menu_id --> menu_list
         List<Long> menuIds = userMapper.getMenuIdByUserId(user.getId());
+
         List<SysMenu> menuList = menuMapper.selectList(new QueryWrapper<SysMenu>().in("id", menuIds));
+
         // 处理菜单层级关系(转树状结构)
         List<SysMenu> menuTree = buildTreeMenu(menuList);
 
@@ -99,7 +96,10 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         List<SysMenu> finalMenus = new ArrayList<>();
         for (SysMenu sysMenu : menuList) {
             for (SysMenu e : menuList) {
-                if (Objects.equals(sysMenu.getId(), e.getParentId())){
+                if(sysMenu.getChildren()==null){
+                    sysMenu.setChildren(new ArrayList<>());
+                }
+                if (sysMenu.getId().equals(e.getParentId())){
                     sysMenu.getChildren().add(e);
                 }
             }

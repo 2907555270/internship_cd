@@ -12,6 +12,7 @@ import com.txy.graduate.util.QueryWrapperUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -98,7 +99,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     /**
      * role user_role menu_role表
      */
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public boolean removeRoleByRid(Long role_id) {
         //解绑user_role
