@@ -10,9 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 对Mybatis-plus的QueryWrapper进一步封装，增强功能
+ * 查询工具
+ *    封装一些查询时用的小工具，主要功能有：
+ *      1. obj2map | map2obi ：对象与Map之间的相互转换
+ *      2. queryMapper_LikeMany : 根据传入对象的类型和属性，自动封装QueryWrapper的模糊查询条件，无需手动设置条件
+ *
  */
-public class QueryWrapperUtil {
+public class QueryUtil {
 
     /**
      * 根据分页信息，构造map
@@ -54,7 +58,9 @@ public class QueryWrapperUtil {
             field.setAccessible(true);
             //数据封装
             try {
-                map.put(field.getName(),field.get(obj));
+                Object attr = field.get(obj);
+                if(attr!=null)
+                    map.put(field.getName(),attr);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 System.out.println("对象封装为map时格式转换错误");
@@ -115,7 +121,6 @@ public class QueryWrapperUtil {
                 System.out.println("类型转换错误，请检查对象是否为空");
             }
         }
-
         return wrapper;
     }
 }

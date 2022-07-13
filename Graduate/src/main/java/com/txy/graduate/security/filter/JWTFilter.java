@@ -1,6 +1,6 @@
 package com.txy.graduate.security.filter;
 import cn.hutool.core.util.StrUtil;
-import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.security.service.UserDetailServiceImpl;
 import com.txy.graduate.service.ISysUserService;

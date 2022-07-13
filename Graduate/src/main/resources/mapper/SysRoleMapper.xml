@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.txy.graduate.mapper.SysRoleMapper">
     <!--user_role表-->
-    <select id="selectRoleByUid" parameterType="long" resultType="sysRole">
+    <select id="selectRoleByUid" parameterType="long" resultType="com.txy.graduate.domain.po.SysRole">
         select * from levelSchool.sys_role
         where id in (select role_id from levelSchool.sys_user_role where user_id=#{user_id})
     </select>
 
-    <insert id="insertUserAndRole" parameterType="sysUserRole">
+    <insert id="insertUserAndRole" parameterType="com.txy.graduate.domain.po.SysUserRole">
         insert into levelSchool.sys_user_role(user_id, role_id) values (#{userId},#{roleId})
     </insert>
 
@@ -19,7 +19,7 @@
         delete from levelSchool.sys_user_role where role_id = #{role_id}
     </delete>
 
-    <update id="updateUByUserAndRoleId" parameterType="sysUserRole">
+    <update id="updateUByUserAndRoleId" parameterType="com.txy.graduate.domain.po.SysUserRole">
         update levelSchool.sys_user_role
         <trim prefix="set" suffixOverrides=",">
             <if test="userId != null" >
@@ -34,12 +34,12 @@
 
 
     <!--role_menu表-->
-    <select id="selectRoleByMenuId" resultType="sysRole">
+    <select id="selectRoleByMenuId" resultType="com.txy.graduate.domain.po.SysRole">
         select * from levelSchool.sys_role
         where id in (select role_id from levelSchool.sys_role_menu where menu_id=#{menu_id})
     </select>
 
-    <insert id="insertRoleAndMenu" parameterType="sysRoleMenu">
+    <insert id="insertRoleAndMenu" parameterType="com.txy.graduate.domain.po.SysRoleMenu">
         insert into levelSchool.sys_role_menu(role_id, menu_id) values(#{roleId},#{menuId})
     </insert>
 
@@ -51,7 +51,7 @@
         delete from levelSchool.sys_role_menu where menu_id=#{menu_id}
     </delete>
 
-    <update id="updateMByUserAndRoleId" parameterType="sysRoleMenu">
+    <update id="updateMByUserAndRoleId" parameterType="com.txy.graduate.domain.po.SysRoleMenu">
         update levelSchool.sys_role_menu
         <trim prefix="set" suffixOverrides=",">
             <if test="roleId != null">
@@ -63,4 +63,8 @@
         </trim>
         where id=#{id}
     </update>
+
+    <select id="selectIdByCode" parameterType="String" resultType="java.lang.Long">
+        select id from levelSchool.sys_role where sys_role.code = #{code};
+    </select>
 </mapper>

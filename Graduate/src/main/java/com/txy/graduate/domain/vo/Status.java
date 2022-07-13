@@ -1,4 +1,4 @@
-package com.txy.graduate.domain;
+package com.txy.graduate.domain.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

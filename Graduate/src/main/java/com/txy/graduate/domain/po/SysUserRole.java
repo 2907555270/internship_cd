@@ -1,20 +1,21 @@
-package com.txy.graduate.domain.sys;
+package com.txy.graduate.domain.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
-@TableName(value = "sys_role_menu")
-public class SysRoleMenu {
+@TableName(value = "sys_user_role")
+public class SysUserRole {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+    @TableField(value = "user_id")
+    private Long userId;
+
     @TableField(value = "role_id")
     private Long roleId;
-
-    @TableField(value = "menu_id")
-    private Long menuId;
 }

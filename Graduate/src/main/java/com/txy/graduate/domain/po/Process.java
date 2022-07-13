@@ -1,4 +1,4 @@
-package com.txy.graduate.domain;
+package com.txy.graduate.domain.po;
 
 import java.util.Date;
 import java.util.List;
@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ import javax.validation.constraints.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("tb_process")
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class Process {
     /**
     * 主键id

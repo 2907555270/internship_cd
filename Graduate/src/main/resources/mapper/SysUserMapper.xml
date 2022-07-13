@@ -9,7 +9,7 @@
         where sm.perms is not null and ur.user_id=#{userId}
     </select>
 
-    <select id="ListByMenuId" resultType="com.txy.graduate.domain.sys.SysUserRole">
+    <select id="ListByMenuId" resultType="com.txy.graduate.domain.po.SysUserRole">
         select ur.*
         from levelSchool.sys_role_menu rm
                  left join levelSchool.sys_user_role ur
@@ -30,4 +30,8 @@
         from levelSchool.sys_user
         where username = #{username}
     </delete>
+
+    <select id="selectIdByUsername" resultType="Long">
+        select id from levelSchool.sys_user where username=#{username}
+    </select>
 </mapper>

@@ -1,7 +1,7 @@
 package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.txy.graduate.domain.Process;
+import com.txy.graduate.domain.po.Process;
 
 import java.util.List;
 

@@ -2,11 +2,11 @@ package com.txy.graduate.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysRoleMenu;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysRoleMenu;
+import com.txy.graduate.domain.po.SysUserRole;
 import com.txy.graduate.service.ISysRoleService;
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +33,7 @@ public class RoleController {
     @GetMapping("/list/{currentPage}/{pageSize}")
     public Result findAll(@PathVariable int currentPage,@PathVariable int pageSize){
         //封装分页信息
-        Map<String, Object> map = QueryWrapperUtil.getMapFromPage(currentPage, pageSize);
+        Map<String, Object> map = QueryUtil.getMapFromPage(currentPage, pageSize);
         //执行查询
         IPage<SysRole> page = roleService.querySysRole(map);
         boolean flag = page.getSize()>0;
