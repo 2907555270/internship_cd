@@ -3,7 +3,7 @@ package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.txy.graduate.domain.sys.SysMenu;
+import com.txy.graduate.domain.po.SysMenu;
 import com.txy.graduate.domain.dto.MenuDTO;
 
 import java.util.List;

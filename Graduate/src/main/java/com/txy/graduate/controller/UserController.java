@@ -2,9 +2,9 @@ package com.txy.graduate.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.service.ISysUserService;
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,7 @@ public class UserController {
     @GetMapping("/list/{currentPage}/{pageSize}")
     public Result findAll(@PathVariable int currentPage,@PathVariable int pageSize){
         //数据封装到map中
-        Map<String, Object> map = QueryWrapperUtil.getMapFromPage(currentPage, pageSize);
+        Map<String, Object> map = QueryUtil.getMapFromPage(currentPage, pageSize);
 
         //执行查询操作，获取数据
         IPage<SysUser> page = userService.querySysUser(map);

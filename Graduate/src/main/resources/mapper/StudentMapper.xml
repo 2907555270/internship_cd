@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.txy.graduate.mapper.StudentMapper">
+    <sql id="student_profile">
+        select id,
+               student_id,
+               student_name,
+               student_class
+        from levelSchool.tb_student
+    </sql>
 
-
-    <select id="selectStatusCount" resultType="java.util.Map">
+    <select id="selectStatusCount" resultType="map">
         select count(id)                               'total',
                cast(sum(report_status) as unsigned)    'report',
                cast(sum(audit_status) as unsigned)     'graduation',
@@ -27,6 +33,28 @@
     </select>
 
     <delete id="deleteByStudentId" parameterType="long">
-        delete from levelSchool.tb_student where student_id=#{student_id}
+        delete
+        from levelSchool.tb_student
+        where student_id = #{student_id}
     </delete>
+
+    <select id="selectByIdOrName" parameterType="String" resultType="com.txy.graduate.domain.po.Student">
+        <include refid="student_profile"/>
+        where tb_student.student_id like concat(#{content},'%')
+        union all
+        <include refid="student_profile"/>
+        where tb_student.student_name like concat(#{content},'%')
+    </select>
+
+    <select id="isExistedByStudentId" resultType="com.txy.graduate.domain.po.Student" parameterType="String">
+        select id
+        from levelSchool.tb_student
+        where student_id = #{studentId}
+    </select>
+
+    <select id="selectStudentIdById" resultType="java.lang.String">
+        select student_id
+        from levelSchool.tb_student
+        where id = #{id}
+    </select>
 </mapper>

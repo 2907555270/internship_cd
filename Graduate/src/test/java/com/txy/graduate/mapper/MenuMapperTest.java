@@ -1,7 +1,7 @@
 package com.txy.graduate.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.txy.graduate.domain.sys.SysMenu;
+import com.txy.graduate.domain.po.SysMenu;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

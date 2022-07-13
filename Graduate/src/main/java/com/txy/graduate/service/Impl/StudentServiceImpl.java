@@ -1,19 +1,18 @@
 package com.txy.graduate.service.Impl;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.domain.Status;
-import com.txy.graduate.domain.Student;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysUser;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.vo.Status;
+import com.txy.graduate.domain.po.Student;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysUser;
+import com.txy.graduate.domain.po.SysUserRole;
 import com.txy.graduate.mapper.StudentMapper;
 import com.txy.graduate.mapper.SysRoleMapper;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.service.StudentService;
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,6 +34,10 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @Autowired
     private SysRoleMapper sysRoleMapper;
 
+    //设置基础查询字段列表
+    private final String[] baseColumns = {"id","student_id","student_name","student_dep",
+            "student_pre","student_class","student_status"};
+
     //学生权限
     @Value("normal")
     private String code;
@@ -46,10 +49,10 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @SneakyThrows
     @Override
     public IPage<Student> queryStudent(Map<String, Object> map) {
+
         //判断map是否为空
-        if (map == null) {
+        if (map == null)
             return null;
-        }
 
         Student student;
 
@@ -57,31 +60,28 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         Object obj = map.get("student");
         //根据map层级判断封装方式
         if (obj == null)
-            student = QueryWrapperUtil.map2obj(map, Student.class);
+            student = QueryUtil.map2obj(map, Student.class);
         else
-            student = QueryWrapperUtil.map2obj((Map<String, Object>) map.get("student"), Student.class);
+            student = QueryUtil.map2obj((Map<String, Object>) map.get("student"), Student.class);
 
         //获取查询条件
-        QueryWrapper<Student> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(student);
+        QueryWrapper<Student> wrapper = QueryUtil.queryWrapper_LikeMany(student);
+        wrapper.select(baseColumns);
 
-        return studentMapper.selectPage(QueryWrapperUtil.getPageFromMap(map), wrapper);
+        return studentMapper.selectPage(QueryUtil.getPageFromMap(map), wrapper);
     }
 
     @Override
     public List<Student> queryByIdOrName(String content) {
-        QueryWrapper<Student> wrapper = new QueryWrapper<>();
-        wrapper.like("student_id", content);
-        //TODO:尽量避免使用or,采用union all
-        wrapper.or();
-        wrapper.like("student_name", content);
-        return studentMapper.selectList(wrapper);
+        return studentMapper.selectByIdOrName(content);
     }
 
     @Override
-    public Student queryStudentById(String studentId) {
+    public boolean isExistedByStudentId(String studentId) {
         QueryWrapper<Student> wrapper = new QueryWrapper<>();
-        wrapper.eq("student_id", studentId);
-        return studentMapper.selectOne(wrapper);
+        wrapper.eq("student_id",studentId);
+        wrapper.select("id");
+        return studentMapper.selectOne(wrapper)!=null;
     }
 
 
@@ -129,35 +129,43 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
 
         //根据学生对应的权限code查询权限id
         QueryWrapper<SysRole> wrapper = new QueryWrapper<>();
-        wrapper.eq("code", code);
-        SysRole sysRole = sysRoleMapper.selectOne(wrapper);
+        wrapper.eq("code",code);
+        wrapper.select("id");
+        Long role_id = sysRoleMapper.selectOne(wrapper).getId();
 
         //为学生用户user设置权限
         SysUserRole sysUserRole = new SysUserRole();
+        //上面插入user的主键id会被自动封装到对象中
         sysUserRole.setUserId(sysUser.getId());
-        sysUserRole.setRoleId(sysRole.getId());
+        sysUserRole.setRoleId(role_id);
+        //todo：需要将SysUserRole单独分出去一个Mapper
         boolean flag3 = sysRoleMapper.insertUserAndRole(sysUserRole) > 0;
+
         return flag1 && flag2 && flag3;
     }
 
-    //TODO:执行了太多的查询，需要优化SQL
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public boolean removeStudent(Long id) {
 
         //根据学生id去查询学生的全部信息
-        Student student = studentMapper.selectById(id);
+        QueryWrapper<Student> studentQueryWrapper = new QueryWrapper<>();
+        studentQueryWrapper.select("student_id");
+        studentQueryWrapper.eq("id",id);
+        String studentId = studentMapper.selectOne(studentQueryWrapper).getStudentId();
 
-        //根据学生id信息查询用户信息
-        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
-        wrapper.eq("username",student.getStudentId());
-        SysUser sysUser = sysUserMapper.selectOne(wrapper);
+        //根据学生id信息查询用户id
+        QueryWrapper<SysUser> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.select("id");
+        userQueryWrapper.eq("student_id",studentId);
+        Long userId = sysUserMapper.selectOne(userQueryWrapper).getId();
 
         //解绑学生的权限信息
-        boolean flag1 = sysRoleMapper.deleteUserAndRoleByUId(sysUser.getId()) > 0;
+        //todo:需要将SysUserRole分出去一个Mapper
+        boolean flag1 = sysRoleMapper.deleteUserAndRoleByUId(userId) > 0;
 
         //删除学生账号
-        boolean flag2 = sysUserMapper.deleteByUserName(sysUser.getUsername()) > 0;
+        boolean flag2 = sysUserMapper.deleteByUserName(studentId) > 0;
 
         //删除学生student信息
         boolean flag3 = studentMapper.deleteById(id)>0;

@@ -3,13 +3,13 @@ package com.txy.graduate.controller;
 import cn.hutool.core.map.MapUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.sys.SysMenu;
-import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.po.SysMenu;
+import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.domain.dto.MenuDTO;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysUserService;
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import com.txy.graduate.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -40,7 +40,7 @@ public class MenuController {
     @PreAuthorize("hasAuthority('sys:menu:list')")
     @GetMapping("/list/{currentPage}/{pageSize}")
     public Result findAll(@PathVariable int currentPage, @PathVariable int pageSize){
-        Map<String, Object> map = QueryWrapperUtil.getMapFromPage(currentPage, pageSize);
+        Map<String, Object> map = QueryUtil.getMapFromPage(currentPage, pageSize);
 
         IPage<SysMenu> page = menuService.findSysMenu(map);
         boolean flag = page.getSize() > 0;

@@ -6,6 +6,7 @@ import com.txy.graduate.config.Result;
 import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.util.RedisUtil;
 import com.txy.graduate.util.ToolUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,11 +18,13 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+@Slf4j //开启日志记录
 @RestController
 public class LoginController {
 
     @Autowired
     private Producer producer;
+
     @Autowired
     private RedisUtil redisUtil;
 

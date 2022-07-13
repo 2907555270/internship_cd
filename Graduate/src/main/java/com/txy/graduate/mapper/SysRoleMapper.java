@@ -1,9 +1,9 @@
 package com.txy.graduate.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysRoleMenu;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysRoleMenu;
+import com.txy.graduate.domain.po.SysUserRole;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -47,4 +47,7 @@ public interface SysRoleMapper extends BaseMapper<SysRole> {
 
     //UPDATE : menu_role_id --> update mysql{menu_role}
     int updateMByUserAndRoleId(SysRoleMenu sysRoleMenu);
+
+    //SELECT : code --> id
+    Long selectIdByCode(String code);
 }

@@ -2,9 +2,9 @@ package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysRoleMenu;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysRoleMenu;
+import com.txy.graduate.domain.po.SysUserRole;
 
 import java.util.List;
 import java.util.Map;

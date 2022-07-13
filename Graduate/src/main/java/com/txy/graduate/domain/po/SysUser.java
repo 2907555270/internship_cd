@@ -1,11 +1,13 @@
-package com.txy.graduate.domain.sys;
+package com.txy.graduate.domain.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +23,8 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("sys_user")
-public class SysUser {
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
+public class SysUser implements Serializable {
     /**
     * 主键Id
     */

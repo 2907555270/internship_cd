@@ -3,12 +3,12 @@ package com.txy.graduate.service.Impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysRoleMenu;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysRoleMenu;
+import com.txy.graduate.domain.po.SysUserRole;
 import com.txy.graduate.mapper.SysRoleMapper;
 import com.txy.graduate.service.ISysRoleService;
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,10 +32,10 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     @Override
     public IPage<SysRole> querySysRole(Map<String, Object> map) {
         //获取查询条件
-        SysRole sysRole = QueryWrapperUtil.map2obj(map, SysRole.class);
-        QueryWrapper<SysRole> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(sysRole);
+        SysRole sysRole = QueryUtil.map2obj(map, SysRole.class);
+        QueryWrapper<SysRole> wrapper = QueryUtil.queryWrapper_LikeMany(sysRole);
 
-        return roleMapper.selectPage(QueryWrapperUtil.getPageFromMap(map), wrapper);
+        return roleMapper.selectPage(QueryUtil.getPageFromMap(map), wrapper);
     }
 
 

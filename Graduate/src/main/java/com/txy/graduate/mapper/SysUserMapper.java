@@ -1,8 +1,8 @@
 package com.txy.graduate.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.txy.graduate.domain.sys.SysUser;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.po.SysUser;
+import com.txy.graduate.domain.po.SysUserRole;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -21,4 +21,6 @@ public interface SysUserMapper extends BaseMapper<SysUser>{
     //通过user_id删除user
     int deleteByUserName(String username);
 
+    //通过username查询用户Id
+    Long selectIdByUsername(String username);
 }

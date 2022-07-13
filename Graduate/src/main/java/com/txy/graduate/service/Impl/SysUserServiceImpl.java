@@ -3,14 +3,14 @@ package com.txy.graduate.service.Impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysUser;
-import com.txy.graduate.domain.sys.SysUserRole;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysUser;
+import com.txy.graduate.domain.po.SysUserRole;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import com.txy.graduate.util.RedisUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,11 +43,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public IPage<SysUser> querySysUser(Map<String, Object> map) {
         //获取user查询条件
-        SysUser sysUser = QueryWrapperUtil.map2obj(map, SysUser.class);
-        QueryWrapper<SysUser> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(sysUser);
+        SysUser sysUser = QueryUtil.map2obj(map, SysUser.class);
+        QueryWrapper<SysUser> wrapper = QueryUtil.queryWrapper_LikeMany(sysUser);
 
         //查询条件无参数时就是普通的分页查询，否则就是多条件模糊查询+分页查询的组合
-        return userMapper.selectPage(QueryWrapperUtil.getPageFromMap(map), wrapper);
+        return userMapper.selectPage(QueryUtil.getPageFromMap(map), wrapper);
     }
 
     @Override
@@ -105,10 +105,10 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public boolean saveUserAndUserRole(Map<String, Object> map) {
         //map中获取user信息
-        SysUserRole sysUserRole = QueryWrapperUtil.map2obj((Map<String, Object>) map.get("role"), SysUserRole.class);
+        SysUserRole sysUserRole = QueryUtil.map2obj((Map<String, Object>) map.get("role"), SysUserRole.class);
 
         //map中获取user_role信息
-        SysUser sysUser = QueryWrapperUtil.map2obj((Map<String, Object>) map.get("user"), SysUser.class);
+        SysUser sysUser = QueryUtil.map2obj((Map<String, Object>) map.get("user"), SysUser.class);
 
         //添加user信息
         boolean flag1 = userMapper.insert(sysUser) > 0;

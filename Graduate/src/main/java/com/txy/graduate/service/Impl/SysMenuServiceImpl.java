@@ -4,8 +4,8 @@ package com.txy.graduate.service.Impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.domain.sys.SysMenu;
-import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.po.SysMenu;
+import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.mapper.SysMenuMapper;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.security.config.ConstConfig;
@@ -13,7 +13,7 @@ import com.txy.graduate.domain.dto.MenuDTO;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysRoleService;
 
-import com.txy.graduate.util.QueryWrapperUtil;
+import com.txy.graduate.util.QueryUtil;
 import com.txy.graduate.util.RedisUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,11 +46,11 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     @Override
     public IPage<SysMenu> findSysMenu(Map<String, Object> map) {
         //封装查询条件的对象
-        SysMenu sysMenu = QueryWrapperUtil.map2obj(map, SysMenu.class);
+        SysMenu sysMenu = QueryUtil.map2obj(map, SysMenu.class);
 
-        QueryWrapper<SysMenu> wrapper = QueryWrapperUtil.queryWrapper_LikeMany(sysMenu);
+        QueryWrapper<SysMenu> wrapper = QueryUtil.queryWrapper_LikeMany(sysMenu);
 
-        return menuMapper.selectPage(QueryWrapperUtil.getPageFromMap(map),wrapper);
+        return menuMapper.selectPage(QueryUtil.getPageFromMap(map),wrapper);
     }
 
     /**

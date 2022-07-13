@@ -1,7 +1,7 @@
 package com.txy.graduate.controller;
 
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.Process;
+import com.txy.graduate.domain.po.Process;
 import com.txy.graduate.service.ProcessService;
 import com.txy.graduate.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;

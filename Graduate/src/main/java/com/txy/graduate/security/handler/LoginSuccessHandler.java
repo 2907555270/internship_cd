@@ -2,8 +2,8 @@ package com.txy.graduate.security.handler;
 
 import cn.hutool.json.JSONUtil;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.sys.SysRole;
-import com.txy.graduate.domain.sys.SysUser;
+import com.txy.graduate.domain.po.SysRole;
+import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;
