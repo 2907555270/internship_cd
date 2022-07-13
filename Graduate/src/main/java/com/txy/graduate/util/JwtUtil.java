@@ -18,7 +18,8 @@ public class JwtUtil {
 	private String header;
 	private long expireTime;
 
-	/**生产token
+	/**
+	 * 生产token
 	 * @param userName
 	 * @return
 	 */
@@ -35,7 +36,8 @@ public class JwtUtil {
 				.compact();//合成
 	}
 
-	/**解析token
+	/**
+	 * 解析token
 	 * @param token
 	 * @return
 	 */
@@ -50,7 +52,8 @@ public class JwtUtil {
 		}
 	}
 
-	/**判断token是否过期
+	/**
+	 * 判断token是否过期
 	 * @param claims
 	 * @return
 	 */

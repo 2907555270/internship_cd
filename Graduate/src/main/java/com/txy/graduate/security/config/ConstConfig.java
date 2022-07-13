@@ -10,4 +10,6 @@ public class ConstConfig {
 
     public final static String USER_KEY = "sys_user";
 
+    public final static String GRANTED_KEY = "granted_authority";
+
 }

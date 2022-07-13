@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
 public class GlobalExceptionHandler {
 
-    //权限不足访问捕获处理
+    //权限不足异常捕获处理
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = AccessDeniedException.class)
     public Result handler(AccessDeniedException e){

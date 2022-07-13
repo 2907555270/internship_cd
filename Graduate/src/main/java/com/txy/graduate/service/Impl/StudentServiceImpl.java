@@ -114,7 +114,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return statuses;
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public boolean saveStudent(Student student) {
 

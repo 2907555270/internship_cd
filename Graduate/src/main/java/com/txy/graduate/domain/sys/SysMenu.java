@@ -4,15 +4,24 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
 @TableName(value = "sys_menu")
-public class SysMenu {
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
+public class SysMenu implements Serializable {
+
+    /**
+     * 主键Id
+     */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
@@ -23,6 +32,7 @@ public class SysMenu {
     private Long parentId;
 
     @TableField(value = "name")
+    @NotBlank(message = "菜单名称:name不能为空")
     private String name;
 
     /**
@@ -35,6 +45,7 @@ public class SysMenu {
      * 授权(多个用逗号分隔，如：user:list,user:create)
      */
     @TableField(value = "perms")
+    @NotBlank(message = "菜单授权信息:perms不能为空")
     private String perms;
 
     @TableField(value = "component")
@@ -44,6 +55,7 @@ public class SysMenu {
      * 类型     0：目录   1：菜单   2：按钮
      */
     @TableField(value = "type")
+    @NotNull(message = "菜单点击类型:type不能为空")
     private Integer type;
 
     /**
@@ -68,5 +80,5 @@ public class SysMenu {
     private Integer status;
 
     @TableField(exist = false)
-    private List<SysMenu> children = new ArrayList<>();
+    private List<SysMenu> children;
 }

@@ -1,7 +1,7 @@
 package com.txy.graduate.security.filter;
 
 import com.txy.graduate.security.config.ConstConfig;
-import com.txy.graduate.security.exception.CaptcheException;
+import com.txy.graduate.security.exception.CaptchaException;
 import com.txy.graduate.security.handler.LoginFailHandler;
 import com.txy.graduate.util.RedisUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -32,22 +32,22 @@ public class CaptcheFilter extends OncePerRequestFilter {
             // 校验验证码
             try {
                 validate(httpServletRequest);
-            } catch (CaptcheException e) {//认证失败后，交由认证失败处理器返回失败信息
+            } catch (CaptchaException e) {//认证失败后，交由认证失败处理器返回失败信息
                 failHandler.onAuthenticationFailure(httpServletRequest, httpServletResponse, e);
             }
         }
         filterChain.doFilter(httpServletRequest,httpServletResponse);
     }
 
-    private void validate(HttpServletRequest request) throws CaptcheException {
+    private void validate(HttpServletRequest request) throws CaptchaException {
         String code = request.getParameter("code");
         String key = request.getParameter("key");
         if (StringUtils.isBlank(code) || StringUtils.isBlank(key)){
-            throw new CaptcheException("验证不能为空");
+            throw new CaptchaException("验证不能为空");
         }
 
         if (!code.equals(redisUtil.hget(ConstConfig.CAPTCHA_KEY, key))){
-            throw new CaptcheException("验证码错误");
+            throw new CaptchaException("验证码错误");
         }
         //删掉redis的验证码(一次性使用)
         redisUtil.hdel(ConstConfig.CAPTCHA_KEY, key);

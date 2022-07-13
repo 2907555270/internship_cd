@@ -7,6 +7,7 @@ import com.txy.graduate.domain.sys.SysRole;
 import com.txy.graduate.domain.sys.SysUser;
 import com.txy.graduate.domain.sys.SysUserRole;
 import com.txy.graduate.mapper.SysUserMapper;
+import com.txy.graduate.security.config.ConstConfig;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.QueryWrapperUtil;
@@ -14,6 +15,7 @@ import com.txy.graduate.util.RedisUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -62,12 +64,15 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public String getUserAuthorityInfo(Long userId) {
         String authority = "";
+        //如果redis中有用户的身份信息，则直接从redis中获取
         if (redisUtil.hasKey("GrantedAuthority:" + userId)) {
             authority = (String) redisUtil.get("GrantedAuthority:" + userId);
-        } else {
+        }
+
+        //redis中没有用户的身份信息，从数据库获取，拼接角色信息和权限信息，并写入redis
+        else {
             //1.获取角色信息
-            // select * form sys_role where id in (select role_id from sys_user_role where user_id = 1)
-            List<SysRole> roles = roleService.list(new QueryWrapper<SysRole>().inSql("id", "select role_id from sys_user_role where user_id = " + userId));
+            List<SysRole> roles = roleService.queryRoleByUid(userId);
             if (roles.size() > 0) {
                 String rolesCode = roles.stream().map(r -> "ROLE_" + r.getCode()).collect(Collectors.joining(","));
                 authority = rolesCode.concat(",");
@@ -79,12 +84,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
                 authority = authority.concat(menuCode);
             }
 
-            redisUtil.set("GrantedAuthority:" + userId, authority, 60 * 60);
+            //向redis中存放用户的身份信息，有效期为一个小时
+            redisUtil.set(ConstConfig.GRANTED_KEY +":" + userId, authority, 60 * 60);
         }
         return authority;
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public boolean deleteUserAndUserRoleByUid(Long user_id) {
         //解绑用户的角色信息
@@ -95,7 +101,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @SneakyThrows
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public boolean saveUserAndUserRole(Map<String, Object> map) {
         //map中获取user信息

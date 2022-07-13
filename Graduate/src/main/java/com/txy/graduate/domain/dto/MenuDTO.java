@@ -1,4 +1,4 @@
-package com.txy.graduate.security.entity;
+package com.txy.graduate.domain.dto;
 
 import lombok.Data;
 
