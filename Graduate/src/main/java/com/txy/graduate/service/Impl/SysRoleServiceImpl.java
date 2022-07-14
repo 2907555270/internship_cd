@@ -2,6 +2,7 @@ package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.po.SysRole;
 import com.txy.graduate.domain.po.SysRoleMenu;
@@ -25,9 +26,19 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     @Autowired
     private SysRoleMapper roleMapper;
 
+
     /**
      * Role表
      */
+    @Override
+    public List<SysRole> queryAll(Integer... args) {
+        //暂时不筛选字段
+        if(args==null||args.length<2)
+            return roleMapper.selectList(null);
+        return roleMapper.selectPage(new Page<>(args[0],args[1]),null).getRecords();
+    }
+
+
     @SneakyThrows
     @Override
     public IPage<SysRole> querySysRole(Map<String, Object> map) {

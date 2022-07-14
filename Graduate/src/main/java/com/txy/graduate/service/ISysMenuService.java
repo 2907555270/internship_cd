@@ -14,8 +14,10 @@ public interface ISysMenuService extends IService<SysMenu> {
     /**
      * menu表
      */
+    List<SysMenu> queryAll(Integer... args);
+
     //分页+多条件模糊查询
-    IPage<SysMenu> findSysMenu(Map<String,Object> map);
+    IPage<SysMenu> querySysMenu(Map<String,Object> map);
 
     /**
      * menu role_menu表
@@ -27,6 +29,6 @@ public interface ISysMenuService extends IService<SysMenu> {
      * user_role + role_menu表
      */
     //从redis或上下文中获取当前用户的信息 ---> 当前用户可使用的Menu
-    List<MenuDTO> getCurrentUserNav(String username);
+    List<MenuDTO> queryCurrentUserNav(String username);
 
 }

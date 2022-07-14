@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysMenu;
 import com.txy.graduate.domain.po.SysUser;
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.domain.dto.MenuDTO;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysUserService;
@@ -42,7 +42,7 @@ public class MenuController {
     public Result findAll(@PathVariable int currentPage, @PathVariable int pageSize){
         Map<String, Object> map = QueryUtil.getMapFromPage(currentPage, pageSize);
 
-        IPage<SysMenu> page = menuService.findSysMenu(map);
+        IPage<SysMenu> page = menuService.querySysMenu(map);
         boolean flag = page.getSize() > 0;
         return Result.result(flag,page,flag?"查询成功 ^_^":"查询失败 -_-");
     }
@@ -51,7 +51,7 @@ public class MenuController {
     @PreAuthorize("hasAuthority('sys:menu:list')")
     @PostMapping("/list")
     public Result findSysMenu(@RequestBody Map<String,Object> map){
-        IPage<SysMenu> page = menuService.findSysMenu(map);
+        IPage<SysMenu> page = menuService.querySysMenu(map);
         boolean flag = page.getSize() > 0;
         return Result.result(flag,page,flag?"查询成功 ^_^":"查询失败 -_-");
     }
@@ -101,11 +101,11 @@ public class MenuController {
         SysUser sysUser = (SysUser) redisUtil.get(ConstConfig.USER_KEY+":"+username);
 
         // 获取权限信息
-        String authorityInfo = userService.getUserAuthorityInfo(sysUser.getId());
+        String authorityInfo = userService.queryUserAuthorityInfo(sysUser.getId());
         String[] authorityArr = authorityInfo.split(",");
 
         // 获取导航栏
-        List<MenuDTO> navs = menuService.getCurrentUserNav(username);
+        List<MenuDTO> navs = menuService.queryCurrentUserNav(username);
 
         return Result.resp(200, "ok",
                  MapUtil.builder()

@@ -3,7 +3,7 @@ package com.txy.graduate.controller;
 import cn.hutool.core.map.MapUtil;
 import com.google.code.kaptcha.Producer;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.util.RedisUtil;
 import com.txy.graduate.util.ToolUtil;
 import lombok.extern.slf4j.Slf4j;

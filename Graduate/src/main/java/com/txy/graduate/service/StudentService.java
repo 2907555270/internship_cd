@@ -13,6 +13,10 @@ public interface StudentService extends IService<Student>{
     /**
      * student表查询
      */
+
+    //查询所有学生的数据
+    List<Student> queryAll(Integer... args);
+
     //分页加多条件模糊查询
     IPage<Student> queryStudent(Map<String,Object> map);
 
@@ -30,4 +34,6 @@ public interface StudentService extends IService<Student>{
 
     //删除学生信息：同时删除用户，解绑用户角色
     boolean removeStudent(Long id);
+
+
 }

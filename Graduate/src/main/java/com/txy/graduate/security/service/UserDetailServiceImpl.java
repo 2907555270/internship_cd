@@ -22,20 +22,19 @@ public class UserDetailServiceImpl implements UserDetailsService {
     //自定义配置用户信息存取
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        SysUser sysUser = sysUserService.getUserByUserName(s);
+        SysUser sysUser = sysUserService.queryUserByUserName(s);
         if (sysUser == null){
             throw new UsernameNotFoundException("用户名或密码错误");
         }
         return new SecurityUser(sysUser.getId(),sysUser.getUsername(),sysUser.getPassword(),getAuthority(sysUser.getId()));
     }
 
-    /**根据userID获取权限（角色，菜单权限）
-     * @param userId
-     * @return
+    /**
+     * 根据userID获取权限（角色，菜单权限）
      */
     public List<GrantedAuthority> getAuthority(Long userId){
         //角色（ROLE_admin）菜单操作权限（sys:user:list）
-        String authority = sysUserService.getUserAuthorityInfo(userId);
+        String authority = sysUserService.queryUserAuthorityInfo(userId);
         return AuthorityUtils.commaSeparatedStringToAuthorityList(authority);
     }
 }

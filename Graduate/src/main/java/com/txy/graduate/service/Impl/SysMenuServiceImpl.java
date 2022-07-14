@@ -3,12 +3,13 @@ package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.po.SysMenu;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.mapper.SysMenuMapper;
 import com.txy.graduate.mapper.SysUserMapper;
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.domain.dto.MenuDTO;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysRoleService;
@@ -39,18 +40,35 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     @Autowired
     private ISysRoleService roleService;
 
+
+    //查询的基本字段
+    private final String[] baseColumns = {"id", "parent_id", "name", "path", "perms", "component", "type", "status"};
+
     /**
      * menu表
      */
+    //查询所有的数据，用于导出数据
+    //可分页查询，也可以查询所有，但是不会返回分页信息
+    @Override
+    public List<SysMenu> queryAll(Integer... args) {
+        QueryWrapper<SysMenu> wrapper = new QueryWrapper<>();
+        wrapper.select(baseColumns);
+        //查询全部
+        if (args == null || args.length < 2)
+            return menuMapper.selectList(wrapper);
+        //分页查询
+        return menuMapper.selectPage(new Page<>(args[0], args[1]), wrapper).getRecords();
+    }
+
     @SneakyThrows
     @Override
-    public IPage<SysMenu> findSysMenu(Map<String, Object> map) {
+    public IPage<SysMenu> querySysMenu(Map<String, Object> map) {
         //封装查询条件的对象
         SysMenu sysMenu = QueryUtil.map2obj(map, SysMenu.class);
 
         QueryWrapper<SysMenu> wrapper = QueryUtil.queryWrapper_LikeMany(sysMenu);
 
-        return menuMapper.selectPage(QueryUtil.getPageFromMap(map),wrapper);
+        return menuMapper.selectPage(QueryUtil.getPageFromMap(map), wrapper);
     }
 
     /**
@@ -71,9 +89,9 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      * user_role role_menu表
      */
     @Override
-    public List<MenuDTO> getCurrentUserNav(String username) {
+    public List<MenuDTO> queryCurrentUserNav(String username) {
         //从redis中获取用户信息
-        SysUser user = (SysUser) redisUtil.get(ConstConfig.USER_KEY+":"+username);
+        SysUser user = (SysUser) redisUtil.get(ConstConfig.USER_KEY + ":" + username);
 
         //查询 user_id --> menu_id --> menu_list
         List<Long> menuIds = userMapper.getMenuIdByUserId(user.getId());
@@ -88,7 +106,9 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     }
 
 
-    /**构建树
+    /**
+     * 构建树
+     *
      * @param menuList
      * @return
      */
@@ -96,34 +116,36 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         List<SysMenu> finalMenus = new ArrayList<>();
         for (SysMenu sysMenu : menuList) {
             for (SysMenu e : menuList) {
-                if(sysMenu.getChildren()==null){
+                if (sysMenu.getChildren() == null) {
                     sysMenu.setChildren(new ArrayList<>());
                 }
-                if (sysMenu.getId().equals(e.getParentId())){
+                if (sysMenu.getId().equals(e.getParentId())) {
                     sysMenu.getChildren().add(e);
                 }
             }
-            if (sysMenu.getParentId() == 0L){
+            if (sysMenu.getParentId() == 0L) {
                 finalMenus.add(sysMenu);
             }
         }
         return finalMenus;
     }
 
-    /**展开树并转dto
+    /**
+     * 展开树并转dto
+     *
      * @param menuTree
      * @return
      */
     private List<MenuDTO> convert(List<SysMenu> menuTree) {
         List<MenuDTO> menuDTOS = new ArrayList<>();
-        menuTree.forEach(t->{
+        menuTree.forEach(t -> {
             MenuDTO menuDTO = new MenuDTO();
             menuDTO.setId(t.getId());
             menuDTO.setName(t.getPerms());
             menuDTO.setTitle(t.getName());
             menuDTO.setComponent(t.getComponent());
             menuDTO.setPath(t.getPath());
-            if (t.getChildren().size() >0) {
+            if (t.getChildren().size() > 0) {
                 menuDTO.setChildren(convert(t.getChildren()));
             }
             menuDTOS.add(menuDTO);

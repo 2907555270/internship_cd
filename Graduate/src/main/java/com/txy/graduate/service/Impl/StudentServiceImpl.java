@@ -2,6 +2,7 @@ package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.vo.Status;
 import com.txy.graduate.domain.po.Student;
@@ -42,20 +43,39 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @Value("normal")
     private String code;
 
+
     /**
      * 查询
      */
+
+    /**
+     * 支持查询所有，和分页查询;
+     *      不会返回分页信息，仅用于导出数据时使用
+     *      args[0]-->currentPage
+     *      args[1]-->pageSize
+     */
+    @Override
+    public List<Student> queryAll(Integer... args) {
+        //筛选查询条件
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.select(baseColumns);
+        //是否分页查询
+        if(args==null||args.length<2)
+            return studentMapper.selectList(wrapper);
+        //分页查询
+        Page<Student> page = new Page<>(args[0],args[1]);
+        return studentMapper.selectPage(page,wrapper).getRecords();
+    }
 
     @SneakyThrows
     @Override
     public IPage<Student> queryStudent(Map<String, Object> map) {
 
-        //判断map是否为空
+        //判断map为空,不执行查询
         if (map == null)
             return null;
 
         Student student;
-
         //判断map的结构中是否有student层级
         Object obj = map.get("student");
         //根据map层级判断封装方式

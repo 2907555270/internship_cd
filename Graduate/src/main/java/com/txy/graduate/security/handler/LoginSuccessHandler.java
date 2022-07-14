@@ -4,7 +4,7 @@ import cn.hutool.json.JSONUtil;
 import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysRole;
 import com.txy.graduate.domain.po.SysUser;
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.JwtUtil;
@@ -51,7 +51,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
         // 获取当前用户角色并返回，前端根据角色跳对应页面
         String username = authentication.getName();
-        SysUser sysUser = userService.getUserByUserName(username);
+        SysUser sysUser = userService.queryUserByUserName(username);
 
         // 将用户的信息存放在redis中
         redisUtil.set(ConstConfig.USER_KEY+":"+username,sysUser,3600 * 72);

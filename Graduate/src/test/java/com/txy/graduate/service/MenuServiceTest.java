@@ -15,7 +15,7 @@ public class MenuServiceTest {
 
     @Test
     public void test(){
-        List<MenuDTO> userNav = sysMenuService.getCurrentUserNav("");
+        List<MenuDTO> userNav = sysMenuService.queryCurrentUserNav("");
         System.out.println(userNav.toString());
     }
 }

@@ -7,9 +7,10 @@ server:
 logging:
   logback:
     rollingpolicy:
-      max-file-size: 3KB
+      max-file-size: 30KB
       file-name-pattern: log/server/server.%d{yyyy-MM-dd}.%i.log
-
+  file:
+    path: log/server
 
 spring:
   application:

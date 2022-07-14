@@ -15,6 +15,9 @@ public interface ISysRoleService extends IService<SysRole> {
     /**
      * Role表
      */
+    //查询所有数据：可分页，也可以查询所有
+    List<SysRole> queryAll(Integer... args);
+
     //分页+多条件模糊查询
     IPage<SysRole> querySysRole(Map<String,Object> map);
 
