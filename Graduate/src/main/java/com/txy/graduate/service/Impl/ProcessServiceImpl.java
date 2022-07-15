@@ -32,6 +32,8 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
     @Override
     public Process queryById(Long id) {
         Process process = mapper.selectById(id);
+        if(process==null)
+            return null;
         //对查询到的结果进行处理
         return fixData(process).get(0);
     }
@@ -57,7 +59,10 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
         //查询新的process中的imgPaths
         List<String> imgPaths = process.getImgPaths();
         //查询旧的process中的imgPaths
-        List<String> imgPathsOld = queryById(process.getId()).getImgPaths();
+        Process query = queryById(process.getId());
+        if(query==null)
+            return false;
+        List<String> imgPathsOld = query.getImgPaths();
 
         //删除的旧的图片
         imgPathsOld.forEach(i->{
@@ -73,6 +78,8 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
     public boolean removeProcessById(Long id) {
         //查询对应的process，获取到对应的图片路径信息
         Process process = queryById(id);
+        if(process==null)
+            return false;
         //删除这些图片
         fileUtil.removeFiles(process.getImgPaths().toArray(String[]::new));
         //删除数据库中的数据
@@ -82,7 +89,7 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
 
     //对数据库中的数据修复成完整的数据
     public List<Process> fixData(Process... processes) {
-        if (processes != null && processes.length > 0) {
+        if (processes[0] != null) {
             return Arrays.stream(processes).peek(process -> {
                 //获取存放的根路径
                 String baseImgPath = process.getBaseImgPath();

@@ -2,6 +2,8 @@ package com.txy.graduate.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.txy.graduate.config.Result;
+import com.txy.graduate.domain.dto.StudentDTO;
 import com.txy.graduate.domain.vo.Status;
 import com.txy.graduate.domain.po.Student;
 
@@ -15,7 +17,7 @@ public interface StudentService extends IService<Student>{
      */
 
     //查询所有学生的数据
-    List<Student> queryAll(Integer... args);
+    List<StudentDTO> queryAll();
 
     //分页加多条件模糊查询
     IPage<Student> queryStudent(Map<String,Object> map);
@@ -33,7 +35,7 @@ public interface StudentService extends IService<Student>{
     boolean saveStudent(Student student);
 
     //删除学生信息：同时删除用户，解绑用户角色
-    boolean removeStudent(Long id);
+    Result removeStudent(Long id);
 
 
 }

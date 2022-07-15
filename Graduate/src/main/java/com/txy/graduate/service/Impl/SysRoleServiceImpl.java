@@ -115,6 +115,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     public boolean removeRoleByRid(Long role_id) {
         //解绑user_role
         removeUserAndRoleByRId(role_id);
+
         //解绑role_menu
         removeRoleAndMenuByRid(role_id);
 

@@ -35,7 +35,7 @@ public class UserController {
         boolean flag = page.getSize()>0;
 
         //返回操作结果
-        return Result.result(flag,page,flag?null:"未获取到任何数据 -_-");
+        return Result.result(flag?200:400,flag,flag?"查询成功 ^_^":"未获取到任何数据 -_-",page);
     }
 
     //分页+多条件模糊查询
@@ -44,7 +44,7 @@ public class UserController {
     public Result findSysUsers(@RequestBody Map<String,Object> map){
         IPage<SysUser> page = userService.querySysUser(map);
         boolean flag = page.getSize()>0;
-        return Result.result(flag,page,flag?null:"未获取到任何数据 -_-");
+        return Result.result(flag?200:400,flag,flag?"查询成功 ^_^":"未获取到任何数据 -_-",page);
     }
 
     //更新用户信息：无权修改权限信息，由RoleController统一控制
@@ -52,7 +52,7 @@ public class UserController {
     @PostMapping("/update")
     public Result updateSysUser(@RequestBody SysUser sysUser){
         boolean flag = userService.updateById(sysUser);
-        return Result.result(flag,null,flag?"更新成功 ^_^":"更新失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"更新成功 ^_^":"更新失败 -_-",null);
     }
 
     /**
@@ -63,7 +63,7 @@ public class UserController {
     @DeleteMapping("/delete/{user_id}")
     public Result deleteSysUser(@PathVariable Long user_id){
         boolean flag = userService.deleteUserAndUserRoleByUid(user_id);
-        return Result.result(flag,null,flag?"删除成功 ^_^":"删除失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"删除成功 ^_^":"删除失败 -_-",null);
     }
 
     //添加新用户，同时绑定用户的角色信息
@@ -71,6 +71,6 @@ public class UserController {
     @PutMapping("/save")
     public Result saveSysUser(@RequestBody Map<String,Object> map){
         boolean flag = userService.saveUserAndUserRole(map);
-        return Result.result(flag,null,flag?"添加成功 ^_^":"添加失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"添加成功 ^_^":"添加失败 -_-",null);
     }
 }

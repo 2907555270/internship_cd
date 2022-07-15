@@ -36,8 +36,8 @@ public class RoleController {
         Map<String, Object> map = QueryUtil.getMapFromPage(currentPage, pageSize);
         //执行查询
         IPage<SysRole> page = roleService.querySysRole(map);
-        boolean flag = page.getSize()>0;
-        return Result.result(flag, page, flag ? null : "未获取任何数据 -_-");
+        boolean flag = page.getTotal()>0;
+        return Result.result(flag?200:404,flag, flag ? null : "未获取任何数据 -_-", page);
     }
 
     @PreAuthorize("hasAuthority('sys:role:list')")
@@ -45,8 +45,8 @@ public class RoleController {
     @PostMapping("/select")
     public Result findRoles(@RequestBody Map<String,Object> map){
         IPage<SysRole> page = roleService.querySysRole(map);
-        boolean flag = page.getSize()>0;
-        return Result.result(flag,page,flag?"查询成功 ^_^":"查询失败 -_-");
+        boolean flag = page.getTotal()>0;
+        return Result.result(flag?200:404,flag,flag?"查询成功 ^_^":"查询失败 -_-",page);
     }
 
     @PreAuthorize("hasAuthority('sys:role:save')")
@@ -54,7 +54,7 @@ public class RoleController {
     @PutMapping("/save")
     public Result save(@RequestBody SysRole role){
         boolean flag = roleService.save(role);
-        return Result.result(flag,null,flag?"添加成功 ^_^":"添加失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"添加成功 ^_^":"添加失败 -_-",null);
     }
 
     @PreAuthorize("hasAuthority('sys:role:update')")
@@ -62,7 +62,7 @@ public class RoleController {
     @PostMapping("/update")
     public Result updateById(@RequestBody SysRole role){
         boolean flag = roleService.updateById(role);
-        return Result.result(flag,null,flag?"修改成功 ^_^":"修改失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"修改成功 ^_^":"修改失败 -_-",null);
     }
 
 
@@ -74,7 +74,7 @@ public class RoleController {
     @DeleteMapping("/delete/{role_id}")
     public Result deleteById(@PathVariable Long role_id){
         boolean flag = roleService.removeRoleByRid(role_id);
-        return Result.result(flag,null,flag?"删除成功 ^_^":"删除失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"删除成功 ^_^":"删除失败 -_-",null);
     }
 
     /**
@@ -85,7 +85,8 @@ public class RoleController {
     @GetMapping("/user/select/{user_id}")
     public Result getRoleByUid(@PathVariable Long user_id){
         List<SysRole> roles = roleService.queryRoleByUid(user_id);
-        return Result.result(roles.size()>0,roles,roles.size()>0?null:"暂未获取到任何数据 -_-");
+        boolean flag = roles.size()>0;
+        return Result.result(flag?200:404,flag,flag?"查询成功":"暂未获取到任何数据 -_-",roles);
     }
 
     @PreAuthorize("hasAnyAuthority('sys:role:save','sys:role:update')")
@@ -93,7 +94,7 @@ public class RoleController {
     @PutMapping("/user/bind")
     public Result bindUserRole(@RequestBody SysUserRole sysUserRole){
         boolean flag = roleService.saveUserAndRole(sysUserRole);
-        return Result.result(flag,null,flag?"绑定成功 ^_^":"绑定失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"绑定成功 ^_^":"绑定失败 -_-",null);
     }
 
     @PreAuthorize("hasAnyAuthority('sys:role:update','sys:role:delete')")
@@ -101,7 +102,7 @@ public class RoleController {
     @DeleteMapping("/user/unbind/{user_id}")
     public Result unBindUserRole(@PathVariable Long user_id){
         boolean flag = roleService.removeUserAndRoleByUId(user_id);
-        return Result.result(flag,null,flag?"解绑成功 ^_^":"解绑失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"解绑成功 ^_^":"解绑失败 -_-",null);
     }
 
     @PreAuthorize("hasAuthority('sys:role:update')")
@@ -109,7 +110,7 @@ public class RoleController {
     @PostMapping("/user/update")
     public Result UpdateBindUserRoleById(@RequestBody SysUserRole sysUserRole){
         boolean flag = roleService.updateUByUserRoleId(sysUserRole);
-        return Result.result(flag,null,flag?"改绑成功 ^_^":"改绑失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"改绑成功 ^_^":"改绑失败 -_-",null);
     }
 
 
@@ -122,7 +123,7 @@ public class RoleController {
     public Result getRoleByMId(@PathVariable Long menu_id){
         List<SysRole> roles = roleService.queryRoleByMid(menu_id);
         boolean flag = roles.size()>0;
-        return Result.result(flag,roles,null);
+        return Result.result(flag?200:404,flag,flag?"查询成功 ^_^":"查询失败 -_-",roles);
     }
 
     @PreAuthorize("hasAnyAuthority('sys:role:save','sys:role:update')")
@@ -130,7 +131,7 @@ public class RoleController {
     @PutMapping("/menu/bind")
     public Result BindRoleMenu(@RequestBody SysRoleMenu sysRoleMenu){
         boolean flag = roleService.saveRoleAndMenu(sysRoleMenu);
-        return Result.result(flag,null,flag?"绑定成功 ^_^":"绑定失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"绑定成功 ^_^":"绑定失败 -_-",null);
     }
 
     @PreAuthorize("hasAnyAuthority('sys:role:delete','sys:role:update')")
@@ -138,7 +139,7 @@ public class RoleController {
     @DeleteMapping("/menu/unbind/{menu_id}")
     public Result UnbindRoleMenuByMid(@PathVariable Long menu_id){
         boolean flag = roleService.removeRoleAndMenuByMid(menu_id);
-        return Result.result(flag,null,flag?"解绑成功 ^_^":"解绑失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"解绑成功 ^_^":"解绑失败 -_-",null);
     }
 
     //改绑menu和role
@@ -146,6 +147,6 @@ public class RoleController {
     @PostMapping("/menu/update")
     public Result UpdateRoleMenuById(@RequestBody SysRoleMenu sysRoleMenu){
         boolean flag = roleService.updateMByUserRoleId(sysRoleMenu);
-        return Result.result(flag,null,flag?"改绑成功 ^_^":"改绑失败 -_-");
+        return Result.result(flag?200:500,flag,flag?"改绑成功 ^_^":"改绑失败 -_-",null);
     }
 }

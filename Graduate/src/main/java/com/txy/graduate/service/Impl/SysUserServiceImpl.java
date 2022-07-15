@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysRole;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.domain.po.SysUserRole;
@@ -109,7 +110,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         boolean flag1 = roleService.removeUserAndRoleByUId(user_id);
         //删除用户信息
         boolean flag2 = userMapper.deleteById(user_id) > 0;
-        return flag1 && flag2;
+        return flag1&&flag2;
     }
 
     @SneakyThrows
@@ -124,8 +125,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
         //添加user信息
         boolean flag1 = userMapper.insert(sysUser) > 0;
-
-        System.out.println(sysUser);
 
         sysUserRole.setUserId(sysUser.getId());
 

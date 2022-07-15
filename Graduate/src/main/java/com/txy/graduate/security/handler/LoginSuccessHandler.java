@@ -61,7 +61,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
         // 响应登录成功请求
         httpServletResponse.setHeader(jwtUtil.getHeader(),jwt);
-        Result resp = Result.resp(200, "登录成功", "ROLE_"+roles.get(0).getCode());
+        Result resp = Result.result(200,true, "登录成功", "ROLE_"+roles.get(0).getCode());
         outputStream.write(JSONUtil.toJsonStr(resp).getBytes(StandardCharsets.UTF_8));
         outputStream.flush();
         outputStream.close();

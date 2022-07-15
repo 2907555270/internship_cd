@@ -11,7 +11,8 @@
 
     <groupId>com.txy</groupId>
     <artifactId>Graduate</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <!--<version>0.0.1-SNAPSHOT</version>-->
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>17</java.version>
@@ -71,11 +72,11 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.2.8</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--    <groupId>com.alibaba</groupId>-->
+        <!--    <artifactId>druid</artifactId>-->
+        <!--    <version>1.2.8</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.alibaba</groupId>
