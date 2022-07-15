@@ -6,43 +6,54 @@ import org.apache.commons.beanutils.ConvertUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * 查询工具
  *    封装一些查询时用的小工具，主要功能有：
- *      1. obj2map | map2obi ：对象与Map之间的相互转换
+ *      1. obj2map | map2obj ：对象与Map之间的相互转换
  *      2. queryMapper_LikeMany : 根据传入对象的类型和属性，自动封装QueryWrapper的模糊查询条件，无需手动设置条件
- *
+ *      3. 获取一个对象的所有的不为空的属性的属性名集合
  */
 public class QueryUtil {
 
+    ///**
+    // * 获取一个对象Object中的所有属性值封装到List中
+    // */
+    //public static List<Object> getFiledValueFromObj(Object obj){
+    //    return Arrays.stream(obj.getClass().getDeclaredFields()).map(f -> {
+    //        f.setAccessible(true);
+    //        try {
+    //            return f.get(obj);
+    //        } catch (IllegalAccessException e) {
+    //            e.printStackTrace();
+    //        }
+    //        return null;
+    //    }).toList();
+    //}
+
     /**
-     * 根据分页信息，构造map
+     * 获取一个对象Object中的所有属性不为空的属性名
      */
-    public static Map<String,Object> getMapFromPage(int currentPage,int pageSize){
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("currentPage",currentPage);
-        map.put("pageSize",pageSize);
-        return map;
+    public static List<String> getFiledNamesNotNull(Object obj){
+        return Arrays.stream(obj.getClass().getDeclaredFields()).map(f->{
+            f.setAccessible(true);
+            try {
+                if(f.get(obj)!=null){
+                    return f.getName();
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }).toList();
     }
 
     /**
-     * 从map提取分页信息，并封装为Page
-     */
-    public static <T> Page<T> getPageFromMap(Map<String,Object> map){
-        Integer currentPage = (Integer) map.get("currentPage");
-        Integer pageSize = (Integer) map.get("pageSize");
-        if(!(currentPage!=null&&pageSize!=null)) {
-            currentPage = 1;
-            pageSize = 1;
-        }
-        return new Page<>(currentPage,pageSize);
-    }
-
-    /**
-     * 将数据对象映射为map
+     * 将数据对象Object映射为map
      */
     public static Map<String,Object> obj2map(Object obj){
         HashMap<String, Object> map = new HashMap<>();
@@ -70,7 +81,7 @@ public class QueryUtil {
     }
 
     /**
-     * 将 map反射为数据对象
+     * 将 map反射为数据对象Object
      */
     public static <T> T map2obj(Map<String,Object> map,Class<T> tClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         //通过反射机制创建一个T对象
@@ -93,6 +104,7 @@ public class QueryUtil {
 
     /**
      * 对wrapper进一步封装，使其能够自动添加多个模糊查询条件
+     *      注意：java对象是驼峰命名，数据库字段是 _ 命名
      */
     public static <T> QueryWrapper<T> queryWrapper_LikeMany(T obj){
         QueryWrapper<T> wrapper = new QueryWrapper<>();
@@ -122,5 +134,29 @@ public class QueryUtil {
             }
         }
         return wrapper;
+    }
+
+
+    /**
+     * 根据分页信息Page，构造map
+     */
+    public static Map<String,Object> getMapFromPage(int currentPage,int pageSize){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("currentPage",currentPage);
+        map.put("pageSize",pageSize);
+        return map;
+    }
+
+    /**
+     * 从map提取分页信息，并封装为Page
+     */
+    public static <T> Page<T> getPageFromMap(Map<String,Object> map){
+        Integer currentPage = (Integer) map.get("currentPage");
+        Integer pageSize = (Integer) map.get("pageSize");
+        if(!(currentPage!=null&&pageSize!=null)) {
+            currentPage = 1;
+            pageSize = 1;
+        }
+        return new Page<>(currentPage,pageSize);
     }
 }

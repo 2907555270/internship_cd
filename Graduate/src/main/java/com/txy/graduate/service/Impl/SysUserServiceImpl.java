@@ -2,12 +2,14 @@ package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysRole;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.domain.po.SysUserRole;
 import com.txy.graduate.mapper.SysUserMapper;
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.QueryUtil;
@@ -34,6 +36,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Autowired
     private ISysRoleService roleService;
 
+    @Override
+    public List<SysUser> queryAll(Integer... args) {
+        //暂时不用筛选字段
+        //QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
+        //wrapper.select()
+        if(args==null||args.length<2){
+            return userMapper.selectList(null);
+        }
+        //分页查询
+        return userMapper.selectPage(new Page<>(args[0],args[1]),null).getRecords();
+    }
 
     /**
      * user表
@@ -51,7 +64,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public SysUser getUserByUserName(String username) {
+    public SysUser queryUserByUserName(String username) {
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
         wrapper.eq("username", username);
         return userMapper.selectOne(wrapper);
@@ -62,7 +75,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      */
 
     @Override
-    public String getUserAuthorityInfo(Long userId) {
+    public String queryUserAuthorityInfo(Long userId) {
         String authority = "";
         //如果redis中有用户的身份信息，则直接从redis中获取
         if (redisUtil.hasKey("GrantedAuthority:" + userId)) {
@@ -97,7 +110,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         boolean flag1 = roleService.removeUserAndRoleByUId(user_id);
         //删除用户信息
         boolean flag2 = userMapper.deleteById(user_id) > 0;
-        return flag1 && flag2;
+        return flag1&&flag2;
     }
 
     @SneakyThrows
@@ -112,8 +125,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
         //添加user信息
         boolean flag1 = userMapper.insert(sysUser) > 0;
-
-        System.out.println(sysUser);
 
         sysUserRole.setUserId(sysUser.getId());
 

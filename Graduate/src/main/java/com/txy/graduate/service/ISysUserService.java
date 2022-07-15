@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.txy.graduate.domain.po.SysUser;
 
+import java.util.List;
 import java.util.Map;
 
 public interface ISysUserService extends IService<SysUser> {
@@ -12,6 +13,9 @@ public interface ISysUserService extends IService<SysUser> {
     /**
      * user表
      */
+    //分页或查询所有的数据
+    List<SysUser> queryAll(Integer... args);
+
 
     /**
      * 组合查询所有数据(多条件模糊查询+分页查询)
@@ -21,18 +25,19 @@ public interface ISysUserService extends IService<SysUser> {
     IPage<SysUser> querySysUser(Map<String,Object> map);
 
     //根据username查询用户信息
-    SysUser getUserByUserName(String username);
+    SysUser queryUserByUserName(String username);
 
 
     /**
      * user user_role表
      */
     //根据userId查询权限信息
-    String getUserAuthorityInfo(Long userId);
+    String queryUserAuthorityInfo(Long userId);
 
     //按user_id删除用户信息：同时解绑用户的角色信息
     boolean deleteUserAndUserRoleByUid(Long user_id);
 
     //新增user：同时绑定用户的角色信息
     boolean saveUserAndUserRole(Map<String,Object> map);
+
 }

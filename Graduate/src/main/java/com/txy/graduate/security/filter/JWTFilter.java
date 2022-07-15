@@ -1,7 +1,7 @@
 package com.txy.graduate.security.filter;
 import cn.hutool.core.util.StrUtil;
 import com.txy.graduate.domain.po.SysUser;
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.security.service.UserDetailServiceImpl;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.JwtUtil;
@@ -60,7 +60,7 @@ public class JWTFilter extends BasicAuthenticationFilter {
         String userName = claim.getSubject();
 
         // 可以获取用户信息，权限等交由security,然后继续往下走
-        SysUser sysUser = sysUserService.getUserByUserName(userName);
+        SysUser sysUser = sysUserService.queryUserByUserName(userName);
 
         //将用户的身份信息保存在redis中
         redisUtil.set(ConstConfig.USER_KEY+":"+userName,sysUser);

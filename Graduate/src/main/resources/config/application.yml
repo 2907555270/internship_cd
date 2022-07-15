@@ -1,0 +1,74 @@
+
+# 开发和生产环境的切换
+spring:
+  profiles:
+    active: pro
+
+
+# 开发和生产的通用环境
+  application:
+    name: graduate
+
+#  mysql数据源
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 3
+      #      最大等待时间：当没有可用连接时，连接池等待连接被归还的最大时间，超过则抛出异常
+      max-wait: 60000
+      #      最大连接数
+      max-active: 300
+      #      最小空闲连接
+      min-idle: 3
+      #      验证连接是否可用
+      validation-query: select 1
+      #      连接是否被空闲连接回收机检测
+      test-while-idle: true
+      #      连接时不使用测试连接是否有效
+      test-on-borrow: false
+      #      归还连接时检测连接是否有效
+      test-on-return: false
+      #      开启缓存功能
+      pool-prepared-statements: true
+      #      单个连接拥有的最大缓存数
+      max-open-prepared-statements: 200
+      #      在空闲连接回收器线程运行期间休眠的时间值
+      time-between-eviction-runs-millis: 600000
+      #      连接保持空闲不被回收的最小时间
+      min-evictable-idle-time-millis: 300000
+
+#  redis配置
+  redis:
+    jedis:
+      pool:
+        #最大连接数
+        max-active: 8
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        #最大空闲
+        max-idle: 8
+        #最小空闲
+        min-idle: 0
+        #连接超时时间
+    timeout: 10000
+
+# server日志
+logging:
+  logback:
+    rollingpolicy:
+      max-file-size: 30KB
+      file-name-pattern: log/server/server.%d{yyyy-MM-dd}.%i.log
+  file:
+    path: log/server
+
+# mybatis-plus别名
+mybatis-plus:
+  type-aliases-package: com.txy.graduate.domain
+
+# security秘钥
+markerhub:
+  jwt:
+    secret: hfjshgohirehigtiuuoighrehuir13fe
+    header: Authorization
+    expireTime: 604800 #7t天

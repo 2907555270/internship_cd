@@ -2,7 +2,10 @@ package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.txy.graduate.config.Result;
+import com.txy.graduate.domain.dto.StudentDTO;
 import com.txy.graduate.domain.vo.Status;
 import com.txy.graduate.domain.po.Student;
 import com.txy.graduate.domain.po.SysRole;
@@ -42,20 +45,25 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @Value("normal")
     private String code;
 
+
     /**
      * 查询
      */
+
+    @Override
+    public List<StudentDTO> queryAll() {
+        return studentMapper.selectAll();
+    }
 
     @SneakyThrows
     @Override
     public IPage<Student> queryStudent(Map<String, Object> map) {
 
-        //判断map是否为空
+        //判断map为空,不执行查询
         if (map == null)
             return null;
 
         Student student;
-
         //判断map的结构中是否有student层级
         Object obj = map.get("student");
         //根据map层级判断封装方式
@@ -144,32 +152,40 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return flag1 && flag2 && flag3;
     }
 
+    //需要抛出异常才能触发此处的事务
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public boolean removeStudent(Long id) {
+    public Result removeStudent(Long id) {
 
         //根据学生id去查询学生的全部信息
         QueryWrapper<Student> studentQueryWrapper = new QueryWrapper<>();
         studentQueryWrapper.select("student_id");
         studentQueryWrapper.eq("id",id);
-        String studentId = studentMapper.selectOne(studentQueryWrapper).getStudentId();
+        Student student = studentMapper.selectOne(studentQueryWrapper);
+        if(student==null)
+            return Result.result(500,false,null,"未找到该学号对应的学生信息 -_-");
+        String studentId = student.getStudentId();
 
         //根据学生id信息查询用户id
         QueryWrapper<SysUser> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.select("id");
-        userQueryWrapper.eq("student_id",studentId);
+        userQueryWrapper.eq("username",studentId);
         Long userId = sysUserMapper.selectOne(userQueryWrapper).getId();
 
         //解绑学生的权限信息
         //todo:需要将SysUserRole分出去一个Mapper
-        boolean flag1 = sysRoleMapper.deleteUserAndRoleByUId(userId) > 0;
+        if(!(sysRoleMapper.deleteUserAndRoleByUId(userId) > 0))
+            return Result.result(500,false,null,"解绑学生的权限信息失败 -_-");
 
         //删除学生账号
-        boolean flag2 = sysUserMapper.deleteByUserName(studentId) > 0;
+        if(!(sysUserMapper.deleteByUserName(studentId) > 0))
+            return Result.result(500,false,null,"删除学生账号失败 -_-");
+
 
         //删除学生student信息
-        boolean flag3 = studentMapper.deleteById(id)>0;
+        if(!(studentMapper.deleteById(id) > 0))
+            return Result.result(500,false,null,"删除学生信息失败 -_-");
 
-        return flag1 && flag2 && flag3;
+        return Result.result(200,true,null,"删除成功 ^_^");
     }
 }

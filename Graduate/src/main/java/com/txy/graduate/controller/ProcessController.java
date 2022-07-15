@@ -33,7 +33,7 @@ public class ProcessController {
     public Result findAll() {
         List<Process> list = processService.queryAll();
         boolean flag = list.size() > 0;
-        return Result.result(flag, list, flag ? null : "未查询到任何数据 -_-");
+        return Result.result(flag?200:404,flag, flag ? "查询成功 ^_^" : "未查询到任何数据 -_-", list);
     }
 
     //根据id查询某个流程的详细信息
@@ -41,7 +41,7 @@ public class ProcessController {
     public Result findById(@PathVariable Long id) {
         Process process = processService.queryById(id);
         boolean flag = process != null;
-        return Result.result(flag, process, flag ? null : "未获取到数据 -_-");
+        return Result.result(flag?200:404,flag, flag ? "查询成功 ^_^" : "未查询到数据 -_-", process);
     }
 
     //上传流程对应的地点图片
@@ -52,7 +52,7 @@ public class ProcessController {
             return fileUtil.uploadPics(multipartFiles, Process.class);
         } catch (IOException e) {
             e.printStackTrace();
-            return Result.result(false,null,"图片上传失败 -_-");
+            return Result.result(500,false,"图片上传失败 -_-",null);
         }
     }
 
@@ -68,7 +68,7 @@ public class ProcessController {
 
         //添加数据到数据库
         boolean flag = processService.saveProcess(process);
-        return Result.result(flag, null, flag ? "添加成功 ^_^" : "添加失败 -_-");
+        return Result.result(flag?200:500,flag,  flag ? "添加成功 ^_^" : "添加失败 -_-",null);
     }
 
     //按process_id更新流程信息：可以更新保存的图片信息
@@ -77,7 +77,7 @@ public class ProcessController {
     public Result update(@RequestBody Process process) {
         //修改流程配置对应的图片+修改流程配置信息===放在service中进行操作
         boolean flag = processService.updateProcessById(process);
-        return Result.result(flag, null, flag ? "修改成功 ^_^" : "修改失败 -_-");
+        return Result.result(flag?200:500,flag,  flag ? "修改成功 ^_^" : "修改失败 -_-",null);
     }
 
     //按process_id删除流程信息：同时删除保存的图片信息
@@ -86,7 +86,7 @@ public class ProcessController {
     public Result deleteById(@PathVariable Long id) {
         //删除该流程配置信息 == 放在service中进行，对上层透明
         boolean flag = processService.removeProcessById(id);
-        return Result.result(flag, null, flag ? "删除成功 ^_^" : "删除失败 -_-");
+        return Result.result(flag?200:500, flag, flag ? "删除成功 ^_^" : "删除失败 -_-",null);
     }
 
 }

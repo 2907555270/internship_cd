@@ -1,6 +1,7 @@
 package com.txy.graduate.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.txy.graduate.domain.dto.StudentDTO;
 import com.txy.graduate.domain.po.Student;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,6 +10,8 @@ import java.util.Map;
 
 @Mapper
 public interface StudentMapper extends BaseMapper<Student> {
+    //查询所有数据，并替换显示内容
+    List<StudentDTO> selectAll();
 
     //分组查询每个状态的完成人数
     Map<String, Object> selectStatusCount();
@@ -27,4 +30,5 @@ public interface StudentMapper extends BaseMapper<Student> {
 
     //根据id查询学生的studentId
     String selectStudentIdById(Long id);
+
 }

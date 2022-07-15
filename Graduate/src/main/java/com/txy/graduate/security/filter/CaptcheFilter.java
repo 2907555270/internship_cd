@@ -1,6 +1,6 @@
 package com.txy.graduate.security.filter;
 
-import com.txy.graduate.security.config.ConstConfig;
+import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.security.exception.CaptchaException;
 import com.txy.graduate.security.handler.LoginFailHandler;
 import com.txy.graduate.util.RedisUtil;

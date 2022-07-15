@@ -2,13 +2,9 @@ package com.txy.graduate.security.handler;
 
 import cn.hutool.json.JSONUtil;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.security.config.ConstConfig;
-import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.JwtUtil;
-import com.txy.graduate.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Component;
@@ -36,7 +32,7 @@ public class JwtLogoutSuccessHandler implements LogoutSuccessHandler {
         response.setContentType("application/json;charset=utf-8");
         ServletOutputStream outputStream = response.getOutputStream();
         response.setHeader(jwtUtil.getHeader(), "");
-        Result resp = Result.resp(200, "退出成功", null);
+        Result resp = Result.result(200,true, "退出成功", null);
         outputStream.write(JSONUtil.toJsonStr(resp).getBytes(StandardCharsets.UTF_8));
         outputStream.flush();
         outputStream.close();
