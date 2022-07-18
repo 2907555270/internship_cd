@@ -1,6 +1,7 @@
 package com.txy.graduate.service.Impl;
 
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -49,6 +50,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      */
     //查询所有的数据，用于导出数据
     //可分页查询，也可以查询所有，但是不会返回分页信息
+    @DS("slave")
     @Override
     public List<SysMenu> queryAll(Integer... args) {
         QueryWrapper<SysMenu> wrapper = new QueryWrapper<>();
@@ -60,6 +62,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         return menuMapper.selectPage(new Page<>(args[0], args[1]), wrapper).getRecords();
     }
 
+    @DS("slave")
     @SneakyThrows
     @Override
     public IPage<SysMenu> querySysMenu(Map<String, Object> map) {
@@ -88,6 +91,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     /**
      * user_role role_menu表
      */
+    @DS("slave")
     @Override
     public List<MenuDTO> queryCurrentUserNav(String username) {
         //从redis中获取用户信息

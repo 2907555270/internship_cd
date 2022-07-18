@@ -1,12 +1,5 @@
 # 开发环境
 spring:
-
-  #  mysql数据源
-  datasource:
-    url: jdbc:p6spy:mysql://172.20.0.2:3306/levelSchool
-    username: root
-    password: root
-
   #  redis
   redis:
     database: 0

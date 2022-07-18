@@ -1,5 +1,6 @@
 package com.txy.graduate.service.Impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.config.Page;
@@ -45,12 +46,14 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
      * 查询
      */
 
+    @DS("slave")
     @Override
     //查询所有的学生的基础信息
     public List<StudentDTO> queryAll() {
         return studentMapper.selectAll();
     }
 
+    @DS("slave")
     @Override
     //分页查询所有学生的基础信息
     public Page<StudentDTO> queryByPage(Page<StudentDTO> page) {
@@ -62,6 +65,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return page;
     }
 
+    @DS("slave")
     @SneakyThrows
     @Override
     public Page<StudentDTO> queryByConditionsAndPage(Map<String, Object> map) {
@@ -86,11 +90,13 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return page;
     }
 
+    @DS("slave")
     @Override
     public List<Student> queryByIdOrName(String content) {
         return studentMapper.selectByIdOrName(content);
     }
 
+    @DS("slave")
     @Override
     public List<Status> queryGlobalStatus() {
         ArrayList<Status> statuses = new ArrayList<>();
@@ -120,6 +126,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return statuses;
     }
 
+    @DS("slave")
     @Override
     public Student queryByStudentId(String studentId) {
         QueryWrapper<Student> wrapper = new QueryWrapper<>();

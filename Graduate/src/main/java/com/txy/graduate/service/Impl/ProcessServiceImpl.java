@@ -1,5 +1,6 @@
 package com.txy.graduate.service.Impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.po.Process;
@@ -26,6 +27,7 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
     private static final String[] baseColumns = {"id", "title", "content", "address", "start_time", "end_time", "phone",
             "type", "note", "img", "base_img_path"};
 
+    @DS("slave")
     @Override
     public List<Process> queryAll() {
         QueryWrapper<Process> wrapper = new QueryWrapper<>();
@@ -35,6 +37,7 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
         return fixData(processes.toArray(Process[]::new));
     }
 
+    @DS("slave")
     @Override
     public Process queryById(Long id) {
         Process process = mapper.selectById(id);
