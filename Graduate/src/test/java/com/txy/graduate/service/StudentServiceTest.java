@@ -1,7 +1,7 @@
 package com.txy.graduate.service;
 
 import com.txy.graduate.config.Page;
-import com.txy.graduate.domain.dto.StudentDTO;
+import com.txy.graduate.domain.dto.StudentDto;
 import com.txy.graduate.domain.po.Student;
 import com.txy.graduate.domain.vo.Status;
 import org.junit.jupiter.api.Test;
@@ -18,14 +18,14 @@ public class StudentServiceTest {
 
     @Test
     public void testQueryAll(){
-        List<StudentDTO> studentDTOS = studentService.queryAll();
+        List<StudentDto> studentDTOS = studentService.queryAll();
         System.out.println(studentDTOS);
     }
 
     @Test
     public void testQueryAllByPage(){
-        Page<StudentDTO> studentDTOPage = new Page<>(2,5);
-        Page<StudentDTO> dtoPage = studentService.queryByPage(studentDTOPage);
+        Page<StudentDto> studentDTOPage = new Page<>(2,5);
+        Page<StudentDto> dtoPage = studentService.queryByPage(studentDTOPage);
         System.out.println(dtoPage);
     }
 
@@ -35,7 +35,7 @@ public class StudentServiceTest {
         map.put("currentPage",1);
         map.put("pageSize",3);
         map.put("studentDep","计算机");
-        Page<StudentDTO> studentPage = studentService.queryByConditionsAndPage(map);
+        Page<StudentDto> studentPage = studentService.queryByConditionsAndPage(map);
         System.out.println(studentPage);
     }
 

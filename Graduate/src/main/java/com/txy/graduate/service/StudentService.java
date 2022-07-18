@@ -3,7 +3,7 @@ package com.txy.graduate.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.txy.graduate.config.Page;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.dto.StudentDTO;
+import com.txy.graduate.domain.dto.StudentDto;
 import com.txy.graduate.domain.vo.Status;
 import com.txy.graduate.domain.po.Student;
 
@@ -17,13 +17,13 @@ public interface StudentService extends IService<Student>{
      */
 
     //查询所有学生的数据
-    List<StudentDTO> queryAll();
+    List<StudentDto> queryAll();
 
     //分页查询所有学生的数据
-    Page<StudentDTO> queryByPage(Page<StudentDTO> page);
+    Page<StudentDto> queryByPage(Page<StudentDto> page);
 
     //分页加多条件模糊查询
-    Page<StudentDTO> queryByConditionsAndPage(Map<String,Object> map);
+    Page<StudentDto> queryByConditionsAndPage(Map<String,Object> map);
 
     //将输入内容作为 学号或姓名进行匹配
     List<Student> queryByIdOrName(String content);

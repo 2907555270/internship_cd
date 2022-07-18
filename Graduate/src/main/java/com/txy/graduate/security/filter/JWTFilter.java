@@ -2,7 +2,7 @@ package com.txy.graduate.security.filter;
 import cn.hutool.core.util.StrUtil;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.config.ConstConfig;
-import com.txy.graduate.security.service.UserDetailServiceImpl;
+import com.txy.graduate.service.Impl.UserDetailServiceImpl;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.JwtUtil;
 import com.txy.graduate.util.RedisUtil;

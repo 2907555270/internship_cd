@@ -2,7 +2,7 @@ package com.txy.graduate.controller;
 
 import com.txy.graduate.config.Page;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.dto.StudentDTO;
+import com.txy.graduate.domain.dto.StudentDto;
 import com.txy.graduate.domain.po.Student;
 
 
@@ -35,7 +35,7 @@ public class StudentController {
     @PreAuthorize("hasRole('admin')")
     @GetMapping("/list/{currentPage}/{pageSize}")
     public Result findAll(@PathVariable int currentPage, @PathVariable int pageSize) {
-        Page<StudentDTO> dtoPage = studentService.queryByPage(new Page<>(currentPage, pageSize));
+        Page<StudentDto> dtoPage = studentService.queryByPage(new Page<>(currentPage, pageSize));
         boolean flag = dtoPage.getTotal() > 0;
         return Result.result(flag ? 200 : 404, flag, flag ? "查询成功 ^_^" : "未获取到任何数据 -_-", dtoPage);
     }
@@ -44,7 +44,7 @@ public class StudentController {
     @PreAuthorize("hasRole('admin')")
     @PostMapping("/select")
     public Result findByConditions(@RequestBody Map<String, Object> map) {
-        Page<StudentDTO> dotPage = studentService.queryByConditionsAndPage(map);
+        Page<StudentDto> dotPage = studentService.queryByConditionsAndPage(map);
         boolean flag = dotPage.getTotal() > 0;
         return Result.result(flag ? 200 : 404, flag, flag ? "数据查询成功 ^_^" : "未查询到任何信息 -_-", dotPage);
     }

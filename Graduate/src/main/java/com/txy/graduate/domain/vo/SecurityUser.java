@@ -1,4 +1,4 @@
-package com.txy.graduate.security.entity;
+package com.txy.graduate.domain.vo;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

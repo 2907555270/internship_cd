@@ -1,6 +1,6 @@
 package com.txy.graduate;
 
-import com.txy.graduate.domain.dto.MenuDTO;
+import com.txy.graduate.domain.dto.MenuDto;
 import com.txy.graduate.domain.po.SysMenu;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -27,8 +27,8 @@ public class GraduateApplication {
     }
 
     @GetMapping("/inc")
-    public MenuDTO test_inc(){
-        MenuDTO menuDTO = new MenuDTO();
+    public MenuDto test_inc(){
+        MenuDto menuDTO = new MenuDto();
         menuDTO.setName("hello");
         return menuDTO;
     }

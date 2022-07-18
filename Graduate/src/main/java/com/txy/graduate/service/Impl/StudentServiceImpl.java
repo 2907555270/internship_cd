@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.config.Page;
 import com.txy.graduate.config.Result;
-import com.txy.graduate.domain.dto.StudentDTO;
+import com.txy.graduate.domain.dto.StudentDto;
 import com.txy.graduate.domain.vo.Status;
 import com.txy.graduate.domain.po.Student;
 import com.txy.graduate.domain.po.SysRole;
@@ -49,14 +49,14 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @DS("slave")
     @Override
     //查询所有的学生的基础信息
-    public List<StudentDTO> queryAll() {
+    public List<StudentDto> queryAll() {
         return studentMapper.selectAll();
     }
 
     @DS("slave")
     @Override
     //分页查询所有学生的基础信息
-    public Page<StudentDTO> queryByPage(Page<StudentDTO> page) {
+    public Page<StudentDto> queryByPage(Page<StudentDto> page) {
         //统计学生的数据量:精确统计
         page.setCount(studentMapper.selectAmount());
         //查询学生的数据
@@ -68,20 +68,20 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     @DS("slave")
     @SneakyThrows
     @Override
-    public Page<StudentDTO> queryByConditionsAndPage(Map<String, Object> map) {
+    public Page<StudentDto> queryByConditionsAndPage(Map<String, Object> map) {
         //判断map为空,不执行查询
         if (map == null)
             return null;
 
         //将map中的student层级下的所有属性展平
-        StudentDTO studentDTO = QueryUtil.map2obj(map, StudentDTO.class);
+        StudentDto studentDTO = QueryUtil.map2obj(map, StudentDto.class);
 
         //封装分页条件
-        Page<StudentDTO> page = new Page<>((int) map.get("currentPage"), (int) map.get("pageSize"));
+        Page<StudentDto> page = new Page<>((int) map.get("currentPage"), (int) map.get("pageSize"));
         studentDTO.setPage(page);
 
         //执行模糊+分页查询
-        List<StudentDTO> studentDTOS = studentMapper.selectByConditionsAndPage(studentDTO);
+        List<StudentDto> studentDTOS = studentMapper.selectByConditionsAndPage(studentDTO);
 
         //封装分页查询结果
         page.setObjects(studentDTOS);

@@ -3,6 +3,8 @@ package com.txy.graduate.domain.po;
 import java.util.Date;
 import java.util.List;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -27,6 +29,7 @@ public class Process {
      * 主键id
      */
     @TableId(value = "id", type = IdType.AUTO)
+    @ExcelIgnore
     private Long id;
 
     /**
@@ -95,17 +98,20 @@ public class Process {
      * 地点图片
      */
     @TableField("img")
+    @ExcelIgnore
     private String img;
 
     /**
      * 地点图片根路径
      */
     @TableField("base_img_path")
+    @ExcelIgnore
     private String baseImgPath;
 
     /**
      * 用与接受和发送images完整路径
      */
     @TableField(exist = false)
+    @ExcelIgnore
     private List<String> imgPaths;
 }

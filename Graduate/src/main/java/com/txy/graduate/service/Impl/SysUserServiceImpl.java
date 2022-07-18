@@ -3,7 +3,6 @@ package com.txy.graduate.service.Impl;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.txy.graduate.domain.po.SysRole;
 import com.txy.graduate.domain.po.SysUser;
@@ -38,21 +37,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @DS("slave")
     @Override
-    public List<SysUser> queryAll(Integer... args) {
-        //暂时不用筛选字段
-        //QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
-        //wrapper.select()
-        if(args==null||args.length<2){
-            return userMapper.selectList(null);
-        }
-        //分页查询
-        return userMapper.selectPage(new Page<>(args[0],args[1]),null).getRecords();
+    public List<SysUser> queryAll() {
+        return userMapper.selectList(null);
     }
 
     /**
      * user表
      */
-
     @DS("slave")
     @SneakyThrows
     @Override

@@ -54,7 +54,7 @@ public class FileUtilTest {
 
     @Test
     public void testRoleDataExport(){
-        Result result = fileUtil.exportDataToExcel(sysRoleService.queryAll(),null,null);
+        Result result = fileUtil.exportDataToExcel(sysRoleService.queryAll(), "RoleData", "role");
         System.out.println(result);
     }
 }

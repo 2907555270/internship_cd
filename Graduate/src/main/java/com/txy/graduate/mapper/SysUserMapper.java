@@ -23,4 +23,6 @@ public interface SysUserMapper extends BaseMapper<SysUser>{
 
     //通过username查询用户Id
     Long selectIdByUsername(String username);
+
+
 }

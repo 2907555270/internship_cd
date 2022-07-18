@@ -6,7 +6,7 @@ import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysMenu;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.config.ConstConfig;
-import com.txy.graduate.domain.dto.MenuDTO;
+import com.txy.graduate.domain.dto.MenuDto;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.QueryUtil;
@@ -105,7 +105,7 @@ public class MenuController {
         String[] authorityArr = authorityInfo.split(",");
 
         // 获取导航栏
-        List<MenuDTO> navs = menuService.queryCurrentUserNav(username);
+        List<MenuDto> navs = menuService.queryCurrentUserNav(username);
         boolean flag = !navs.isEmpty();
 
         return Result.result(flag?200:400,flag,

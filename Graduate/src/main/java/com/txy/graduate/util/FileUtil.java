@@ -1,11 +1,20 @@
 package com.txy.graduate.util;
 
+import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.annotation.write.style.ColumnWidth;
+import com.alibaba.excel.annotation.write.style.ContentFontStyle;
+import com.alibaba.excel.annotation.write.style.HeadFontStyle;
+import com.alibaba.excel.write.metadata.style.WriteCellStyle;
+import com.alibaba.excel.write.metadata.style.WriteFont;
+import com.alibaba.excel.write.style.HorizontalCellStyleStrategy;
 import com.txy.graduate.config.Result;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +23,7 @@ import java.io.*;
 import java.util.*;
 
 @Component("fileUtil")
+
 public class FileUtil {
 
     @Value("${project.host}")
@@ -44,9 +54,9 @@ public class FileUtil {
     //拼接访问文件的url
     public String getUrl(String fileName) {
         String baseUrl = "";
-        if(!HOST.isEmpty()&&!PORT.isEmpty())
-            baseUrl = HOST+":"+PORT;
-        return (baseUrl + fileName.replaceAll("/opt/files",""));
+        if (!HOST.isEmpty() && !PORT.isEmpty())
+            baseUrl = HOST + ":" + PORT;
+        return (baseUrl + fileName.replaceAll("/opt/files", ""));
     }
 
     //上传图片：支持的图片格式为：jpg,png,gif,bmp
@@ -62,7 +72,7 @@ public class FileUtil {
 
         //判断图片资源是否为空
         if (multipartFiles == null || multipartFiles[0].isEmpty()) {
-            return Result.result(500,false, "图片内容为空，上传失败 -_-",null);
+            return Result.result(500, false, "图片内容为空，上传失败 -_-", null);
         }
 
         //遍历图片资源，并保存，然后返回路径
@@ -75,7 +85,7 @@ public class FileUtil {
                 String fileType = Objects.requireNonNull(fileName).substring(fileName.indexOf('.'), fileName.length());
                 //判断文件是否是支持的图片格式类型
                 if (Arrays.asList(imgType).contains(fileType))
-                    return Result.result(500,false, "图片格式错误，上传失败 -_-", null);
+                    return Result.result(500, false, "图片格式错误，上传失败 -_-", null);
                 //设置新的文件名:不加根路径
                 String newImgPath = path + "/" + new Date().getTime() + (long) (Math.random() * range) + fileType;
                 //保存文件到存储服务器
@@ -86,7 +96,7 @@ public class FileUtil {
             }
         }
         //上传图片到存储服务器
-        return Result.result(200,true, "图片上传成功 ^_^", newImgPaths);
+        return Result.result(200, true, "图片上传成功 ^_^", newImgPaths);
     }
 
     //删除图片
@@ -104,23 +114,17 @@ public class FileUtil {
      * args[0] = file_name
      * args[1] = sheet_name
      * 以集合中的第一个数据不为空的属性名作为表头
-     *
      */
     public <T> Result exportDataToExcel(List<T> tList, String... args) {
-
         //默认参数
         //文件输出路径
         String fileName = EXCEL_ROOT_PATH + "export-" + new Date() + ".xls";
         //sheet名
         String sheetName = "sheet";
-        //行指针
-        int rowIndex = 0;
-        //列指针
-        int cellIndex = 0;
 
         //数据是否为空
         if (tList == null || tList.isEmpty()) {
-            return Result.result(500,false,  "数据为空，导出失败 -_-",null);
+            return Result.result(500, false, "未获取到数据，导出失败 -_-", null);
         }
 
         //有参数则获取参数，并初始化参数
@@ -131,55 +135,41 @@ public class FileUtil {
                 sheetName = args[1];
         }
 
-        ////初始化文件存储目录
-        //if (!initDirectory(EXCEL_ROOT_PATH)) {
-        //    return Result.result(false, null, "文件目录初始化失败 -_-:" + EXCEL_ROOT_PATH);
-        //}
+        try {
+            //设置表头格式
+            WriteCellStyle headCellStyle = new WriteCellStyle();
+            headCellStyle.setFillBackgroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+            headCellStyle.setHorizontalAlignment(HorizontalAlignment.CENTER);
+            headCellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+            //头部字体
+            WriteFont headFont = new WriteFont();
+            headFont.setFontName("宋体");
+            headFont.setFontHeightInPoints((short) 12);
+            //headFont.setBold(true);
+            headCellStyle.setWriteFont(headFont);
 
-        //解析对象获取初始数据-获取对象的所有属性名
-        List<String> filedNames = QueryUtil.getFiledNamesNotNull(tList.get(0));
+            //设置内容格式
+            WriteCellStyle contentCellStyle = new WriteCellStyle();
+            contentCellStyle.setHorizontalAlignment(HorizontalAlignment.CENTER);
+            contentCellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+            //设置字体
+            WriteFont writeFont = new WriteFont();
+            writeFont.setFontName("宋体");
+            writeFont.setFontHeightInPoints((short) 12);
+            contentCellStyle.setWriteFont(writeFont);
 
-        //创建一个Excel对应的对象
-        HSSFWorkbook wb = new HSSFWorkbook();
-        //创建单元格样式
-        HSSFCellStyle cellStyle = wb.createCellStyle();
-        //创建一个sheet
-        HSSFSheet sheet = wb.createSheet(sheetName);
-        //设置单元格样式:水平居中
-        cellStyle.setAlignment(HorizontalAlignment.CENTER_SELECTION);
+            //将格式保存在策略中
+            HorizontalCellStyleStrategy strategy = new HorizontalCellStyleStrategy(headCellStyle, contentCellStyle);
 
-        //数据写入表头
-        HSSFRow row;
-        row = sheet.createRow(rowIndex++);
-        for (String rowName : filedNames) {
-            row.createCell(cellIndex++).setCellValue(rowName);
+            EasyExcel.write(fileName, tList.get(0).getClass())
+                    .registerWriteHandler(strategy)
+                    .sheet(sheetName)
+                    .doWrite(() -> tList);
+        } catch (Exception e) {
+            return Result.result(500, false, "导出文件失败 -_-", null);
         }
 
-        //遍历写入数据
-        for (T t : tList) {
-            //将对象转换为map
-            Map<String, Object> map = QueryUtil.obj2map(t);
-            //指针归零
-            cellIndex = 0;
-            //创建新的一行
-            row = sheet.createRow(rowIndex++);
-            //写入一行数据
-            for (String rowName : filedNames) {
-                Object value = map.get(rowName);
-                if (value != null)
-                    row.createCell(cellIndex++).setCellValue(value.toString());
-            }
-        }
-
-        //输出文件
-        try (OutputStream fileOut = new FileOutputStream(fileName)) {
-            wb.write(fileOut);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return Result.result(500,false, "文件输出时错误 -_-",null);
-        }
-
-        return Result.result(200,true, getUrl(fileName),null);
+        return Result.result(200, true, getUrl(fileName), null);
     }
 }
 

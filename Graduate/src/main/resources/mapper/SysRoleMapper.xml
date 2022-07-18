@@ -3,24 +3,24 @@
 <mapper namespace="com.txy.graduate.mapper.SysRoleMapper">
     <!--user_role表-->
     <select id="selectRoleByUid" parameterType="long" resultType="com.txy.graduate.domain.po.SysRole">
-        select * from levelSchool.sys_role
-        where id in (select role_id from levelSchool.sys_user_role where user_id=#{user_id})
+        select * from graduate.sys_role
+        where id in (select role_id from graduate.sys_user_role where user_id=#{user_id})
     </select>
 
     <insert id="insertUserAndRole" parameterType="com.txy.graduate.domain.po.SysUserRole">
-        insert into levelSchool.sys_user_role(user_id, role_id) values (#{userId},#{roleId})
+        insert into graduate.sys_user_role(user_id, role_id) values (#{userId},#{roleId})
     </insert>
 
     <delete id="deleteUserAndRoleByUId" parameterType="long">
-        delete from levelSchool.sys_user_role where user_id = #{user_id}
+        delete from graduate.sys_user_role where user_id = #{user_id}
     </delete>
 
     <delete id="deleteUserAndRoleByRId" parameterType="long">
-        delete from levelSchool.sys_user_role where role_id = #{role_id}
+        delete from graduate.sys_user_role where role_id = #{role_id}
     </delete>
 
     <update id="updateUByUserAndRoleId" parameterType="com.txy.graduate.domain.po.SysUserRole">
-        update levelSchool.sys_user_role
+        update graduate.sys_user_role
         <trim prefix="set" suffixOverrides=",">
             <if test="userId != null" >
                 user_id=#{userId},
@@ -35,24 +35,24 @@
 
     <!--role_menu表-->
     <select id="selectRoleByMenuId" resultType="com.txy.graduate.domain.po.SysRole">
-        select * from levelSchool.sys_role
-        where id in (select role_id from levelSchool.sys_role_menu where menu_id=#{menu_id})
+        select * from graduate.sys_role
+        where id in (select role_id from graduate.sys_role_menu where menu_id=#{menu_id})
     </select>
 
     <insert id="insertRoleAndMenu" parameterType="com.txy.graduate.domain.po.SysRoleMenu">
-        insert into levelSchool.sys_role_menu(role_id, menu_id) values(#{roleId},#{menuId})
+        insert into graduate.sys_role_menu(role_id, menu_id) values(#{roleId},#{menuId})
     </insert>
 
     <delete id="deleteRoleAndMenuByRId" parameterType="long">
-        delete from levelSchool.sys_role_menu where role_id=#{role_id}
+        delete from graduate.sys_role_menu where role_id=#{role_id}
     </delete>
 
     <delete id="deleteRoleAndMenuByMId" parameterType="long">
-        delete from levelSchool.sys_role_menu where menu_id=#{menu_id}
+        delete from graduate.sys_role_menu where menu_id=#{menu_id}
     </delete>
 
     <update id="updateMByUserAndRoleId" parameterType="com.txy.graduate.domain.po.SysRoleMenu">
-        update levelSchool.sys_role_menu
+        update graduate.sys_role_menu
         <trim prefix="set" suffixOverrides=",">
             <if test="roleId != null">
                 role_id = #{roleId},
@@ -65,6 +65,6 @@
     </update>
 
     <select id="selectIdByCode" parameterType="String" resultType="java.lang.Long">
-        select id from levelSchool.sys_role where sys_role.code = #{code};
+        select id from graduate.sys_role where sys_role.code = #{code};
     </select>
 </mapper>

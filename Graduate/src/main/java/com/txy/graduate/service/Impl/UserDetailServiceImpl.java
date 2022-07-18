@@ -1,6 +1,6 @@
-package com.txy.graduate.security.service;
+package com.txy.graduate.service.Impl;
 
-import com.txy.graduate.security.entity.SecurityUser;
+import com.txy.graduate.domain.vo.SecurityUser;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.service.ISysUserService;
 import org.springframework.security.core.GrantedAuthority;

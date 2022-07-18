@@ -2,7 +2,7 @@ package com.txy.graduate.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.txy.graduate.config.Page;
-import com.txy.graduate.domain.dto.StudentDTO;
+import com.txy.graduate.domain.dto.StudentDto;
 import com.txy.graduate.domain.po.Student;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,10 +12,10 @@ import java.util.Map;
 @Mapper()
 public interface StudentMapper extends BaseMapper<Student> {
     //查询数据中有价值的字段数据，并替换显示内容
-    List<StudentDTO> selectAll();
+    List<StudentDto> selectAll();
 
     //分页查询学生的所有有价值的字段数据，并替换显示内容
-    List<StudentDTO> selectAllByPage(Page<StudentDTO> page);
+    List<StudentDto> selectAllByPage(Page<StudentDto> page);
 
     //统计学生表的总数据量：精确统计
     int selectAmount();
@@ -24,7 +24,7 @@ public interface StudentMapper extends BaseMapper<Student> {
     int selectAmountQuick();
 
     //多条件后缀模糊查询+分页查询 学生信息
-    List<StudentDTO> selectByConditionsAndPage(StudentDTO studentDTO);
+    List<StudentDto> selectByConditionsAndPage(StudentDto studentDTO);
 
 
     //分组查询每个状态的完成人数

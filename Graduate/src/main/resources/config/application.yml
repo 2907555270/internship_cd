@@ -1,7 +1,7 @@
 # 开发和生产环境的切换
 spring:
   profiles:
-    active: pro
+    active: dev
 
 
 # 开发和生产的通用环境

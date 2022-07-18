@@ -11,7 +11,7 @@ import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.mapper.SysMenuMapper;
 import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.config.ConstConfig;
-import com.txy.graduate.domain.dto.MenuDTO;
+import com.txy.graduate.domain.dto.MenuDto;
 import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysRoleService;
 
@@ -93,7 +93,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      */
     @DS("slave")
     @Override
-    public List<MenuDTO> queryCurrentUserNav(String username) {
+    public List<MenuDto> queryCurrentUserNav(String username) {
         //从redis中获取用户信息
         SysUser user = (SysUser) redisUtil.get(ConstConfig.USER_KEY + ":" + username);
 
@@ -138,10 +138,10 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      * @param menuTree ： 菜单树-只含有直接孩子
      * @return : 含有所有子菜单
      */
-    private List<MenuDTO> convert(List<SysMenu> menuTree) {
-        List<MenuDTO> menuDTOS = new ArrayList<>();
+    private List<MenuDto> convert(List<SysMenu> menuTree) {
+        List<MenuDto> menuDTOS = new ArrayList<>();
         menuTree.forEach(t -> {
-            MenuDTO menuDTO = new MenuDTO();
+            MenuDto menuDTO = new MenuDto();
             menuDTO.setId(t.getId());
             menuDTO.setName(t.getPerms());
             menuDTO.setTitle(t.getName());

@@ -13,8 +13,8 @@ public interface ISysUserService extends IService<SysUser> {
     /**
      * user表
      */
-    //分页或查询所有的数据
-    List<SysUser> queryAll(Integer... args);
+    //查询所有的数据
+    List<SysUser> queryAll();
 
 
     /**

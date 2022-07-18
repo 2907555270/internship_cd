@@ -9,13 +9,13 @@ import java.util.List;
 
 @Data
 @JsonInclude(value = JsonInclude.Include.NON_NULL) //只将不为null的属性转为Json传给前端
-public class MenuDTO implements Serializable {
+public class MenuDto implements Serializable {
     private Long id;
     private String name;
     private String title;
     private String icon;
     private String path;
     private String component;
-    private List<MenuDTO> children = new ArrayList<>();
+    private List<MenuDto> children = new ArrayList<>();
 
 }
