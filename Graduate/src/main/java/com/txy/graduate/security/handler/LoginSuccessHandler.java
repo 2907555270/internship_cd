@@ -9,12 +9,11 @@ import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.JwtUtil;
 import com.txy.graduate.util.RedisUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.ServletException;
+import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,20 +27,20 @@ import java.util.List;
 @Component
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
-    @Autowired
+    @Resource
     JwtUtil jwtUtil;
 
-    @Autowired
+    @Resource
     private ISysRoleService roleService;
 
-    @Autowired
+    @Resource
     private ISysUserService userService;
 
-    @Autowired
+    @Resource
     private RedisUtil redisUtil;
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException {
 
         httpServletResponse.setContentType("application/json;charset=utf-8");
         ServletOutputStream outputStream = httpServletResponse.getOutputStream();

@@ -8,10 +8,10 @@ import com.txy.graduate.config.ConstConfig;
 import com.txy.graduate.util.RedisUtil;
 import com.txy.graduate.util.ToolUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -21,10 +21,10 @@ import java.io.IOException;
 @RestController
 public class LoginController {
 
-    @Autowired
+    @Resource
     private Producer producer;
 
-    @Autowired
+    @Resource
     private RedisUtil redisUtil;
 
     @GetMapping("/captcha")

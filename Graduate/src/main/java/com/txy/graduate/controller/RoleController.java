@@ -7,10 +7,10 @@ import com.txy.graduate.domain.po.SysRoleMenu;
 import com.txy.graduate.domain.po.SysUserRole;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.util.QueryUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 //TODO:访问权限没有设置完整
@@ -22,7 +22,7 @@ import java.util.Map;
 @RequestMapping("/role")
 public class RoleController {
 
-    @Autowired
+    @Resource
     private ISysRoleService roleService;
 
     /**

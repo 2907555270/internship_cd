@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@Mapper
+@Mapper()
 public interface SysUserMapper extends BaseMapper<SysUser>{
     //通过userId查询 Menu
     List<String> getMenuByUserId(Long userId);

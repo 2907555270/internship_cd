@@ -4,7 +4,6 @@ import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.Process;
 import com.txy.graduate.service.ProcessService;
 import com.txy.graduate.util.FileUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -12,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,10 +21,10 @@ import java.util.List;
 @RequestMapping("/process")
 public class ProcessController {
 
-    @Autowired
+    @Resource
     private ProcessService processService;
 
-    @Autowired
+    @Resource
     private FileUtil fileUtil;
 
 

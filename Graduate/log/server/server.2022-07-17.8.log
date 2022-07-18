@@ -1,0 +1,5 @@
+2022-07-17 21:16:33.372  INFO 28856 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/graduate]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 21:16:33.373  INFO 28856 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 21:16:33.380  INFO 28856 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2022-07-17 21:52:56.106  INFO 28856 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 21:52:56.111  INFO 28856 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
