@@ -3,7 +3,6 @@ package com.txy.graduate.security.service;
 import com.txy.graduate.security.entity.SecurityUser;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.service.ISysUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,12 +10,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
-    @Autowired
+    @Resource
     private ISysUserService sysUserService;
 
     //自定义配置用户信息存取

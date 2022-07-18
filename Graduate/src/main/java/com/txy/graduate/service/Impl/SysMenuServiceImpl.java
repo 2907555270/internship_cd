@@ -17,27 +17,27 @@ import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.util.QueryUtil;
 import com.txy.graduate.util.RedisUtil;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.List;
 
 @Service
 public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> implements ISysMenuService {
 
-    @Autowired
+    @Resource
     private SysMenuMapper menuMapper;
 
-    @Autowired
+    @Resource
     private SysUserMapper userMapper;
 
-    @Autowired
+    @Resource
     private RedisUtil redisUtil;
 
-    @Autowired
+    @Resource
     private ISysRoleService roleService;
 
 
@@ -108,9 +108,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
 
     /**
      * 构建树
-     *
-     * @param menuList
-     * @return
+     * @param menuList ：菜单列表
+     * @return List<SysMenu> ： 构建后的菜单树
      */
     private List<SysMenu> buildTreeMenu(List<SysMenu> menuList) {
         List<SysMenu> finalMenus = new ArrayList<>();
@@ -132,9 +131,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
 
     /**
      * 展开树并转dto
-     *
-     * @param menuTree
-     * @return
+     * @param menuTree ： 菜单树-只含有直接孩子
+     * @return : 含有所有子菜单
      */
     private List<MenuDTO> convert(List<SysMenu> menuTree) {
         List<MenuDTO> menuDTOS = new ArrayList<>();

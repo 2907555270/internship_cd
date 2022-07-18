@@ -20,8 +20,6 @@ public class JwtUtil {
 
 	/**
 	 * 生产token
-	 * @param userName
-	 * @return
 	 */
 	public String createToken(String userName){
 		Date now = new Date();
@@ -38,8 +36,6 @@ public class JwtUtil {
 
 	/**
 	 * 解析token
-	 * @param token
-	 * @return
 	 */
 	public Claims getClaimByToken(String token){
 		try {
@@ -54,8 +50,6 @@ public class JwtUtil {
 
 	/**
 	 * 判断token是否过期
-	 * @param claims
-	 * @return
 	 */
 	public boolean isTokenExpired(Claims claims){
 		return claims.getExpiration().before(new Date());

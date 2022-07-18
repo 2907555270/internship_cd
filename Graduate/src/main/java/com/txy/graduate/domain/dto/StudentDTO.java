@@ -1,6 +1,7 @@
 package com.txy.graduate.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.txy.graduate.config.Page;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -9,9 +10,11 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StudentDTO implements Serializable {
     private String studentId;
-    private String StudentName;
-    private String StudentDep;
-    private String StudentPre;
-    private String StudentClass;
-    private String StudentStatus;
+    private String studentName;
+    private String studentDep;
+    private String studentPre;
+    private String studentClass;
+    private String finnishStatus;
+
+    private Page<StudentDTO> page;
 }

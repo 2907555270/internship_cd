@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysRole;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.domain.po.SysUserRole;
@@ -15,11 +14,11 @@ import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.QueryUtil;
 import com.txy.graduate.util.RedisUtil;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -27,13 +26,13 @@ import java.util.stream.Collectors;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
-    @Autowired
+    @Resource
     private SysUserMapper userMapper;
 
-    @Autowired
+    @Resource
     private RedisUtil redisUtil;
 
-    @Autowired
+    @Resource
     private ISysRoleService roleService;
 
     @Override

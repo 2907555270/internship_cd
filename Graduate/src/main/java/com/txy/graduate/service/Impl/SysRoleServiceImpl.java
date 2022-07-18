@@ -11,11 +11,11 @@ import com.txy.graduate.mapper.SysRoleMapper;
 import com.txy.graduate.service.ISysRoleService;
 import com.txy.graduate.util.QueryUtil;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +23,7 @@ import java.util.Map;
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements ISysRoleService {
 
-    @Autowired
+    @Resource(name = "sysRoleMapper")
     private SysRoleMapper roleMapper;
 
 

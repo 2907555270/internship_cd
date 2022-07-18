@@ -1513,3 +1513,1347 @@
  2022-07-15 17:03:50 | 执行耗时 1 ms 
  SQL 语句：SELECT id,name,code,remark,created,updated,status FROM sys_role;
 
+ 2022-07-17 15:46:28 | 执行耗时 12 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 15:46:28 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 15:46:28 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 15:46:31 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student;
+
+ 2022-07-17 16:20:02 | 执行耗时 12 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:20:02 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:20:03 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:20:06 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 1,2) a where t.id = a.id;;
+
+ 2022-07-17 16:20:55 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:20:55 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:20:55 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:20:59 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id;;
+
+ 2022-07-17 16:28:15 | 执行耗时 19 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:28:15 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:28:15 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:28:18 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 16:28:18 | 执行耗时 0 ms 
+ SQL 语句：select max(id) from levelSchool.tb_student;;
+
+ 2022-07-17 16:40:08 | 执行耗时 12 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:40:08 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:40:08 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:40:10 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student ;;
+
+ 2022-07-17 16:40:10 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id;;
+
+ 2022-07-17 16:42:10 | 执行耗时 15 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:42:10 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:42:10 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:42:14 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 16:42:14 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id;;
+
+ 2022-07-17 16:42:43 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:42:43 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:42:43 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 16:42:47 | 执行耗时 2 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 16:42:47 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 5,5) a where t.id = a.id;;
+
+ 2022-07-17 17:02:30 | 执行耗时 12 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:02:30 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:02:30 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:02:33 | 执行耗时 9 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student limit NULL;
+
+ 2022-07-17 17:02:56 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:02:56 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:02:56 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:02:59 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student limit 1;
+
+ 2022-07-17 17:06:02 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:06:02 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:06:02 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:06:05 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student limit 1;
+
+ 2022-07-17 17:07:02 | 执行耗时 12 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:07:02 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:07:03 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:07:06 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student limit 2;
+
+ 2022-07-17 17:30:16 | 执行耗时 10 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:30:16 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:30:16 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:30:51 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:30:51 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:30:51 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:30:54 | 执行耗时 15 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE (student_name LIKE '%张三四%' AND id IN (select id from tb_student order by id limit0,3));
+
+ 2022-07-17 17:33:21 | 执行耗时 15 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:33:21 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:33:21 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:33:24 | 执行耗时 13 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status FROM tb_student WHERE (student_name LIKE '%张三四%' AND id IN (select id from tb_student order by id limit 0,3));
+
+ 2022-07-17 17:52:49 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:52:49 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:52:49 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:53:59 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:53:59 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:53:59 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:54:30 | 执行耗时 15 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:54:30 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:54:30 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:55:04 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:55:04 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:55:04 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:58:20 | 执行耗时 14 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:58:20 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:58:20 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:59:24 | 执行耗时 15 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:59:24 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 17:59:24 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:06:16 | 执行耗时 14 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:06:16 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:06:16 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:06:19 | 执行耗时 14 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit NULL,NULL) a where t.id = a.id and;
+
+ 2022-07-17 18:08:00 | 执行耗时 21 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:08:00 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:08:00 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:08:04 | 执行耗时 16 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit -3,3) a where t.id = a.id;
+
+ 2022-07-17 18:10:40 | 执行耗时 8 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:10:40 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:10:40 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:10:44 | 执行耗时 13 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit -3,3) a where t.id = a.id and;
+
+ 2022-07-17 18:12:23 | 执行耗时 14 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:12:23 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:12:23 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:12:26 | 执行耗时 10 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit -3,3) a where t.id = a.id;
+
+ 2022-07-17 18:13:27 | 执行耗时 15 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:13:27 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:13:27 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:13:31 | 执行耗时 11 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit -3,3) a where t.id = a.id;;
+
+ 2022-07-17 18:15:09 | 执行耗时 15 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:15:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:15:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:15:13 | 执行耗时 14 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id and;
+
+ 2022-07-17 18:16:30 | 执行耗时 10 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:16:30 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:16:30 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:16:33 | 执行耗时 14 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id and;
+
+ 2022-07-17 18:17:25 | 执行耗时 10 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:17:25 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:17:25 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:17:28 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id;
+
+ 2022-07-17 18:18:32 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:18:32 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:18:32 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:19:24 | 执行耗时 9 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:19:24 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:19:24 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:19:28 | 执行耗时 3 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id and student_name like concat('张三四', '%');
+
+ 2022-07-17 18:20:12 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:20:12 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:20:12 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:20:16 | 执行耗时 3 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id and student_name like concat('张三四', '%');
+
+ 2022-07-17 18:20:16 | 执行耗时 11 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 18:28:55 | 执行耗时 9 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:28:55 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:28:55 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:28:57 | 执行耗时 4 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id and student_name like concat('张三四', '%');
+
+ 2022-07-17 18:28:58 | 执行耗时 7 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 18:33:33 | 执行耗时 16 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:33:33 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:33:33 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 18:33:37 | 执行耗时 2 ms 
+ SQL 语句：select id, student_id, student_name, student_class from levelSchool.tb_student where tb_student.student_id like concat('163', '%') union all select id, student_id, student_name, student_class from levelSchool.tb_student where tb_student.student_name like concat('163', '%') limit 0,5;;
+
+ 2022-07-17 19:28:21 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:28:21 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:28:21 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:28:24 | 执行耗时 3 ms 
+ SQL 语句：select id, student_id, student_name, student_class from levelSchool.tb_student where tb_student.student_id like concat('张三四', '%') union all select id, student_id, student_name, student_class from levelSchool.tb_student where tb_student.student_name like concat('张三四', '%') limit 0,5;;
+
+ 2022-07-17 19:30:03 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:30:03 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:30:03 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:30:07 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE id=1 ;
+
+ 2022-07-17 19:31:09 | 执行耗时 9 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:31:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:31:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:31:12 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE id=1 ;
+
+ 2022-07-17 19:38:57 | 执行耗时 13 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:38:57 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:38:57 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:39:00 | 执行耗时 1 ms 
+ SQL 语句：select count(*) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-17 19:39:00 | 执行耗时 1 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-17 19:45:42 | 执行耗时 10 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:45:42 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:45:42 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:51:14 | 执行耗时 3 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:51:14 | 执行耗时 5 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:51:14 | 执行耗时 8 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:51:14 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 19:51:14 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id;;
+
+ 2022-07-17 19:52:39 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:52:39 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:52:39 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:52:39 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 19:52:39 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id;;
+
+ 2022-07-17 19:56:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:56:07 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:56:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:56:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:56:16 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:56:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:56:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:56:55 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:56:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:57:09 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:57:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:57:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:57:31 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:57:32 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:57:32 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:58:00 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 19:58:00 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 19:58:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 19:58:21 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:58:21 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 19:58:21 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:00:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:00:29 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:00:29 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:01:18 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:01:18 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:01:18 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:01:18 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_id like concat('计算机', '%') and student_id like concat('计算机', '%');
+
+ 2022-07-17 20:01:18 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:01:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:01:30 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:01:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:01:30 | 执行耗时 0 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_id like concat('计算机', '%') and student_id like concat('计算机', '%');
+
+ 2022-07-17 20:01:30 | 执行耗时 0 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:01:55 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:01:55 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:01:55 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:01:55 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_id like concat('中文', '%') and student_id like concat('中文', '%');
+
+ 2022-07-17 20:01:55 | 执行耗时 3 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:03:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:03:40 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:03:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:03:40 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_id like concat('中文', '%') and student_id like concat('中文', '%');
+
+ 2022-07-17 20:03:40 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:04:48 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:04:48 | 执行耗时 3 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:04:48 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:04:52 | 执行耗时 10 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:04:52 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:04:52 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:04:56 | 执行耗时 2 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,3) a where t.id = a.id and student_id like concat('计算机', '%');
+
+ 2022-07-17 20:04:56 | 执行耗时 8 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:05:38 | 执行耗时 1 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:38 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:38 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:41 | 执行耗时 12 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:41 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:41 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:52 | 执行耗时 14 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:52 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:05:52 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:06:37 | 执行耗时 8 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:06:37 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:06:37 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:07:16 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:07:16 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:07:16 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:07:23 | 执行耗时 2 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:07:23 | 执行耗时 2 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:07:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:07:23 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_dep like concat('中文', '%') and student_pre like concat('中文', '%');
+
+ 2022-07-17 20:07:23 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:07:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:07:51 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:07:51 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:07:51 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_dep like concat('中文', '%') and student_pre like concat('中文', '%');
+
+ 2022-07-17 20:07:51 | 执行耗时 0 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:07:59 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:07:59 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:07:59 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:07:59 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_dep like concat('中文', '%') and student_pre like concat('中文', '%');
+
+ 2022-07-17 20:07:59 | 执行耗时 0 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:08:49 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:08:49 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:08:49 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:08:49 | 执行耗时 0 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student t, (select id from levelSchool.tb_student order by id limit 0,5) a where t.id = a.id and student_dep like concat('中文', '%') and student_pre like concat('中文', '%') and student_class like concat('10', '%');
+
+ 2022-07-17 20:08:49 | 执行耗时 1 ms 
+ SQL 语句：select count(*) from levelSchool.tb_student;;
+
+ 2022-07-17 20:12:36 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:12:36 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:12:36 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:12:36 | 执行耗时 0 ms 
+ SQL 语句：select count(*) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-17 20:12:36 | 执行耗时 0 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-17 20:13:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:13:40 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:13:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:13:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,student_id,student_name,student_dep,student_pre,student_class,student_status,report_status,report_time,report_note,report_note_status,audit_status,audit_note,audit_note_status,owe_status,owe_amount,owe_note,owe_note_status,book_status,book_amount,book_money,book_note,book_note_status,archives_status,archives_address,archives_time,archives_note,archives_note_status,dormitory_status,dormitory_note,dormitory_note_status,diploma_status,diploma_time,diploma_note,diploma_note_status,note FROM tb_student WHERE id=1 ;
+
+ 2022-07-17 20:15:09 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:15:09 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:15:09 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:15:09 | 执行耗时 0 ms 
+ SQL 语句：select count(*) 'total', cast(sum(report_status) as unsigned) 'report', cast(sum(audit_status) as unsigned) 'graduation', cast(sum(owe_status) as unsigned) 'owe', cast(sum(book_status) as unsigned) 'book', cast(sum(archives_status) as unsigned) 'archive', cast(sum(dormitory_status) as unsigned) 'dormitory', cast(sum(diploma_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-17 20:15:09 | 执行耗时 0 ms 
+ SQL 语句：select cast(sum(report_note_status) as unsigned) 'report', cast(sum(audit_note_status) as unsigned) 'graduation', cast(sum(owe_note_status) as unsigned) 'owe', cast(sum(book_note_status) as unsigned) 'book', cast(sum(archives_note_status) as unsigned) 'archive', cast(sum(dormitory_note_status) as unsigned) 'dormitory', cast(sum(diploma_note_status) as unsigned) 'diploma' from levelSchool.tb_student;;
+
+ 2022-07-17 20:16:50 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:16:50 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:16:50 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:16:50 | 执行耗时 1 ms 
+ SQL 语句：select student_id, student_name, student_dep, student_pre, student_class, if(student_status = 1, '已完成', '未完成') as 'finnish_status' from levelSchool.tb_student ;;
+
+ 2022-07-17 20:24:08 | 执行耗时 6 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:24:08 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:24:08 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:24:15 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:24:15 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-17 20:27:50 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:27:50 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:27:50 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:27:51 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=1 ;
+
+ 2022-07-17 20:28:53 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:28:53 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:28:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:28:53 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=1 ;
+
+ 2022-07-17 20:29:16 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:29:16 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:29:16 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:29:16 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-17 20:34:37 | 执行耗时 8 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:34:37 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:34:37 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:36:37 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:36:37 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:36:37 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:36:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:36:42 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:36:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:36:42 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process;
+
+ 2022-07-17 20:37:12 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:37:12 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:37:12 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:37:13 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,title,content,address,startTime,endTime,phone,note,img,baseImgPath FROM tb_process WHERE (id = 1);
+
+ 2022-07-17 20:37:51 | 执行耗时 9 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:37:51 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:37:51 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:38:18 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:38:18 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:38:18 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:38:46 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:38:46 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:38:46 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:42:36 | 执行耗时 8 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:42:36 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:42:36 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:42:48 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:42:48 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:42:48 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:43:23 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:43:23 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:43:23 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:43:37 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:43:37 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:43:37 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:43:37 | 执行耗时 6 ms 
+ SQL 语句：SELECT id,title,content,address,start_time,end_time,phone,type,note,img,baseImgPath FROM tb_process WHERE (status = 1);
+
+ 2022-07-17 20:44:01 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:44:01 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:44:01 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 20:44:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:44:06 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:44:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:44:06 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,start_time,end_time,phone,type,note,img,base_img_path FROM tb_process WHERE (status = 1);
+
+ 2022-07-17 20:44:21 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:44:21 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:44:21 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:44:21 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=1 ;
+
+ 2022-07-17 20:47:28 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:47:28 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:47:28 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:47:28 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=1 ;
+
+ 2022-07-17 20:51:53 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:51:53 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:51:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 20:59:43 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 20:59:43 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 20:59:43 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:00:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:00:00 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:00:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:00:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:00:07 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:00:07 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:00:22 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:00:22 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:00:22 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:00:40 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:00:40 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:00:40 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:01:00 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:01:00 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:01:00 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:01:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:01:15 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:01:15 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:01:49 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:01:49 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:01:49 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:02:05 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:02:05 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:02:05 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:03:33 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:03:33 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:03:33 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:03:42 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:03:42 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:03:42 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:04:01 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:04:01 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:04:01 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:05:23 | 执行耗时 7 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 21:05:23 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 21:05:23 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 21:05:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:05:58 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:05:58 | 执行耗时 2 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:07:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:07:07 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:07:07 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:07:07 | 执行耗时 9 ms 
+ SQL 语句：INSERT INTO tb_process ( title, content, address, type, start_time, end_time, phone, img, base_img_path ) VALUES ( 'test', 'test', 'test', 1, '2022-08-20T08:00:00.000+0800', '2023-09-20T08:00:00.000+0800', '13888888388', '/165806231388723.png;/1658062313890920.png;/1658062313890396.jpg;/1658062313891430.jpg', '/home/flyme/file_system/graduate/img/Process' );
+
+ 2022-07-17 21:13:53 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:13:53 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:13:53 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:14:01 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:14:01 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:14:01 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:14:09 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:14:09 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:14:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:14:09 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=24 ;
+
+ 2022-07-17 21:16:01 | 执行耗时 6 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 21:16:01 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 21:16:01 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-17 21:16:33 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:16:33 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:16:33 | 执行耗时 2 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:16:33 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=24 ;
+
+ 2022-07-17 21:16:33 | 执行耗时 6 ms 
+ SQL 语句：UPDATE tb_process SET title='修改', base_img_path='/home/flyme/file_system/graduate/img/Process' WHERE id=24;
+
+ 2022-07-17 21:20:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:20:58 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:20:58 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:20:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,title,content,address,status,type,start_time,end_time,phone,note,img,base_img_path FROM tb_process WHERE id=24 ;
+
+ 2022-07-17 21:20:58 | 执行耗时 15 ms 
+ SQL 语句：DELETE FROM tb_process WHERE id=24;
+
+ 2022-07-17 21:27:44 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = '');
+
+ 2022-07-17 21:28:43 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = '');
+
+ 2022-07-17 21:31:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:31:57 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:31:57 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:33:54 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:33:54 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:33:54 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:33:54 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:33:54 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:34:30 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:34:30 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:34:30 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:34:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:34:58 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:34:58 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:34:59 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:34:59 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:36:45 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:36:45 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:36:45 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:37:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:37:11 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:37:11 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:38:06 | 执行耗时 0 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:38:06 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:38:06 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-17 21:38:35 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-17 21:38:35 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-17 21:38:35 | 执行耗时 1 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-18 10:42:09 | 执行耗时 9 ms 
+ SQL 语句：select 1;
+
+ 2022-07-18 10:42:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-18 10:42:09 | 执行耗时 0 ms 
+ SQL 语句：select 1;
+
+ 2022-07-18 10:42:55 | 执行耗时 8 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-18 10:42:55 | 执行耗时 4 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-18 10:42:55 | 执行耗时 3 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-18 10:43:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-18 10:43:23 | 执行耗时 1 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+
+ 2022-07-18 10:43:23 | 执行耗时 0 ms 
+ SQL 语句：SELECT DISTINCT sm.perms FROM levelSchool.sys_user_role ur left join levelSchool.sys_role_menu rm on ur.role_id = rm.role_id left JOIN levelSchool.sys_menu sm on rm.menu_id = sm.id where sm.perms is not null and ur.user_id=1;
+
+ 2022-07-18 10:43:23 | 执行耗时 1 ms 
+ SQL 语句：SELECT id,username,password,avatar,email,city,created,updated,last_login,status FROM sys_user WHERE (username = 'admin');
+
+ 2022-07-18 10:43:23 | 执行耗时 0 ms 
+ SQL 语句：select * from levelSchool.sys_role where id in (select role_id from levelSchool.sys_user_role where user_id=1);
+

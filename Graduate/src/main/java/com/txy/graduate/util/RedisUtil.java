@@ -1,18 +1,18 @@
 package com.txy.graduate.util;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-@Component
+@Component("redisUtil")
 public class RedisUtil {
 
-    @Autowired
+    @Resource
     private RedisTemplate redisTemplate;
 
     /**
@@ -20,7 +20,6 @@ public class RedisUtil {
      *
      * @param key  键
      * @param time 时间(秒)
-     * @return
      */
     public boolean expire(String key, long time) {
         try {

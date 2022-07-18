@@ -11,7 +11,6 @@ import com.txy.graduate.service.ISysMenuService;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.QueryUtil;
 import com.txy.graduate.util.RedisUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
@@ -19,6 +18,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -26,11 +26,11 @@ import java.util.Map;
 @RequestMapping("/sys/menu")
 public class MenuController {
 
-    @Autowired
+    @Resource
     private ISysUserService userService;
-    @Autowired
+    @Resource
     private ISysMenuService menuService;
-    @Autowired
+    @Resource
     private RedisUtil redisUtil;
 
 

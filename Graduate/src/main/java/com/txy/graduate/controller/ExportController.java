@@ -3,10 +3,11 @@ package com.txy.graduate.controller;
 import com.txy.graduate.config.Result;
 import com.txy.graduate.service.*;
 import com.txy.graduate.util.FileUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -16,22 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/export")
 public class ExportController {
 
-    @Autowired
+    @Resource
     private ProcessService processService;
 
-    @Autowired
+    @Resource
     private StudentService studentService;
 
-    @Autowired
+    @Resource
     private ISysMenuService sysMenuService;
 
-    @Autowired
+    @Resource
     private ISysUserService sysUserService;
 
-    @Autowired
+    @Resource
     private ISysRoleService sysRoleService;
 
-    @Autowired
+    @Resource
     private FileUtil fileUtil;
 
     @GetMapping("/student")

@@ -20,21 +20,6 @@ import java.util.Map;
  */
 public class QueryUtil {
 
-    ///**
-    // * 获取一个对象Object中的所有属性值封装到List中
-    // */
-    //public static List<Object> getFiledValueFromObj(Object obj){
-    //    return Arrays.stream(obj.getClass().getDeclaredFields()).map(f -> {
-    //        f.setAccessible(true);
-    //        try {
-    //            return f.get(obj);
-    //        } catch (IllegalAccessException e) {
-    //            e.printStackTrace();
-    //        }
-    //        return null;
-    //    }).toList();
-    //}
-
     /**
      * 获取一个对象Object中的所有属性不为空的属性名
      */

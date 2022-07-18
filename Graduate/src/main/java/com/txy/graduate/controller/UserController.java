@@ -5,10 +5,10 @@ import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.po.SysUser;
 import com.txy.graduate.service.ISysUserService;
 import com.txy.graduate.util.QueryUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.Map;
 
 
@@ -16,7 +16,7 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Resource
     private ISysUserService userService;
 
 

@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.*;
 
-@Component
+@Component("fileUtil")
 public class FileUtil {
 
     @Value("${project.host}")
@@ -48,26 +48,6 @@ public class FileUtil {
             baseUrl = HOST+":"+PORT;
         return (baseUrl + fileName.replaceAll("/opt/files",""));
     }
-
-    ////初始化文件目录
-    //public boolean initDirectory(String path) {
-    //    //初始化存储目录
-    //    File root_dir = new File(path);
-    //    //若当前目录不存在 或 当前路径并非一个目录
-    //    if (!root_dir.exists() || !root_dir.isDirectory()) {
-    //        System.out.println("文件目录:"+path+" 不存在，正在创建目录...");
-    //        //文件目录创建成功
-    //        if (root_dir.mkdir()) {
-    //            System.out.println("文件目录"+path+"初始化成功");
-    //            return true;
-    //        }
-    //        //文件目录创建失败--权限不够...
-    //        else
-    //            return false;
-    //    }
-    //    //目录已存在
-    //    return true;
-    //}
 
     //上传图片：支持的图片格式为：jpg,png,gif,bmp
     public <T> Result uploadPics(MultipartFile[] multipartFiles, Class<T> tClass) throws IOException {

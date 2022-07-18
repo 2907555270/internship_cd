@@ -1,9 +1,8 @@
 package com.txy.graduate.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.txy.graduate.config.Page;
 import com.txy.graduate.config.Result;
 import com.txy.graduate.domain.dto.StudentDTO;
 import com.txy.graduate.domain.vo.Status;
@@ -17,29 +16,25 @@ import com.txy.graduate.mapper.SysUserMapper;
 import com.txy.graduate.service.StudentService;
 import com.txy.graduate.util.QueryUtil;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.*;
 
-@Service
+@Service("studentService")
 public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> implements StudentService {
 
-    @Autowired
+    @Resource(name = "studentMapper")
     private StudentMapper studentMapper;
 
-    @Autowired
+    @Resource(name = "sysUserMapper")
     private SysUserMapper sysUserMapper;
 
-    @Autowired
+    @Resource(name = "sysRoleMapper")
     private SysRoleMapper sysRoleMapper;
-
-    //设置基础查询字段列表
-    private final String[] baseColumns = {"id","student_id","student_name","student_dep",
-            "student_pre","student_class","student_status"};
 
     //学生权限
     @Value("normal")
@@ -51,47 +46,50 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
      */
 
     @Override
+    //查询所有的学生的基础信息
     public List<StudentDTO> queryAll() {
         return studentMapper.selectAll();
     }
 
+    @Override
+    //分页查询所有学生的基础信息
+    public Page<StudentDTO> queryByPage(Page<StudentDTO> page) {
+        //统计学生的数据量:精确统计
+        page.setCount(studentMapper.selectAmount());
+        //查询学生的数据
+        page.setObjects(studentMapper.selectAllByPage(page));
+        page.setTotal(page.getObjects().size());
+        return page;
+    }
+
     @SneakyThrows
     @Override
-    public IPage<Student> queryStudent(Map<String, Object> map) {
-
+    public Page<StudentDTO> queryByConditionsAndPage(Map<String, Object> map) {
         //判断map为空,不执行查询
         if (map == null)
             return null;
 
-        Student student;
-        //判断map的结构中是否有student层级
-        Object obj = map.get("student");
-        //根据map层级判断封装方式
-        if (obj == null)
-            student = QueryUtil.map2obj(map, Student.class);
-        else
-            student = QueryUtil.map2obj((Map<String, Object>) map.get("student"), Student.class);
+        //将map中的student层级下的所有属性展平
+        StudentDTO studentDTO = QueryUtil.map2obj(map, StudentDTO.class);
 
-        //获取查询条件
-        QueryWrapper<Student> wrapper = QueryUtil.queryWrapper_LikeMany(student);
-        wrapper.select(baseColumns);
+        //封装分页条件
+        Page<StudentDTO> page = new Page<>((int) map.get("currentPage"), (int) map.get("pageSize"));
+        studentDTO.setPage(page);
 
-        return studentMapper.selectPage(QueryUtil.getPageFromMap(map), wrapper);
+        //执行模糊+分页查询
+        List<StudentDTO> studentDTOS = studentMapper.selectByConditionsAndPage(studentDTO);
+
+        //封装分页查询结果
+        page.setObjects(studentDTOS);
+        page.setTotal(studentDTOS.size());
+        page.setCount(studentMapper.selectAmount());
+        return page;
     }
 
     @Override
     public List<Student> queryByIdOrName(String content) {
         return studentMapper.selectByIdOrName(content);
     }
-
-    @Override
-    public boolean isExistedByStudentId(String studentId) {
-        QueryWrapper<Student> wrapper = new QueryWrapper<>();
-        wrapper.eq("student_id",studentId);
-        wrapper.select("id");
-        return studentMapper.selectOne(wrapper)!=null;
-    }
-
 
     @Override
     public List<Status> queryGlobalStatus() {
@@ -121,6 +119,15 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
 
         return statuses;
     }
+
+    @Override
+    public Student queryByStudentId(String studentId) {
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.eq("student_id",studentId);
+        wrapper.select("id");
+        return studentMapper.selectOne(wrapper);
+    }
+
 
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
