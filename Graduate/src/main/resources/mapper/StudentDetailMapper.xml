@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.txy.graduate.mapper.StudentDetailMapper">
+    <!--统计各个状态完成的人数情况-->
+    <select id="selectStatus" parameterType="list" resultType="java.util.Map">
+        select sum(if(d.report_status = 1, 1, 0)) reportStatus,
+            sum(if(d.audit_status=1,1,0)) auditStatus,
+            sum(if(d.owe_status=1,1,0)) oweStatus,
+            sum(if(d.book_status=1,1,0)) bookStatus,
+            sum(if(d.archives_status=1,1,0)) archivesStatus,
+            sum(if(d.dormitory_status=1,1,0)) dormitoryStatus,
+            sum(if(d.diploma_status=1,1,0)) diplomaStatus
+        from graduate.tb_student_detail d where id_card in
+        <foreach collection="idCards" item="idCard" separator="," open="(" close=")">
+            #{idCard}
+        </foreach>
+    </select>
+
+    <!--统计各个状态的备注方法-->
+    <select id="selectNotes" resultType="java.util.Map">
+        select sum(if(d.report_status = 2, 1, 0)) reportStatus,
+        sum(if(d.audit_status=2,1,0)) auditStatus,
+        sum(if(d.owe_status=2,1,0)) oweStatus,
+        sum(if(d.book_status=2,1,0)) bookStatus,
+        sum(if(d.archives_status=2,1,0)) archivesStatus,
+        sum(if(d.dormitory_status=2,1,0)) dormitoryStatus,
+        sum(if(d.diploma_status=2,1,0)) diplomaStatus
+        from tb_student_detail d where id_card in
+        <foreach collection="idCards" item="idCard" separator="," open="(" close=")">
+            #{idCard}
+        </foreach>
+    </select>
+</mapper>

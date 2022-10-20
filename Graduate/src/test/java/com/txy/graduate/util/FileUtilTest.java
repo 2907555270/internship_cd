@@ -30,13 +30,13 @@ public class FileUtilTest {
 
     @Test
     public void testStudentDataExport(){
-        Result result = fileUtil.exportDataToExcel(studentService.queryAll(),"StudentData","student");
+        Result result = fileUtil.exportDataToExcel(studentService.queryAll("sc1010"),"StudentData","student");
         System.out.println(result);
     }
 
     @Test
     public void testProcessDataExport(){
-        Result result = fileUtil.exportDataToExcel(processService.queryAll(), "ProcessData", "process");
+        Result result = fileUtil.exportDataToExcel(processService.queryAll("sc1010"), "ProcessData", "process");
         System.out.println(result);
     }
 

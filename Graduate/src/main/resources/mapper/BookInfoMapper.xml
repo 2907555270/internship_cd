@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.txy.graduate.mapper.BookInfoMapper">
+  <resultMap id="BaseResultMap" type="com.txy.graduate.domain.po.BookInfo">
+    <!--@mbg.generated-->
+    <!--@Table graduate.tb_book_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="owe_amount" jdbcType="DECIMAL" property="oweAmount" />
+    <result column="book_amount" jdbcType="INTEGER" property="bookAmount" />
+    <result column="school_code" jdbcType="VARCHAR" property="schoolCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, username, id_card, owe_amount, book_amount, school_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from graduate.tb_book_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from graduate.tb_book_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.txy.graduate.domain.po.BookInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into graduate.tb_book_info (username, id_card, owe_amount, 
+      book_amount, school_code)
+    values (#{username,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, #{oweAmount,jdbcType=DECIMAL}, 
+      #{bookAmount,jdbcType=INTEGER}, #{schoolCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.txy.graduate.domain.po.BookInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into graduate.tb_book_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        username,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+      <if test="oweAmount != null">
+        owe_amount,
+      </if>
+      <if test="bookAmount != null">
+        book_amount,
+      </if>
+      <if test="schoolCode != null">
+        school_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="oweAmount != null">
+        #{oweAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="bookAmount != null">
+        #{bookAmount,jdbcType=INTEGER},
+      </if>
+      <if test="schoolCode != null">
+        #{schoolCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txy.graduate.domain.po.BookInfo">
+    <!--@mbg.generated-->
+    update graduate.tb_book_info
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="oweAmount != null">
+        owe_amount = #{oweAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="bookAmount != null">
+        book_amount = #{bookAmount,jdbcType=INTEGER},
+      </if>
+      <if test="schoolCode != null">
+        school_code = #{schoolCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txy.graduate.domain.po.BookInfo">
+    <!--@mbg.generated-->
+    update graduate.tb_book_info
+    set username = #{username,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      owe_amount = #{oweAmount,jdbcType=DECIMAL},
+      book_amount = #{bookAmount,jdbcType=INTEGER},
+      school_code = #{schoolCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

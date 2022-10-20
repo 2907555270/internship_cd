@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.txy.graduate.mapper.StudentInfoMapper">
+    <!--TODO:优化方向：暂时可以不优化
+            1.采用多线程分页批量读取数据，并写入到同一个excel中
+
+        TODO:现存问题：
+            1.没有对数据进行按条件筛选查询
+    -->
+    <select id="selectAll" resultType="com.txy.graduate.domain.dto.StudentDto">
+        select i.id,
+               student_id,
+               student_name,
+               student_dep,
+               student_pre,
+               student_class,
+               if(d.graduation_status = 1, '已完成', '未完成') as 'finnish_status'
+        from tb_student_info i
+                 join tb_student_detail d
+                      on i.id_card = d.id_card
+        where school_code = #{schoolCode};
+    </select>
+
+    <!--查询导航信息-->
+    <select id="selectNav" resultType="com.txy.graduate.domain.po.StudentInfo">
+        select distinct student_dep, student_pre, student_class
+        from tb_student_info
+        where school_code = #{schoolCode}
+    </select>
+
+    <!--根据学生的id修改学生的状态信息-->
+    <update id="updateStatus" parameterType="map">
+        update tb_student_detail set
+        <trim prefixOverrides="set" suffixOverrides=",">
+            <if test="map.graduationStatus != null and map.graduationStatus !=''">
+                graduation_status=#{map.graduationStatus},
+            </if>
+            <if test="map.reportStatus != null and map.reportStatus != ''">
+                report_status=#{map.reportStatus},
+            </if>
+            <if test="map.auditStatus != null and map.auditStatus != ''">
+                audit_status=#{map.auditStatus},
+            </if>
+            <if test="map.oweStatus != null and map.oweStatus != ''">
+                owe_status=#{map.oweStatus},
+            </if>
+            <if test="map.bookStatus != null and map.bookStatus != ''">
+                book_status=#{map.bookStatus},
+            </if>
+            <if test="map.archivesStatus != null and map.archivesStatus != ''">
+                archives_status=#{map.archivesStatus},
+            </if>
+            <if test="map.dormitoryStatus != null and map.dormitoryStatus != ''">
+                dormitory_status=#{map.dormitoryStatus},
+            </if>
+            <if test="map.diplomaStatus != null and map.diplomaStatus != ''">
+                diploma_status=#{map.diplomaStatus},
+            </if>
+        </trim>
+        where id = #{map.id}
+    </update>
+
+    <!--根据Id查询学生的图书欠款、欠款信息-->
+    <select id="selectBookInfoById" resultType="com.txy.graduate.domain.po.BookInfo">
+        select b.book_amount, b.owe_amount
+        from tb_book_info b,
+             tb_student_info i
+        where b.id_card = i.id_card
+          and i.id = #{id};
+    </select>
+
+
+    <!--根据学号删除学生信息-->
+    <delete id="deleteByStudentId" parameterType="long">
+        delete
+        from graduate.tb_student
+        where student_id = #{student_id}
+    </delete>
+
+    <!--查询该学号的学生的id-->
+    <select id="isExistedByStudentId" resultType="com.txy.graduate.domain.po.StudentInfo" parameterType="String">
+        select id
+        from graduate.tb_student
+        where student_id = #{studentId}
+    </select>
+
+    <!--根据id查询某个学生的学号-->
+    <select id="selectStudentIdById" resultType="java.lang.String">
+        select student_id
+        from graduate.tb_student
+        where id = #{id}
+    </select>
+</mapper>

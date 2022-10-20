@@ -1,6 +1,6 @@
 package com.txy.graduate.util;
 
-import com.txy.graduate.domain.po.Student;
+import com.txy.graduate.domain.po.StudentInfo;
 import com.txy.graduate.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class QueryWrapperUtilTest {
     private StudentService studentService;
 
     //创建一个数据对象用于测试
-    private final Student student = new Student();
+    private final StudentInfo student = new StudentInfo();
 
     @Test
     public void test_obj2map() {
@@ -34,7 +34,7 @@ public class QueryWrapperUtilTest {
         HashMap<String, Object> map = new HashMap<>();
         map.put("studentId","1632501");
         map.put("studentName","胡佳绩");
-        Student student = QueryUtil.map2obj(map, Student.class);
+        StudentInfo student = QueryUtil.map2obj(map, StudentInfo.class);
         System.out.println(student);
     }
 

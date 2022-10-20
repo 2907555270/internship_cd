@@ -1,17 +1,11 @@
 package com.txy.graduate.util;
 
 import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.annotation.write.style.ColumnWidth;
-import com.alibaba.excel.annotation.write.style.ContentFontStyle;
-import com.alibaba.excel.annotation.write.style.HeadFontStyle;
+
 import com.alibaba.excel.write.metadata.style.WriteCellStyle;
 import com.alibaba.excel.write.metadata.style.WriteFont;
 import com.alibaba.excel.write.style.HorizontalCellStyleStrategy;
 import com.txy.graduate.config.Result;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
@@ -32,6 +26,9 @@ public class FileUtil {
     @Value("${nginx.files.port}")
     private String PORT;
 
+    @Value("${root_path}")
+    private String ROOT_PATH;
+
     @Value("${img.root.path}")
     private String IMG_ROOT_PATH;
 
@@ -46,17 +43,17 @@ public class FileUtil {
     private int range;
 
 
-    //获取文件存储的根路径
+    //获取文件存储的类名称路径
     public <T> String getRootPath(Class<T> tClass) {
-        return IMG_ROOT_PATH + tClass.getSimpleName();
+        return ROOT_PATH + IMG_ROOT_PATH + tClass.getSimpleName();
     }
 
     //拼接访问文件的url
     public String getUrl(String fileName) {
         String baseUrl = "";
         if (!HOST.isEmpty() && !PORT.isEmpty())
-            baseUrl = HOST + ":" + PORT;
-        return (baseUrl + fileName.replaceAll("/opt/files", ""));
+            baseUrl = HOST + ":" + PORT + "/";
+        return (baseUrl + fileName.replaceAll(ROOT_PATH, ""));
     }
 
     //上传图片：支持的图片格式为：jpg,png,gif,bmp
@@ -118,9 +115,11 @@ public class FileUtil {
     public <T> Result exportDataToExcel(List<T> tList, String... args) {
         //默认参数
         //文件输出路径
-        String fileName = EXCEL_ROOT_PATH + "export-" + new Date() + ".xls";
+        String fileName = ROOT_PATH + EXCEL_ROOT_PATH + "export-" + new Date() + ".xls";
         //sheet名
         String sheetName = "sheet";
+
+        System.out.println(fileName);
 
         //数据是否为空
         if (tList == null || tList.isEmpty()) {
@@ -130,7 +129,7 @@ public class FileUtil {
         //有参数则获取参数，并初始化参数
         if (args != null) {
             if (args.length >= 1 && args[0] != null)
-                fileName = EXCEL_ROOT_PATH + args[0] + ".xls";
+                fileName = ROOT_PATH + EXCEL_ROOT_PATH + args[0] + ".xls";
             if (args.length >= 2 && args[1] != null)
                 sheetName = args[1];
         }
@@ -145,7 +144,6 @@ public class FileUtil {
             WriteFont headFont = new WriteFont();
             headFont.setFontName("宋体");
             headFont.setFontHeightInPoints((short) 12);
-            //headFont.setBold(true);
             headCellStyle.setWriteFont(headFont);
 
             //设置内容格式
@@ -166,6 +164,7 @@ public class FileUtil {
                     .sheet(sheetName)
                     .doWrite(() -> tList);
         } catch (Exception e) {
+            e.printStackTrace();
             return Result.result(500, false, "导出文件失败 -_-", null);
         }
 

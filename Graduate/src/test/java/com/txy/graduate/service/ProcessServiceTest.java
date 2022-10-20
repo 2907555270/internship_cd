@@ -18,7 +18,7 @@ public class ProcessServiceTest {
 
     @Test
     public void testQueryAll(){
-        List<Process> processes = processService.queryAll();
+        List<Process> processes = processService.queryAll("sc1010");
         for (Process process:processes ) {
             System.out.println(process);
         }

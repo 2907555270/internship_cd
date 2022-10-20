@@ -35,7 +35,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Resource
     private ISysRoleService roleService;
 
-    @DS("slave")
+    
     @Override
     public List<SysUser> queryAll() {
         return userMapper.selectList(null);
@@ -44,7 +44,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     /**
      * user表
      */
-    @DS("slave")
+    
     @SneakyThrows
     @Override
     public IPage<SysUser> querySysUser(Map<String, Object> map) {
@@ -56,7 +56,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return userMapper.selectPage(QueryUtil.getPageFromMap(map), wrapper);
     }
 
-    @DS("slave")
+    
     @Override
     public SysUser queryUserByUserName(String username) {
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
@@ -67,7 +67,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     /**
      * user user_role表
      */
-    @DS("slave")
+    
     @Override
     public String queryUserAuthorityInfo(Long userId) {
         String authority = "";

@@ -1,15 +1,18 @@
 package com.txy.graduate.service;
 
-import com.txy.graduate.config.Page;
 import com.txy.graduate.domain.dto.StudentDto;
-import com.txy.graduate.domain.po.Student;
-import com.txy.graduate.domain.vo.Status;
+import com.txy.graduate.domain.po.StudentDetail;
+import com.txy.graduate.domain.po.StudentInfo;
+import com.txy.graduate.mapper.StudentDetailMapper;
+import com.txy.graduate.util.QueryUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 public class StudentServiceTest {
@@ -18,37 +21,40 @@ public class StudentServiceTest {
 
     @Test
     public void testQueryAll(){
-        List<StudentDto> studentDTOS = studentService.queryAll();
-        System.out.println(studentDTOS);
+        List<StudentDto> studentDTOS = studentService.queryAll("sc1010");
+        for (StudentDto dto:studentDTOS ) {
+            System.out.println(dto);
+        }
     }
 
     @Test
     public void testQueryAllByPage(){
-        Page<StudentDto> studentDTOPage = new Page<>(2,5);
-        Page<StudentDto> dtoPage = studentService.queryByPage(studentDTOPage);
-        System.out.println(dtoPage);
+
     }
 
     @Test
     public void testQueryByConditionsAndPage(){
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("currentPage",1);
-        map.put("pageSize",3);
-        map.put("studentDep","计算机");
-        Page<StudentDto> studentPage = studentService.queryByConditionsAndPage(map);
-        System.out.println(studentPage);
+
     }
 
     @Test
     public void testQueryByIdOrName(){
-        String content = "张三四";
-        List<Student> students = studentService.queryByIdOrName(content);
-        System.out.println(students);
     }
 
     @Test
     public void testStatistic(){
-        List<Status> statuses = studentService.queryGlobalStatus();
+        StudentInfo studentInfo = new StudentInfo();
+        studentInfo.setSchoolCode("sc1010");
+        Map<String,Map<String,Object>> statuses = studentService.queryStatus(studentInfo);
         System.out.println(statuses);
+    }
+
+    @Test
+    public void testUpdateStatus() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("id",2);
+        map.put("reportStatus",1);
+        boolean flag = studentService.updateStatus(map);
+        System.out.println(flag);
     }
 }

@@ -4,7 +4,6 @@ import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.write.style.ColumnWidth;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.txy.graduate.config.Page;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,9 +14,7 @@ import java.io.Serializable;
  */
 @Data
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@ColumnWidth()
-public class StudentDto implements Serializable {
+public class StudentDto{
     @ExcelIgnore
     private Long id;
 
@@ -39,6 +36,6 @@ public class StudentDto implements Serializable {
     @ExcelProperty(value = "完成状态")
     private String finnishStatus;
 
-    @ExcelIgnore //忽略该字段的读取
-    private Page<StudentDto> page;
+    @ExcelIgnore
+    private String schoolCode;
 }

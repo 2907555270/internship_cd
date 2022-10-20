@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProcessService extends IService<Process> {
     //查询所有数据
-    List<Process> queryAll();
+    List<Process> queryAll(String schoolCode);
 
     //按id查询某个数据
     Process queryById(Long id);

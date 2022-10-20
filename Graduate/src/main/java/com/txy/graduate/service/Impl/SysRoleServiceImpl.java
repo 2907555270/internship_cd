@@ -31,7 +31,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     /**
      * Role表
      */
-    @DS("slave")
+    
     @Override
     public List<SysRole> queryAll(Integer... args) {
         //暂时不筛选字段
@@ -41,7 +41,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     }
 
 
-    @DS("slave")
+    
     @SneakyThrows
     @Override
     public IPage<SysRole> querySysRole(Map<String, Object> map) {
@@ -56,7 +56,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     /**
      * user_role表
      */
-    @DS("slave")
+    
     @Override
     public List<SysRole> queryRoleByUid(Long user_id) {
         return roleMapper.selectRoleByUid(user_id);
@@ -86,7 +86,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     /**
      * role_menu表
      */
-    @DS("slave")
+    
     @Override
     public List<SysRole> queryRoleByMid(Long menu_id) {
         return roleMapper.selectRoleByMenuId(menu_id);

@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.alibaba.excel.annotation.ExcelIgnore;
-import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -91,8 +90,8 @@ public class Process {
     /**
      * 备注
      */
-    @TableField("note")
-    private String note;
+    @TableField("school_code")
+    private String schoolCode;
 
     /**
      * 地点图片

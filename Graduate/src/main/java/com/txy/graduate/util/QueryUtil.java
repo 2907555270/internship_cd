@@ -19,7 +19,6 @@ import java.util.Map;
  *      3. 获取一个对象的所有的不为空的属性的属性名集合
  */
 public class QueryUtil {
-
     /**
      * 获取一个对象Object中的所有属性不为空的属性名
      */

@@ -1,0 +1,4057 @@
+{
+	"info": {
+		"_postman_id": "6e1e8bb7-ea11-47c5-8658-444c917d1dce",
+		"name": "文档",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login 登录",
+			"item": [
+				{
+					"name": "captcha(获取验证码)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/captcha",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"captcha"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功获取到验证码",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/captcha",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"captcha"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:37:56 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"成功获取到验证码 ^_^\",\n    \"data\": {\n        \"base64Img\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAoAHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0IUedEsyQtIglcFlQsNzAYyQPQZH50oFebfEjwxqcd9D4w0GeYX9ko82IMW+QfxKPTGcr0Iz75APTxUgFcX4c+IFjrvhWbVAoF5aqBcWinneeFx7Meh/wrDj+MDX6bdJ8Nahdy4yFAyP4ueAePl/n6UAeqCnrXOeE77xBqNrNca7p8dgxkxFADk7MdTzwc5rG8e+MW0O1f7KxzFJ5bOCw2OFD4OAezxgA8EtzwDQB6ABUgrjPh34rufFOkSSXkQiuIdvy87tjA7SxIAycZ47EHvXZ5VFLMQFAySTwBQBIKkWq63MHmvF5yeYhUMu4ZXd0z9e1ZvibVL7SNIe4060+1XH8EeCc45PT/ZDH8AOSQKAN1akArxKx+Od1ZXLQ+INBlgABIZAVPAPYj1FeqeGfFOmeKbH7XpswdN7pg8H5SAePxU/RhQBuipFrlPiB4hfwz4PvL+KRUm2lIyTyCQcY9ecV5h8OfCuv+IdOtPEVt45vILp5t81qJC4dA2CGG7jOD1BoA99FFOAooA4sCpAKYKkFAHkvjX4dRaRBqnibQ9QlsnVRI1pGnyNz8wGDwCcEDBAI+mOd8E/ER/CWlPb3Wg3E+AAJ0bbhASQCCOxZu/evb9Z1fTtFsPtGpypHbu4j+YZBJ6DFYfi7X/Dtv4WuftE9rLHNE0caoQxyRwQB7gUAZkPxj8Py6PLdstxDOv3IpIWIc8dGAI9ep7VxJuNI1Xw9rOvahqdlcajMJHgspZgzq24bG8vPJCcYx2rqPhl4PE3hI/2gtzFFNP5yxbtpb93tyfY7iRUXjH4U+G9P0aW9tPOt3jUkDzMr9Tntx29fagDW+DisPB32lCpXcyiONSqsQfvH/aPy9fSquseL9X1/Wn0DRQqBw26YlcInAyR8wIzkdie2Otc18PPANtrGk3d5ctNFLExj/dSNG6nHQ7SORxng+vOa5K30s2viy9tDqxt2jkUpJNKv7xg3DZIIbbyccE+xoA7O5k1Pwv4qsbVrmO7UlwnloCqNuVwx5PA2b8dBtHA6V7vJcY02S6gXzv3JkjUfx8ZA/GvnPTvD2pyaqrw3FpeTIw2tdwsWZnJVUzG5PKhiRxtHUdh6DrOu/EXwyi3c2g6dPYwKof8As2QsuB1yrfN09BxigDm/HvxM0bVtPv8ARpNFkGpqDHHNlWRWZSCc9cjcw6V1nwQ0G507wz9rvAu6UloADyqvtLZ9zsX8q5bxR44+H/jPQJmubL7Pq235Xkg2yqQRn5wOeM8Zq78AZLwXOrwCWSXTQAYWbOMhsfhx2oAZ8afA1jaaVqHiyW8vJ7+e5jjjjZx5USnjAGM9B6/hWt8NvhZoUuieGvFKyXkOpIq3LbJRsc5PBBHTHoRWz8a7K6vfAbpbQST4mX93EpZiegOB+NdJ8OIpYvh/o0c0MkLrbhTHIpVlxxgg9KAOqAopRRQBxi1wXjTxT4rs9aTQ/DeiGaaWISC7K7wASR04VcEdWJ+lFFAGJafCXWPEE327xjr07zkHbFC28pn/AGj8o+ijHvUS/DnSvBXinS7vUmbUdHupPs5eZdv2eYkGMtjgqcEdsZoooA9qjRURURQqqMAAcAUs1tBdRGK4hjljJB2yKGGR04NFFAC2dlbWMCw20SxoqhBjk7RwBk84Has/UfCelatdRXNzE/mxcoyNjDdmPqR2zkD0oooAu6boGnaW4ktrceaFI82Ql3OTkncecnv9B2ArV2hgQwBB6g0UUAclrfwu8K69dfabjT1jmP3mh+XdyvYey4/E1Wg+GKaJul8J6/qGiyt96LIuLdj7xv8AU96KKALA1rx3oPGreH7bW7Vetzo8u2UD3hfqf901s+H/AB1oXiK9bT7aaa31JFLPY3cDQzIB1yrDn8CaKKAOpWiiigD/2Q==\",\n        \"key\": \"416fc865cc39467c9c0b5eb6f312a832\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login(登录)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login?code=bfwbf&key=572850931b134c22816d539853162a0a&username=admin&password=111111",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "bfwbf"
+								},
+								{
+									"key": "key",
+									"value": "572850931b134c22816d539853162a0a"
+								},
+								{
+									"key": "username",
+									"value": "admin"
+								},
+								{
+									"key": "password",
+									"value": "111111"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "验证码错误",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login?code=bnc4b&key=bafae03f12cf4cbcb680480d452d1c2c&username=admin&password=111111",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "bnc4b"
+										},
+										{
+											"key": "key",
+											"value": "bafae03f12cf4cbcb680480d452d1c2c"
+										},
+										{
+											"key": "username",
+											"value": "admin"
+										},
+										{
+											"key": "password",
+											"value": "111111"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Jul 2022 07:57:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"账号或密码不正确验证码错误\",\n    \"code\": 500,\n    \"flag\": false\n}"
+						},
+						{
+							"name": "账号或密码错误",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login?code=efbba&key=469f72de426847ad99775bb55c4e21fe&username=admin&password=123",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "efbba"
+										},
+										{
+											"key": "key",
+											"value": "469f72de426847ad99775bb55c4e21fe"
+										},
+										{
+											"key": "username",
+											"value": "admin"
+										},
+										{
+											"key": "password",
+											"value": "123"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Jul 2022 07:58:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"账号或密码不正确Bad credentials\",\n    \"code\": 500,\n    \"flag\": false\n}"
+						},
+						{
+							"name": "登录成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login?code=depxn&key=9dd6806a6e9847eb996e09fc0c9bcdb1&username=admin&password=123",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "depxn"
+										},
+										{
+											"key": "key",
+											"value": "9dd6806a6e9847eb996e09fc0c9bcdb1"
+										},
+										{
+											"key": "username",
+											"value": "admin"
+										},
+										{
+											"key": "password",
+											"value": "123"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Authorization",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1Nzg3NDQwMSwiZXhwIjoxNjU4NDc5MjAxfQ.WJv7hrH99-2XnHYrsB7tA3r6I7H8UpkQ-DQiSX6EGpIzoQ7AmL5UQsv4ttppVRRAos03EIiEnAz4a4ErSxCGSw"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:40:01 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"登录成功\",\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": \"ROLE_admin\"\n}"
+						}
+					]
+				},
+				{
+					"name": "logout(退出)",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "退出成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Authorization",
+									"value": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:40:23 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"退出成功\",\n    \"code\": 200,\n    \"flag\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "student  学生信息",
+			"item": [
+				{
+					"name": "findAllByPage(分页查询学生信息）",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/student/list/sc1010/1/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"list",
+								"sc1010",
+								"1",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功查询到数据",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/student/list/sc1010/1/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"list",
+										"sc1010",
+										"1",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 07:08:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"查询成功 ^_^\",\n    \"data\": {\n        \"currentPage\": 1,\n        \"pageSize\": 3,\n        \"objects\": [\n            {\n                \"id\": 1,\n                \"studentId\": \"163001\",\n                \"studentName\": \"张兴\",\n                \"studentDep\": \"计算机\",\n                \"studentPre\": \"计算机\",\n                \"studentClass\": \"计算302班\",\n                \"finnishStatus\": \"已完成\",\n                \"schoolCode\": \"sc1010\"\n            },\n            {\n                \"id\": 2,\n                \"studentId\": \"163002\",\n                \"studentName\": \"张翔峰\",\n                \"studentDep\": \"管理\",\n                \"studentPre\": \"管理\",\n                \"studentClass\": \"2\",\n                \"finnishStatus\": \"已完成\",\n                \"schoolCode\": \"sc1010\"\n            },\n            {\n                \"id\": 3,\n                \"studentId\": \"163003\",\n                \"studentName\": \"邓燕飞\",\n                \"studentDep\": \"体育\",\n                \"studentPre\": \"体育\",\n                \"studentClass\": \"3\",\n                \"finnishStatus\": \"未完成\",\n                \"schoolCode\": \"sc1010\"\n            }\n        ],\n        \"start\": 0,\n        \"total\": 3,\n        \"count\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "findByConditions(分页+条件查询学生信息)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPage\":1,\n    \"pageSize\":3,\n    \"student\":{\n        \"studentId\":\"1630\",\n        \"studentName\":\"张\",\n        \"studentDep\":\"计算机\",\n        \"studentPre\":\"计算机\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/select/sc1010",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"select",
+								"sc1010"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功查询到数据",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"currentPage\":1,\n    \"pageSize\":3,\n    \"student\":{\n        \"studentId\":\"1630\",\n        \"studentName\":\"张\",\n        \"studentDep\":\"计算机\",\n        \"studentPre\":\"计算机\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/select/sc1010",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"select",
+										"sc1010"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 07:11:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"数据查询成功 ^_^\",\n    \"data\": {\n        \"currentPage\": 1,\n        \"pageSize\": 3,\n        \"objects\": [\n            {\n                \"id\": 1,\n                \"studentId\": \"163001\",\n                \"studentName\": \"张兴\",\n                \"studentDep\": \"计算机\",\n                \"studentPre\": \"计算机\",\n                \"studentClass\": \"计算302班\",\n                \"finnishStatus\": \"已完成\",\n                \"schoolCode\": \"sc1010\"\n            },\n            {\n                \"id\": 2,\n                \"studentId\": \"163002\",\n                \"studentName\": \"张翔峰\",\n                \"studentDep\": \"管理\",\n                \"studentPre\": \"管理\",\n                \"studentClass\": \"2\",\n                \"finnishStatus\": \"已完成\",\n                \"schoolCode\": \"sc1010\"\n            },\n            {\n                \"id\": 3,\n                \"studentId\": \"163003\",\n                \"studentName\": \"邓燕飞\",\n                \"studentDep\": \"体育\",\n                \"studentPre\": \"体育\",\n                \"studentClass\": \"3\",\n                \"finnishStatus\": \"未完成\",\n                \"schoolCode\": \"sc1010\"\n            }\n        ],\n        \"start\": 0,\n        \"total\": 3,\n        \"count\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "statistic(学生离校手续统计)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/student/statistic/sc1010",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"statistic",
+								"sc1010"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "正常统计结果",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/student/statistic/sc1010",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"statistic",
+										"sc1010"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:42:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": [\n        {\n            \"title\": \"audit\",\n            \"total\": 4,\n            \"completed\": 4,\n            \"unfinished\": 0,\n            \"noteNum\": 0\n        },\n        {\n            \"title\": \"book\",\n            \"total\": 4,\n            \"completed\": 1,\n            \"unfinished\": 3,\n            \"noteNum\": 0\n        },\n        {\n            \"title\": \"dormitory\",\n            \"total\": 4,\n            \"completed\": 4,\n            \"unfinished\": 0,\n            \"noteNum\": 0\n        },\n        {\n            \"title\": \"report\",\n            \"total\": 4,\n            \"completed\": 4,\n            \"unfinished\": 0,\n            \"noteNum\": 0\n        },\n        {\n            \"title\": \"archive\",\n            \"total\": 4,\n            \"completed\": 3,\n            \"unfinished\": 1,\n            \"noteNum\": 1\n        },\n        {\n            \"title\": \"diploma\",\n            \"total\": 4,\n            \"completed\": 2,\n            \"unfinished\": 2,\n            \"noteNum\": 0\n        },\n        {\n            \"title\": \"owe\",\n            \"total\": 4,\n            \"completed\": 4,\n            \"unfinished\": 0,\n            \"noteNum\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "searchTip(搜索提示--只查5条数据)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/student/search/sc1010/张",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"search",
+								"sc1010",
+								"张"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "输入为学号",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/student/search/sc1010/16300",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"search",
+										"sc1010",
+										"16300"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 07:16:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"studentId\": \"163001\",\n            \"studentName\": \"张兴\",\n            \"studentClass\": \"计算302班\",\n            \"schoolCode\": \"sc1010\"\n        },\n        {\n            \"id\": 2,\n            \"studentId\": \"163002\",\n            \"studentName\": \"张翔峰\",\n            \"studentClass\": \"2\",\n            \"schoolCode\": \"sc1010\"\n        },\n        {\n            \"id\": 3,\n            \"studentId\": \"163003\",\n            \"studentName\": \"邓燕飞\",\n            \"studentClass\": \"3\",\n            \"schoolCode\": \"sc1010\"\n        },\n        {\n            \"id\": 4,\n            \"studentId\": \"163004\",\n            \"studentName\": \"支凤婷\",\n            \"studentClass\": \"4\",\n            \"schoolCode\": \"sc1010\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "输入为姓名",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/student/search/sc1010/张",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"search",
+										"sc1010",
+										"张"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 07:16:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"studentId\": \"163001\",\n            \"studentName\": \"张兴\",\n            \"studentClass\": \"计算302班\",\n            \"schoolCode\": \"sc1010\"\n        },\n        {\n            \"id\": 2,\n            \"studentId\": \"163002\",\n            \"studentName\": \"张翔峰\",\n            \"studentClass\": \"2\",\n            \"schoolCode\": \"sc1010\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "findStatusById(根据id获取学生离校手续状态信息)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/student/one/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"one",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "查找成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/student/one/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 07:40:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"id\": 1,\n        \"studentId\": \"163001\",\n        \"studentName\": \"张兴\",\n        \"studentDep\": \"计算机\",\n        \"studentPre\": \"计算机\",\n        \"studentClass\": \"计算302班\",\n        \"reportStatus\": 1,\n        \"reportNote\": \"\",\n        \"auditStatus\": 1,\n        \"auditNote\": \"\",\n        \"oweStatus\": 1,\n        \"oweNote\": \"\",\n        \"bookStatus\": 0,\n        \"bookNote\": \"\",\n        \"archivesStatus\": 2,\n        \"archivesNote\": \"地址改派\",\n        \"dormitoryStatus\": 1,\n        \"dormitoryNote\": \"\",\n        \"diplomaStatus\": 1,\n        \"diplomaNote\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "findPartInfoById(根据学生的id获取指定状态对应的信息：不允许同时获取多个状态的信息)",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"diplomaStatus\":\"xx\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/one/part",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"one",
+								"part"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "查询报到证领取信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"reportStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 16:28:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"studentDep\": \"163001\",\n        \"studentName\": \"张兴\",\n        \"reportStatus\": 1,\n        \"id\": 1,\n        \"studentClass\": \"计算302班\"\n    }\n}"
+						},
+						{
+							"name": "获取毕业审核信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"auditStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 16:29:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"studentDep\": \"163001\",\n        \"studentName\": \"张兴\",\n        \"auditStatus\": 1,\n        \"id\": 1,\n        \"studentClass\": \"计算302班\"\n    }\n}"
+						},
+						{
+							"name": "查询欠费缴纳信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"oweStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 16:56:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"studentDep\": \"163001\",\n        \"studentName\": \"张兴\",\n        \"oweAmount\": 0,\n        \"id\": 1,\n        \"studentClass\": \"计算302班\",\n        \"oweStatus\": 1\n    }\n}"
+						},
+						{
+							"name": "查询图书归还信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"bookStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jul 2022 00:55:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"bookInfo\": {\n            \"oweAmount\": 3,\n            \"bookAmount\": 0\n        },\n        \"studentDep\": \"163001\",\n        \"bookStatus\": 0,\n        \"studentName\": \"张兴\",\n        \"id\": 1,\n        \"studentClass\": \"计算302班\"\n    }\n}"
+						},
+						{
+							"name": "查询档案去向信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"archivesStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:03:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"studentDep\": \"163001\",\n        \"studentName\": \"张兴\",\n        \"id\": 1,\n        \"archivesNote\": \"地址改派\",\n        \"archivesStatus\": 2,\n        \"studentClass\": \"计算302班\",\n        \"archivesAddress\": \"abc\"\n    }\n}"
+						},
+						{
+							"name": "查询公寓退宿信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"dormitoryStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:06:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"dormitoryStatus\": 1,\n        \"studentDep\": \"163001\",\n        \"studentName\": \"张兴\",\n        \"id\": 1,\n        \"studentClass\": \"计算302班\"\n    }\n}"
+						},
+						{
+							"name": "查询毕业证发放信息",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"diplomaStatus\":\"xx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/one/part",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"one",
+										"part"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jul 2022 01:25:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"data\": {\n        \"studentDep\": \"163001\",\n        \"diplomaInfo\": {\n            \"diplomaTime\": \"2022-07-11T07:46:01.000+00:00\",\n            \"diplomaStatus\": 1,\n            \"diplomaNote\": \"\"\n        },\n        \"studentName\": \"张兴\",\n        \"id\": 1,\n        \"studentClass\": \"计算302班\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "updateStatus(修改学生流程完成状态)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"archivesStatus\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/update/status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"update",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "发放毕业证",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"graduationStatus\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/update/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"update",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 15:09:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"修改成功 ^_^\"\n}"
+						},
+						{
+							"name": "领取报到证",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"reportStatus\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/update/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"update",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 15:12:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"修改成功 ^_^\"\n}"
+						},
+						{
+							"name": "毕业审核",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"auditStatus\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/update/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"update",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 15:13:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"修改成功 ^_^\"\n}"
+						},
+						{
+							"name": "档案地址正确",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"archivesStatus\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/update/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"update",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:37:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"修改成功 ^_^\"\n}"
+						},
+						{
+							"name": "档案地址需要改派",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":1,\n    \"archivesStatus\":2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student/update/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"update",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:43:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"修改成功 ^_^\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "process  流程信息",
+			"item": [
+				{
+					"name": "findAll(查询所有流程信息)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/process/list/sc1010",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"process",
+								"list",
+								"sc1010"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "查询成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/process/list/sc1010",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"list",
+										"sc1010"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 08:11:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"查询成功 ^_^\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"报到证领取\",\n            \"content\": \"到辅导员处进行信息核对，提交相关资料，点击下方按钮领取报到证\",\n            \"address\": \"信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 2,\n            \"title\": \"毕业审核\",\n            \"content\": \"提示：办理地点需上传地点图片\",\n            \"address\": \"行政楼220教务处;\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 3,\n            \"title\": \"欠费缴纳\",\n            \"content\": \"配置相关内容及办理时间、办理地点等\",\n            \"address\": \"行政楼120财务处\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 4,\n            \"title\": \"图书归还\",\n            \"content\": \"提示：办理地点需上传地点图片\",\n            \"address\": \"图书馆T1-208流通部\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 5,\n            \"title\": \"档案去向确认\",\n            \"content\": \"配置相关内容及办理时间、办理地点等\",\n            \"address\": \"地点\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 6,\n            \"title\": \"公寓退宿\",\n            \"content\": \"提示：办理地点需上传地点图片\",\n            \"address\": \"地点\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 7,\n            \"title\": \"毕业证领取\",\n            \"content\": \"配置相关内容及办理时间、办理地点等\",\n            \"address\": \"地点\",\n            \"type\": 1,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        },\n        {\n            \"id\": 8,\n            \"title\": \"移动端登录界面\",\n            \"content\": \"提示：办理地点需上传地点图片\",\n            \"address\": \"地点\",\n            \"type\": 2,\n            \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n            \"phone\": \"\",\n            \"schoolCode\": \"sc1010\",\n            \"imgPaths\": [\n                \"/opt/files/img/1.jpg\",\n                \"/opt/files/img/2.png\",\n                \"/opt/files/img/3.gif\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "findById(按流程id查询流程信息)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/process/one/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"process",
+								"one",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "查询成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/process/one/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"one",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 08:04:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"查询成功 ^_^\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"报到证领取\",\n        \"content\": \"到辅导员处进行信息核对，提交相关资料，点击下方按钮领取报到证\",\n        \"address\": \"信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;\",\n        \"status\": 1,\n        \"type\": 1,\n        \"startTime\": \"2022-07-11T17:51:21.000+00:00\",\n        \"endTime\": \"2022-07-11T17:51:21.000+00:00\",\n        \"phone\": \"\",\n        \"schoolCode\": \"sc1010\",\n        \"imgPaths\": [\n            \"/opt/files/img/1.jpg\",\n            \"/opt/files/img/2.png\",\n            \"/opt/files/img/3.gif\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "uploadImgs(上传图片)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pics",
+									"type": "file",
+									"src": [
+										"/home/flyme/图片/img/wallpaper2.png",
+										"/home/flyme/图片/img/wallpaper.png",
+										"/home/flyme/图片/img/search_bgcolor2.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/process/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"process",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "文件目录初始化失败",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pics",
+											"type": "file",
+											"src": [
+												"/home/flyme/图片/img/wallpaper2.png",
+												"/home/flyme/图片/img/wallpaper.png",
+												"/home/flyme/图片/img/search_bgcolor2.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/process/upload",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Jul 2022 09:47:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"flag\": false,\n    \"msg\": \"文件目录初始化失败:/home/flyme/file_system/graduate/img/Process\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "无图片上传",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pics",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/process/upload",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Jul 2022 09:52:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"flag\": false,\n    \"msg\": \"图片内容为空，上传失败 -_-\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "图片上传成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pics",
+											"type": "file",
+											"src": [
+												"/home/flyme/图片/img/wallpaper2.png",
+												"/home/flyme/图片/img/wallpaper.png",
+												"/home/flyme/图片/img/search_bgcolor2.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/process/upload",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:55:04 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"图片上传成功 ^_^\",\n    \"data\": [\n        \"172.20.0.4:80/graduate/img/Process/1657875304104540.png\",\n        \"172.20.0.4:80/graduate/img/Process/1657875304113887.png\",\n        \"172.20.0.4:80/graduate/img/Process/1657875304113761.jpg\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "save(添加新流程信息)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"test1\",\n    \"content\":\"test1\",\n    \"phone\":\"17390201035\",\n    \"note\":\"test\",\n    \"address\":\"tes1t\",\n    \"type\":1,\n    \"imgPaths\":[\n        \"/home/flyme/file_system/graduate/img/Process/1658339349630183.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1658339349636147.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1658339349636750.jpg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/process/save",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"process",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "添加成功",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"test1\",\n    \"content\":\"test1\",\n    \"phone\":\"17390201035\",\n    \"note\":\"test\",\n    \"address\":\"tes1t\",\n    \"type\":1,\n    \"imgPaths\":[\n        \"/home/flyme/file_system/graduate/img/Process/1658339349630183.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1658339349636147.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1658339349636750.jpg\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/process/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:51:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"添加成功 ^_^\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateById(按流程Id更新流程信息)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":25,\n    \"title\":\"test\",\n    \"imgPaths\":[\n        \"/home/flyme/file_system/graduate/img/Process/1657768353885627.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1657768353885442.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1657768353886292.jpg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/process/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"process",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "修改成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":25,\n    \"title\":\"test\",\n    \"imgPaths\":[\n        \"/home/flyme/file_system/graduate/img/Process/1657768353885627.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1657768353885442.png\",\n        \"/home/flyme/file_system/graduate/img/Process/1657768353886292.jpg\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/process/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:52:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"修改成功 ^_^\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteById(按流程id删除流程信息)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/process/delete/25",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"process",
+								"delete",
+								"25"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "删除成功",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/process/delete/25",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"process",
+										"delete",
+										"25"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Jul 2022 17:53:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"删除成功 ^_^\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "export 导出数据",
+			"item": [
+				{
+					"name": "导出学生信息",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sys/export/student?fileName=StudentData&sheetName=student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sys",
+								"export",
+								"student"
+							],
+							"query": [
+								{
+									"key": "fileName",
+									"value": "StudentData"
+								},
+								{
+									"key": "sheetName",
+									"value": "student"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "导出成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/sys/export/student?fileName=StudentData&sheetName=student",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sys",
+										"export",
+										"student"
+									],
+									"query": [
+										{
+											"key": "fileName",
+											"value": "StudentData"
+										},
+										{
+											"key": "sheetName",
+											"value": "student"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:58:41 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"172.20.0.4:80/graduate/excel/StudentData.xls\"\n}"
+						}
+					]
+				},
+				{
+					"name": "导出离校流程信息",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sys/export/process?fileName=ProcessData&sheetName=process",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sys",
+								"export",
+								"process"
+							],
+							"query": [
+								{
+									"key": "fileName",
+									"value": "ProcessData"
+								},
+								{
+									"key": "sheetName",
+									"value": "process"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "导出成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/sys/export/process?fileName=ProcessData&sheetName=process",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sys",
+										"export",
+										"process"
+									],
+									"query": [
+										{
+											"key": "fileName",
+											"value": "ProcessData"
+										},
+										{
+											"key": "sheetName",
+											"value": "process"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:59:08 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"172.20.0.4:80/graduate/excel/ProcessData.xls\"\n}"
+						}
+					]
+				},
+				{
+					"name": "导出菜单信息",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sys/export/menu?fileName=MenuData&sheetName=menu",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sys",
+								"export",
+								"menu"
+							],
+							"query": [
+								{
+									"key": "fileName",
+									"value": "MenuData"
+								},
+								{
+									"key": "sheetName",
+									"value": "menu"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "导出成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{admin_token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/sys/export/menu?fileName=MenuData&sheetName=menu",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sys",
+										"export",
+										"menu"
+									],
+									"query": [
+										{
+											"key": "fileName",
+											"value": "MenuData"
+										},
+										{
+											"key": "sheetName",
+											"value": "menu"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:59:22 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"172.20.0.4:80/graduate/excel/MenuData.xls\"\n}"
+						}
+					]
+				},
+				{
+					"name": "导出用户信息",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sys/export/user?fileName=UserData&sheetName=user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sys",
+								"export",
+								"user"
+							],
+							"query": [
+								{
+									"key": "fileName",
+									"value": "UserData"
+								},
+								{
+									"key": "sheetName",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "导出成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/sys/export/user?fileName=UserData&sheetName=user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sys",
+										"export",
+										"user"
+									],
+									"query": [
+										{
+											"key": "fileName",
+											"value": "UserData"
+										},
+										{
+											"key": "sheetName",
+											"value": "user"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:59:36 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"172.20.0.4:80/graduate/excel/UserData.xls\"\n}"
+						}
+					]
+				},
+				{
+					"name": "导出权限信息",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sys/export/role?fileName=RoleData&sheetName=role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sys",
+								"export",
+								"role"
+							],
+							"query": [
+								{
+									"key": "fileName",
+									"value": "RoleData"
+								},
+								{
+									"key": "sheetName",
+									"value": "role"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "导出成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/sys/export/role?fileName=RoleData&sheetName=role",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sys",
+										"export",
+										"role"
+									],
+									"query": [
+										{
+											"key": "fileName",
+											"value": "RoleData"
+										},
+										{
+											"key": "sheetName",
+											"value": "role"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Jul 2022 08:59:50 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"flag\": true,\n    \"msg\": \"172.20.0.4:80/graduate/excel/RoleData.xls\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -29,9 +29,9 @@ public class ProcessController {
 
 
     //查询所有的流程配置信息
-    @GetMapping("/list")
-    public Result findAll() {
-        List<Process> list = processService.queryAll();
+    @GetMapping("/list/{schoolCode}")
+    public Result findAll(@PathVariable String schoolCode) {
+        List<Process> list = processService.queryAll(schoolCode);
         boolean flag = list.size() > 0;
         return Result.result(flag?200:404,flag, flag ? "查询成功 ^_^" : "未查询到任何数据 -_-", list);
     }
@@ -47,9 +47,9 @@ public class ProcessController {
     //上传流程对应的地点图片
     @PreAuthorize("hasRole('admin')")
     @PostMapping("/upload")
-    public Result upload(@RequestParam("pics") MultipartFile[] multipartFiles) {
+    public Result upload(@RequestBody MultipartFile[] file) {
         try {
-            return fileUtil.uploadPics(multipartFiles, Process.class);
+            return fileUtil.uploadPics(file, Process.class);
         } catch (IOException e) {
             e.printStackTrace();
             return Result.result(500,false,"图片上传失败 -_-",null);

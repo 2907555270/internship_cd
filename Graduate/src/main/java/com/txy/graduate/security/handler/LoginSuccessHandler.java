@@ -19,7 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 登录成功过滤器
@@ -58,9 +60,15 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         // 获取用户的权限
         List<SysRole> roles = roleService.queryRoleByUid(sysUser.getId());
 
+        //封装用户的信息
+        Map<String, Object> map = new HashMap<>();
+        map.put("role","ROLE_"+roles.get(0).getCode());
+        map.put("id",sysUser.getId());
+        map.put("username",sysUser.getUsername());
+
         // 响应登录成功请求
         httpServletResponse.setHeader(jwtUtil.getHeader(),jwt);
-        Result resp = Result.result(200,true, "登录成功", "ROLE_"+roles.get(0).getCode());
+        Result resp = Result.result(200,true, "登录成功", map);
         outputStream.write(JSONUtil.toJsonStr(resp).getBytes(StandardCharsets.UTF_8));
         outputStream.flush();
         outputStream.close();

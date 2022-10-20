@@ -7,6 +7,7 @@ import com.txy.graduate.domain.po.Process;
 import com.txy.graduate.mapper.ProcessMapper;
 import com.txy.graduate.service.ProcessService;
 import com.txy.graduate.util.FileUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,20 +25,33 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
     @Resource(name = "fileUtil")
     private FileUtil fileUtil;
 
-    private static final String[] baseColumns = {"id", "title", "content", "address", "start_time", "end_time", "phone",
-            "type", "note", "img", "base_img_path"};
+    @Value("${img.root.path}")
+    private String IMG_ROOT_PATH;
 
-    @DS("slave")
+    @Value("${project.host}")
+    private String HOST;
+
+    @Value("${nginx.files.port}")
+    private String PORT;
+
+    private static final String[] baseColumns = {"id", "title", "content", "address", "start_time", "end_time", "phone",
+            "type", "school_code", "img", "base_img_path"};
+
+    private String getBaseUrl() {
+        return HOST + ":" + PORT + "/" + IMG_ROOT_PATH + Process.class.getSimpleName();
+    }
+
+    
     @Override
-    public List<Process> queryAll() {
+    public List<Process> queryAll(String schoolCode) {
         QueryWrapper<Process> wrapper = new QueryWrapper<>();
-        wrapper.select(baseColumns).eq("status", 1);
+        wrapper.select(baseColumns).eq("status", 1).eq("school_code", schoolCode);
         List<Process> processes = mapper.selectList(wrapper);
         //对查询到的结果进行处理
         return fixData(processes.toArray(Process[]::new));
     }
 
-    @DS("slave")
+    
     @Override
     public Process queryById(Long id) {
         Process process = mapper.selectById(id);
@@ -62,22 +76,36 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
 
     @Override
     public boolean updateProcessById(Process process) {
-        //为process添加BaseImgPath
-        process.setBaseImgPath(fileUtil.getRootPath(Process.class));
-
-        //查询新的process中的imgPaths
-        List<String> imgPaths = process.getImgPaths();
         //查询旧的process中的imgPaths
         Process query = queryById(process.getId());
         if (query == null)
             return false;
         List<String> imgPathsOld = query.getImgPaths();
 
+        //查询新的process中的imgPaths
+        List<String> imgPaths = process.getImgPaths();
+        //如果没有图片内容
+        if (imgPaths == null || imgPaths.isEmpty()) {
+            process.setBaseImgPath("");
+            process.setImg("");
+        }
+        else{
+            //为process添加BaseImgPath
+            process.setBaseImgPath(fileUtil.getRootPath(Process.class));
+            //截断process中的图片路径
+            List<Process> processList = joinData(process);
+            if (processList != null && !processList.isEmpty())
+                process = processList.get(0);
+        }
+
         //删除的旧的图片
-        imgPathsOld.forEach(i -> {
-            if (imgPaths == null || !imgPaths.contains(i))
-                fileUtil.removeFiles(i);
-        });
+        if(!imgPathsOld.isEmpty()){
+            imgPathsOld.forEach(i -> {
+                assert imgPaths != null;
+                if (!imgPaths.contains(i))
+                    fileUtil.removeFiles(i);
+            });
+        }
 
         //执行更新数据库数据
         return mapper.updateById(process) > 0;
@@ -101,16 +129,16 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
         if (processes[0] != null) {
             List<Process> result = new ArrayList<>();
             for (Process process : processes) {//获取存放的根路径
-                String baseImgPath = process.getBaseImgPath();
                 //补全图片的完整路径
                 List<String> imgPaths = process.getImgPaths();
                 if (imgPaths == null)
                     imgPaths = new ArrayList<>();
-                if (process.getImg() != null) {
-                    List<String> finalImgPaths = imgPaths;
+
+                if (process.getImg() != null && !process.getImg().isBlank()) {
                     List<String> list = new ArrayList<>();
                     Collections.addAll(list, process.getImg().split(";"));
-                    list.forEach(s -> finalImgPaths.add(baseImgPath + "/" + s));
+                    List<String> finalImgPaths = imgPaths;
+                    list.forEach(s -> finalImgPaths.add(getBaseUrl() + s));
                 }
                 process.setImgPaths(imgPaths);
                 //将无效的数据置null
@@ -127,11 +155,10 @@ public class ProcessServiceImpl extends ServiceImpl<ProcessMapper, Process> impl
     public List<Process> joinData(Process... processes) {
         List<Process> list = new ArrayList<>();
         for (Process p : processes) {//获取存放的根路径
-            String baseImgPath = p.getBaseImgPath();
             List<String> imgPaths = p.getImgPaths();
             //裁剪、拼接img
             if (imgPaths != null && !imgPaths.isEmpty()) {
-                String img = imgPaths.stream().map(s -> s.replaceFirst(baseImgPath, "")).collect(Collectors.joining(";"));
+                String img = imgPaths.stream().map(s -> s.replaceFirst(getBaseUrl(), "")).collect(Collectors.joining(";"));
                 p.setImg(img);
                 list.add(p);
             }

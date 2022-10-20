@@ -1,0 +1,3635 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文档</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.configure({
+            tabReplace: '    ',
+        });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <style>body {
+    position: relative;
+}
+
+h1 {
+    margin-top: 5px;
+}
+
+h1, h2, h3, h4 {
+    color: #2b2b2b;
+}
+
+h2:after {
+    content: ' ';
+}
+
+h5 {
+    font-weight: bold;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    display: none;
+    position: absolute;
+    margin-left: 8px;
+}
+
+h1:hover a, h2:hover a, h3:hover a, h4:hover a, h5:hover a, h6:hover a {
+    color: #a5a5a5;
+    display: initial;
+}
+
+.nav.nav-tabs > li > a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.tab-content {
+    padding-top: 8px;
+}
+
+.table {
+    margin-bottom: 8px;
+}
+
+pre {
+    border-radius: 0px;
+    border: none;
+}
+
+pre code {
+    margin: -9.5px;
+}
+
+.request {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.response-text-sample {
+    padding: 0px !important;
+}
+
+.response-text-sample pre {
+    margin-bottom: 0px;
+}
+
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #2b2b2b;
+    padding-top: 20px;
+}
+
+#sidebar-wrapper ul {
+    width: 250px;
+}
+
+#sidebar-wrapper ul li {
+    margin-right: 10px;
+}
+
+#sidebar-wrapper ul li a:hover {
+    background: inherit;
+    text-decoration: none;
+}
+
+#sidebar-wrapper ul li a {
+    display: block;
+    color: #ECF0F1;
+    padding: 6px 15px;
+}
+
+#sidebar-wrapper ul li ul {
+    padding-left: 25px;
+}
+
+#sidebar-wrapper ul li ul li a {
+    padding: 1px 0px;
+}
+
+#sidebar-wrapper ul li a:hover,
+#sidebar-wrapper ul li a:focus {
+    color: #e0c46c;
+    border-right: solid 1px #e0c46c;
+}
+
+#sidebar-wrapper ul li.active > a {
+    color: #e0c46c;
+    border-right: solid 3px #e0c46c;
+}
+
+#sidebar-wrapper ul li:not(.active) ul {
+    display: none;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px 15px 15px 250px;
+}
+</style>
+</head>
+<body data-spy="scroll" data-target=".scrollspy">
+<div id="sidebar-wrapper">
+    <div class="scrollspy">
+    <ul id="main-menu" data-spy="affix" class="nav">
+        <li>
+            <a href="#doc-general-notes">General notes</a>
+        </li>
+        
+        <li>
+            <a href="#doc-api-detail">API detail</a>
+        </li>
+        
+        
+        
+        <li>
+            <a href="#folder-login">login 登录</a>
+            <ul>
+                
+                <li>
+                    <a href="#request-login-captcha">captcha(获取验证码)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-login-login">login(登录)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-login-logout">logout(退出)</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        
+        <li>
+            <a href="#folder-student">student  学生信息</a>
+            <ul>
+                
+                <li>
+                    <a href="#request-student-findallbypage">findAllByPage(分页查询学生信息）</a>
+                </li>
+                
+                <li>
+                    <a href="#request-student-findbyconditions">findByConditions(分页+条件查询学生信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-student-statistic">statistic(学生离校手续统计)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-student-searchtip-5">searchTip(搜索提示--只查5条数据)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-student-findstatusbyid-id">findStatusById(根据id获取学生离校手续状态信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-student-findpartinfobyid-id">findPartInfoById(根据学生的id获取指定状态对应的信息：不允许同时获取多个状态的信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-student-updatestatus">updateStatus(修改学生流程完成状态)</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        
+        <li>
+            <a href="#folder-process">process  流程信息</a>
+            <ul>
+                
+                <li>
+                    <a href="#request-process-findall">findAll(查询所有流程信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-process-findbyid-id">findById(按流程id查询流程信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-process-uploadimgs">uploadImgs(上传图片)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-process-save">save(添加新流程信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-process-updatebyid-id">updateById(按流程Id更新流程信息)</a>
+                </li>
+                
+                <li>
+                    <a href="#request-process-deletebyid-id">deleteById(按流程id删除流程信息)</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        
+        <li>
+            <a href="#folder-export">export 导出数据</a>
+            <ul>
+                
+                <li>
+                    <a href="#request-export-">导出学生信息</a>
+                </li>
+                
+                <li>
+                    <a href="#request-export-">导出离校流程信息</a>
+                </li>
+                
+                <li>
+                    <a href="#request-export-">导出菜单信息</a>
+                </li>
+                
+                <li>
+                    <a href="#request-export-">导出用户信息</a>
+                </li>
+                
+                <li>
+                    <a href="#request-export-">导出权限信息</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+    </ul>
+</div>
+
+</div>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>文档</h1>
+
+                <h2 id="doc-general-notes">
+                    General notes
+                    <a href="#doc-general-notes"><i class="glyphicon glyphicon-link"></i></a>
+                </h2>
+
+                
+
+                
+
+                <h2 id="doc-api-detail">
+                    API detail
+                    <a href="#doc-api-detail"><i class="glyphicon glyphicon-link"></i></a>
+                </h2>
+
+                
+
+
+                
+                
+                <div class="endpoints-group">
+                    <h3 id="folder-login">
+                        login 登录
+                        <a href="#folder-login"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <div></div>
+
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-login-captcha">
+                            captcha(获取验证码)
+                            <a href="#request-login-captcha"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-login-captcha-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-login-captcha-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-login-captcha-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/captcha"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-login-captcha-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/captcha HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-login-captcha-responses-336bf310-dce5-4439-b411-d0bd98e8944e" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-login-captcha-responses-336bf310-dce5-4439-b411-d0bd98e8944e">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:37:56 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "成功获取到验证码 ^_^",
+    "data": {
+        "base64Img": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAoAHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0IUedEsyQtIglcFlQsNzAYyQPQZH50oFebfEjwxqcd9D4w0GeYX9ko82IMW+QfxKPTGcr0Iz75APTxUgFcX4c+IFjrvhWbVAoF5aqBcWinneeFx7Meh/wrDj+MDX6bdJ8Nahdy4yFAyP4ueAePl/n6UAeqCnrXOeE77xBqNrNca7p8dgxkxFADk7MdTzwc5rG8e+MW0O1f7KxzFJ5bOCw2OFD4OAezxgA8EtzwDQB6ABUgrjPh34rufFOkSSXkQiuIdvy87tjA7SxIAycZ47EHvXZ5VFLMQFAySTwBQBIKkWq63MHmvF5yeYhUMu4ZXd0z9e1ZvibVL7SNIe4060+1XH8EeCc45PT/ZDH8AOSQKAN1akArxKx+Od1ZXLQ+INBlgABIZAVPAPYj1FeqeGfFOmeKbH7XpswdN7pg8H5SAePxU/RhQBuipFrlPiB4hfwz4PvL+KRUm2lIyTyCQcY9ecV5h8OfCuv+IdOtPEVt45vILp5t81qJC4dA2CGG7jOD1BoA99FFOAooA4sCpAKYKkFAHkvjX4dRaRBqnibQ9QlsnVRI1pGnyNz8wGDwCcEDBAI+mOd8E/ER/CWlPb3Wg3E+AAJ0bbhASQCCOxZu/evb9Z1fTtFsPtGpypHbu4j+YZBJ6DFYfi7X/Dtv4WuftE9rLHNE0caoQxyRwQB7gUAZkPxj8Py6PLdstxDOv3IpIWIc8dGAI9ep7VxJuNI1Xw9rOvahqdlcajMJHgspZgzq24bG8vPJCcYx2rqPhl4PE3hI/2gtzFFNP5yxbtpb93tyfY7iRUXjH4U+G9P0aW9tPOt3jUkDzMr9Tntx29fagDW+DisPB32lCpXcyiONSqsQfvH/aPy9fSquseL9X1/Wn0DRQqBw26YlcInAyR8wIzkdie2Otc18PPANtrGk3d5ctNFLExj/dSNG6nHQ7SORxng+vOa5K30s2viy9tDqxt2jkUpJNKv7xg3DZIIbbyccE+xoA7O5k1Pwv4qsbVrmO7UlwnloCqNuVwx5PA2b8dBtHA6V7vJcY02S6gXzv3JkjUfx8ZA/GvnPTvD2pyaqrw3FpeTIw2tdwsWZnJVUzG5PKhiRxtHUdh6DrOu/EXwyi3c2g6dPYwKof8As2QsuB1yrfN09BxigDm/HvxM0bVtPv8ARpNFkGpqDHHNlWRWZSCc9cjcw6V1nwQ0G507wz9rvAu6UloADyqvtLZ9zsX8q5bxR44+H/jPQJmubL7Pq235Xkg2yqQRn5wOeM8Zq78AZLwXOrwCWSXTQAYWbOMhsfhx2oAZ8afA1jaaVqHiyW8vJ7+e5jjjjZx5USnjAGM9B6/hWt8NvhZoUuieGvFKyXkOpIq3LbJRsc5PBBHTHoRWz8a7K6vfAbpbQST4mX93EpZiegOB+NdJ8OIpYvh/o0c0MkLrbhTHIpVlxxgg9KAOqAopRRQBxi1wXjTxT4rs9aTQ/DeiGaaWISC7K7wASR04VcEdWJ+lFFAGJafCXWPEE327xjr07zkHbFC28pn/AGj8o+ijHvUS/DnSvBXinS7vUmbUdHupPs5eZdv2eYkGMtjgqcEdsZoooA9qjRURURQqqMAAcAUs1tBdRGK4hjljJB2yKGGR04NFFAC2dlbWMCw20SxoqhBjk7RwBk84Has/UfCelatdRXNzE/mxcoyNjDdmPqR2zkD0oooAu6boGnaW4ktrceaFI82Ql3OTkncecnv9B2ArV2hgQwBB6g0UUAclrfwu8K69dfabjT1jmP3mh+XdyvYey4/E1Wg+GKaJul8J6/qGiyt96LIuLdj7xv8AU96KKALA1rx3oPGreH7bW7Vetzo8u2UD3hfqf901s+H/AB1oXiK9bT7aaa31JFLPY3cDQzIB1yrDn8CaKKAOpWiiigD/2Q==",
+        "key": "416fc865cc39467c9c0b5eb6f312a832"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-login-login">
+                            login(登录)
+                            <a href="#request-login-login"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-login-login-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-login-login-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-login-login-example-curl">
+                                    <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/x-www-form-urlencoded" "{{url}}/login?code=bfwbf&key=572850931b134c22816d539853162a0a&username=admin&password=111111"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-login-login-example-http">
+                                    <pre><code class="hljs http">POST %7B%7Burl%7D%7D/login?code=bfwbf&key=572850931b134c22816d539853162a0a&username=admin&password=111111 HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-login-login-responses-96dc3fcb-d116-4c0e-9318-51327ac6d2d6" data-toggle="tab">
+                                        
+                                            验证码错误
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-login-login-responses-4ba1bd54-1432-4f5b-8d64-98bb123694b5" data-toggle="tab">
+                                        
+                                            账号或密码错误
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-login-login-responses-6b49d173-7c68-44e4-a70b-ddb9fa511e45" data-toggle="tab">
+                                        
+                                            登录成功
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-login-login-responses-96dc3fcb-d116-4c0e-9318-51327ac6d2d6">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json;charset=utf-8</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Thu, 14 Jul 2022 07:57:02 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "msg": "账号或密码不正确验证码错误",
+    "code": 500,
+    "flag": false
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-login-login-responses-4ba1bd54-1432-4f5b-8d64-98bb123694b5">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json;charset=utf-8</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Thu, 14 Jul 2022 07:58:10 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "msg": "账号或密码不正确Bad credentials",
+    "code": 500,
+    "flag": false
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-login-login-responses-6b49d173-7c68-44e4-a70b-ddb9fa511e45">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Authorization</th><td>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1Nzg3NDQwMSwiZXhwIjoxNjU4NDc5MjAxfQ.WJv7hrH99-2XnHYrsB7tA3r6I7H8UpkQ-DQiSX6EGpIzoQ7AmL5UQsv4ttppVRRAos03EIiEnAz4a4ErSxCGSw</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json;charset=utf-8</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:40:01 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "msg": "登录成功",
+    "code": 200,
+    "flag": true,
+    "data": "ROLE_admin"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-login-logout">
+                            logout(退出)
+                            <a href="#request-login-logout"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-login-logout-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-login-logout-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-login-logout-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/logout"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-login-logout-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/logout HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-login-logout-responses-16f0990b-2e95-4c5a-ab4c-19a1f585c84a" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-login-logout-responses-16f0990b-2e95-4c5a-ab4c-19a1f585c84a">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Authorization</th><td></td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json;charset=utf-8</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:40:23 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "msg": "退出成功",
+    "code": 200,
+    "flag": true
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+
+                </div>
+                
+                
+                <div class="endpoints-group">
+                    <h3 id="folder-student">
+                        student  学生信息
+                        <a href="#folder-student"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <div></div>
+
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-findallbypage">
+                            findAllByPage(分页查询学生信息）
+                            <a href="#request-student-findallbypage"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-findallbypage-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-findallbypage-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-findallbypage-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET -H "Authorization: {{admin_token}}" "{{url}}/student/list/sc1010/1/3"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-findallbypage-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/student/list/sc1010/1/3 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-findallbypage-responses-d7a48227-4683-4e94-b488-4ecfa7ee325e" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-findallbypage-responses-d7a48227-4683-4e94-b488-4ecfa7ee325e">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 07:08:41 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "查询成功 ^_^",
+    "data": {
+        "currentPage": 1,
+        "pageSize": 3,
+        "objects": [
+            {
+                "id": 1,
+                "studentId": "163001",
+                "studentName": "张兴",
+                "studentDep": "计算机",
+                "studentPre": "计算机",
+                "studentClass": "计算302班",
+                "finnishStatus": "已完成",
+                "schoolCode": "sc1010"
+            },
+            {
+                "id": 2,
+                "studentId": "163002",
+                "studentName": "张翔峰",
+                "studentDep": "管理",
+                "studentPre": "管理",
+                "studentClass": "2",
+                "finnishStatus": "已完成",
+                "schoolCode": "sc1010"
+            },
+            {
+                "id": 3,
+                "studentId": "163003",
+                "studentName": "邓燕飞",
+                "studentDep": "体育",
+                "studentPre": "体育",
+                "studentClass": "3",
+                "finnishStatus": "未完成",
+                "schoolCode": "sc1010"
+            }
+        ],
+        "start": 0,
+        "total": 3,
+        "count": 4
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-findbyconditions">
+                            findByConditions(分页+条件查询学生信息)
+                            <a href="#request-student-findbyconditions"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-findbyconditions-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-findbyconditions-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-findbyconditions-example-curl">
+                                    <pre><code class="hljs curl">curl -X POST -H "Authorization: {{admin_token}}" -d '{
+    "currentPage":1,
+    "pageSize":3,
+    "student":{
+        "studentId":"1630",
+        "studentName":"张",
+        "studentDep":"计算机",
+        "studentPre":"计算机"
+    }
+}' "{{url}}/student/select/sc1010"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-findbyconditions-example-http">
+                                    <pre><code class="hljs http">POST %7B%7Burl%7D%7D/student/select/sc1010 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}
+
+{
+    "currentPage":1,
+    "pageSize":3,
+    "student":{
+        "studentId":"1630",
+        "studentName":"张",
+        "studentDep":"计算机",
+        "studentPre":"计算机"
+    }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-findbyconditions-responses-a3b7085a-d97d-4a97-88e7-313e54034714" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-findbyconditions-responses-a3b7085a-d97d-4a97-88e7-313e54034714">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 07:11:51 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "数据查询成功 ^_^",
+    "data": {
+        "currentPage": 1,
+        "pageSize": 3,
+        "objects": [
+            {
+                "id": 1,
+                "studentId": "163001",
+                "studentName": "张兴",
+                "studentDep": "计算机",
+                "studentPre": "计算机",
+                "studentClass": "计算302班",
+                "finnishStatus": "已完成",
+                "schoolCode": "sc1010"
+            },
+            {
+                "id": 2,
+                "studentId": "163002",
+                "studentName": "张翔峰",
+                "studentDep": "管理",
+                "studentPre": "管理",
+                "studentClass": "2",
+                "finnishStatus": "已完成",
+                "schoolCode": "sc1010"
+            },
+            {
+                "id": 3,
+                "studentId": "163003",
+                "studentName": "邓燕飞",
+                "studentDep": "体育",
+                "studentPre": "体育",
+                "studentClass": "3",
+                "finnishStatus": "未完成",
+                "schoolCode": "sc1010"
+            }
+        ],
+        "start": 0,
+        "total": 3,
+        "count": 4
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-statistic">
+                            statistic(学生离校手续统计)
+                            <a href="#request-student-statistic"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-statistic-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-statistic-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-statistic-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET -H "Authorization: {{admin_token}}" "{{url}}/student/statistic/sc1010"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-statistic-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/student/statistic/sc1010 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-statistic-responses-1a5e93e9-2394-40ec-8986-cb4108cc8cd7" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-statistic-responses-1a5e93e9-2394-40ec-8986-cb4108cc8cd7">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:42:26 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": [
+        {
+            "title": "audit",
+            "total": 4,
+            "completed": 4,
+            "unfinished": 0,
+            "noteNum": 0
+        },
+        {
+            "title": "book",
+            "total": 4,
+            "completed": 1,
+            "unfinished": 3,
+            "noteNum": 0
+        },
+        {
+            "title": "dormitory",
+            "total": 4,
+            "completed": 4,
+            "unfinished": 0,
+            "noteNum": 0
+        },
+        {
+            "title": "report",
+            "total": 4,
+            "completed": 4,
+            "unfinished": 0,
+            "noteNum": 0
+        },
+        {
+            "title": "archive",
+            "total": 4,
+            "completed": 3,
+            "unfinished": 1,
+            "noteNum": 1
+        },
+        {
+            "title": "diploma",
+            "total": 4,
+            "completed": 2,
+            "unfinished": 2,
+            "noteNum": 0
+        },
+        {
+            "title": "owe",
+            "total": 4,
+            "completed": 4,
+            "unfinished": 0,
+            "noteNum": 0
+        }
+    ]
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-searchtip-5">
+                            searchTip(搜索提示--只查5条数据)
+                            <a href="#request-student-searchtip-5"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-searchtip-5-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-searchtip-5-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-searchtip-5-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET -H "Authorization: {{admin_token}}" "{{url}}/student/search/sc1010/张"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-searchtip-5-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/student/search/sc1010/%E5%BC%A0 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-searchtip-5-responses-3d8efd40-2a83-4dfd-8287-2a5ea9034390" data-toggle="tab">
+                                        
+                                            输入为学号
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-searchtip-5-responses-2bed5475-de78-4da6-9d54-537ea069d66f" data-toggle="tab">
+                                        
+                                            输入为姓名
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-searchtip-5-responses-3d8efd40-2a83-4dfd-8287-2a5ea9034390">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 07:16:25 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": [
+        {
+            "id": 1,
+            "studentId": "163001",
+            "studentName": "张兴",
+            "studentClass": "计算302班",
+            "schoolCode": "sc1010"
+        },
+        {
+            "id": 2,
+            "studentId": "163002",
+            "studentName": "张翔峰",
+            "studentClass": "2",
+            "schoolCode": "sc1010"
+        },
+        {
+            "id": 3,
+            "studentId": "163003",
+            "studentName": "邓燕飞",
+            "studentClass": "3",
+            "schoolCode": "sc1010"
+        },
+        {
+            "id": 4,
+            "studentId": "163004",
+            "studentName": "支凤婷",
+            "studentClass": "4",
+            "schoolCode": "sc1010"
+        }
+    ]
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-searchtip-5-responses-2bed5475-de78-4da6-9d54-537ea069d66f">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 07:16:56 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": [
+        {
+            "id": 1,
+            "studentId": "163001",
+            "studentName": "张兴",
+            "studentClass": "计算302班",
+            "schoolCode": "sc1010"
+        },
+        {
+            "id": 2,
+            "studentId": "163002",
+            "studentName": "张翔峰",
+            "studentClass": "2",
+            "schoolCode": "sc1010"
+        }
+    ]
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-findstatusbyid-id">
+                            findStatusById(根据id获取学生离校手续状态信息)
+                            <a href="#request-student-findstatusbyid-id"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-findstatusbyid-id-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-findstatusbyid-id-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-findstatusbyid-id-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET -H "Authorization: {{admin_token}}" "{{url}}/student/one/1"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-findstatusbyid-id-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/student/one/1 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-findstatusbyid-id-responses-c7f08134-5501-44a0-b8e2-7e908023dcce" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-findstatusbyid-id-responses-c7f08134-5501-44a0-b8e2-7e908023dcce">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 07:40:42 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "id": 1,
+        "studentId": "163001",
+        "studentName": "张兴",
+        "studentDep": "计算机",
+        "studentPre": "计算机",
+        "studentClass": "计算302班",
+        "reportStatus": 1,
+        "reportNote": "",
+        "auditStatus": 1,
+        "auditNote": "",
+        "oweStatus": 1,
+        "oweNote": "",
+        "bookStatus": 0,
+        "bookNote": "",
+        "archivesStatus": 2,
+        "archivesNote": "地址改派",
+        "dormitoryStatus": 1,
+        "dormitoryNote": "",
+        "diplomaStatus": 1,
+        "diplomaNote": ""
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-findpartinfobyid-id">
+                            findPartInfoById(根据学生的id获取指定状态对应的信息：不允许同时获取多个状态的信息)
+                            <a href="#request-student-findpartinfobyid-id"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-findpartinfobyid-id-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-findpartinfobyid-id-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-findpartinfobyid-id-example-curl">
+                                    <pre><code class="hljs curl">curl -X POST -d '{
+    "id":1,
+    "diplomaStatus":"xx"
+}' "{{url}}/student/one/part"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-example-http">
+                                    <pre><code class="hljs http">POST %7B%7Burl%7D%7D/student/one/part HTTP/1.1
+Host: 
+
+{
+    "id":1,
+    "diplomaStatus":"xx"
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-findpartinfobyid-id-responses-130fcff6-07be-4f36-8b31-894f1b32d54f" data-toggle="tab">
+                                        
+                                            查询报到证领取信息
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-findpartinfobyid-id-responses-6b4dbd2e-9864-4306-8860-d9a65229dd5d" data-toggle="tab">
+                                        
+                                            获取毕业审核信息
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-findpartinfobyid-id-responses-89c50999-df68-461b-8ed7-27bf3f2ad025" data-toggle="tab">
+                                        
+                                            查询欠费缴纳信息
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-findpartinfobyid-id-responses-e8b97806-75ef-4b71-9180-84fd9720e31f" data-toggle="tab">
+                                        
+                                            查询图书归还信息
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-findpartinfobyid-id-responses-5d4f1bcb-034b-4eef-9251-25646afe57f2" data-toggle="tab">
+                                        
+                                            查询档案去向信息
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-findpartinfobyid-id-responses-49db0e31-e86a-4e87-8fa3-6df6bc49c4ca" data-toggle="tab">
+                                        
+                                            查询公寓退宿信息
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-findpartinfobyid-id-responses-f2b7d2ad-abb3-495e-b771-99bee716c5e6" data-toggle="tab">
+                                        
+                                            查询毕业证发放信息
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-findpartinfobyid-id-responses-130fcff6-07be-4f36-8b31-894f1b32d54f">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 16:28:04 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "studentDep": "163001",
+        "studentName": "张兴",
+        "reportStatus": 1,
+        "id": 1,
+        "studentClass": "计算302班"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-responses-6b4dbd2e-9864-4306-8860-d9a65229dd5d">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 16:29:25 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "studentDep": "163001",
+        "studentName": "张兴",
+        "auditStatus": 1,
+        "id": 1,
+        "studentClass": "计算302班"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-responses-89c50999-df68-461b-8ed7-27bf3f2ad025">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 16:56:47 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "studentDep": "163001",
+        "studentName": "张兴",
+        "oweAmount": 0,
+        "id": 1,
+        "studentClass": "计算302班",
+        "oweStatus": 1
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-responses-e8b97806-75ef-4b71-9180-84fd9720e31f">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Thu, 21 Jul 2022 00:55:12 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "bookInfo": {
+            "oweAmount": 3,
+            "bookAmount": 0
+        },
+        "studentDep": "163001",
+        "bookStatus": 0,
+        "studentName": "张兴",
+        "id": 1,
+        "studentClass": "计算302班"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-responses-5d4f1bcb-034b-4eef-9251-25646afe57f2">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:03:13 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "studentDep": "163001",
+        "studentName": "张兴",
+        "id": 1,
+        "archivesNote": "地址改派",
+        "archivesStatus": 2,
+        "studentClass": "计算302班",
+        "archivesAddress": "abc"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-responses-49db0e31-e86a-4e87-8fa3-6df6bc49c4ca">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:06:24 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "dormitoryStatus": 1,
+        "studentDep": "163001",
+        "studentName": "张兴",
+        "id": 1,
+        "studentClass": "计算302班"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-findpartinfobyid-id-responses-f2b7d2ad-abb3-495e-b771-99bee716c5e6">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Thu, 21 Jul 2022 01:25:58 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "data": {
+        "studentDep": "163001",
+        "diplomaInfo": {
+            "diplomaTime": "2022-07-11T07:46:01.000+00:00",
+            "diplomaStatus": 1,
+            "diplomaNote": ""
+        },
+        "studentName": "张兴",
+        "id": 1,
+        "studentClass": "计算302班"
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-student-updatestatus">
+                            updateStatus(修改学生流程完成状态)
+                            <a href="#request-student-updatestatus"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-student-updatestatus-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-student-updatestatus-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-student-updatestatus-example-curl">
+                                    <pre><code class="hljs curl">curl -X POST -H "Authorization: {{admin_token}}" -d '{
+    "id":1,
+    "archivesStatus":2
+}' "{{url}}/student/update/status"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-student-updatestatus-example-http">
+                                    <pre><code class="hljs http">POST %7B%7Burl%7D%7D/student/update/status HTTP/1.1
+Host: 
+Authorization: {{admin_token}}
+
+{
+    "id":1,
+    "archivesStatus":2
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-student-updatestatus-responses-08934dd8-a8f1-49bc-8a1b-459263f6f0a0" data-toggle="tab">
+                                        
+                                            发放毕业证
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-updatestatus-responses-a34dc31f-5923-4f0f-a645-60064b25b4ce" data-toggle="tab">
+                                        
+                                            领取报到证
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-updatestatus-responses-fe54c9ce-e829-46b1-ad87-f2a057920674" data-toggle="tab">
+                                        
+                                            毕业审核
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-updatestatus-responses-f8b9da1e-dd48-467c-bcc5-b5b582169c42" data-toggle="tab">
+                                        
+                                            档案地址正确
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-student-updatestatus-responses-a867a8d4-3e33-44cf-a90e-95402f8f2c5b" data-toggle="tab">
+                                        
+                                            档案地址需要改派
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-student-updatestatus-responses-08934dd8-a8f1-49bc-8a1b-459263f6f0a0">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 15:09:58 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "修改成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-updatestatus-responses-a34dc31f-5923-4f0f-a645-60064b25b4ce">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 15:12:23 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "修改成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-updatestatus-responses-fe54c9ce-e829-46b1-ad87-f2a057920674">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 15:13:01 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "修改成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-updatestatus-responses-f8b9da1e-dd48-467c-bcc5-b5b582169c42">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:37:13 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "修改成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-student-updatestatus-responses-a867a8d4-3e33-44cf-a90e-95402f8f2c5b">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:43:10 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "修改成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+
+                </div>
+                
+                
+                <div class="endpoints-group">
+                    <h3 id="folder-process">
+                        process  流程信息
+                        <a href="#folder-process"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <div></div>
+
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-process-findall">
+                            findAll(查询所有流程信息)
+                            <a href="#request-process-findall"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-process-findall-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-process-findall-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-process-findall-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET -H "Authorization: {{admin_token}}" "{{url}}/process/list/sc1010"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-process-findall-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/process/list/sc1010 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-process-findall-responses-a4792435-4981-4f20-8d56-71f9e4c2aa74" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-process-findall-responses-a4792435-4981-4f20-8d56-71f9e4c2aa74">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 08:11:43 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "查询成功 ^_^",
+    "data": [
+        {
+            "id": 1,
+            "title": "报到证领取",
+            "content": "到辅导员处进行信息核对，提交相关资料，点击下方按钮领取报到证",
+            "address": "信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "毕业审核",
+            "content": "提示：办理地点需上传地点图片",
+            "address": "行政楼220教务处;",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "欠费缴纳",
+            "content": "配置相关内容及办理时间、办理地点等",
+            "address": "行政楼120财务处",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "图书归还",
+            "content": "提示：办理地点需上传地点图片",
+            "address": "图书馆T1-208流通部",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "档案去向确认",
+            "content": "配置相关内容及办理时间、办理地点等",
+            "address": "地点",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "公寓退宿",
+            "content": "提示：办理地点需上传地点图片",
+            "address": "地点",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "毕业证领取",
+            "content": "配置相关内容及办理时间、办理地点等",
+            "address": "地点",
+            "type": 1,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "移动端登录界面",
+            "content": "提示：办理地点需上传地点图片",
+            "address": "地点",
+            "type": 2,
+            "startTime": "2022-07-11T17:51:21.000+00:00",
+            "endTime": "2022-07-11T17:51:21.000+00:00",
+            "phone": "",
+            "schoolCode": "sc1010",
+            "imgPaths": [
+                "/opt/files/img/1.jpg",
+                "/opt/files/img/2.png",
+                "/opt/files/img/3.gif"
+            ]
+        }
+    ]
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-process-findbyid-id">
+                            findById(按流程id查询流程信息)
+                            <a href="#request-process-findbyid-id"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-process-findbyid-id-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-process-findbyid-id-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-process-findbyid-id-example-curl">
+                                    <pre><code class="hljs curl">curl -X GET -H "Authorization: {{admin_token}}" "{{url}}/process/one/2"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-process-findbyid-id-example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/process/one/2 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-process-findbyid-id-responses-51da4788-7c12-4d00-b835-689d3f77e240" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-process-findbyid-id-responses-51da4788-7c12-4d00-b835-689d3f77e240">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 08:04:41 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "查询成功 ^_^",
+    "data": {
+        "id": 1,
+        "title": "报到证领取",
+        "content": "到辅导员处进行信息核对，提交相关资料，点击下方按钮领取报到证",
+        "address": "信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;信息工程系：1-1-102;",
+        "status": 1,
+        "type": 1,
+        "startTime": "2022-07-11T17:51:21.000+00:00",
+        "endTime": "2022-07-11T17:51:21.000+00:00",
+        "phone": "",
+        "schoolCode": "sc1010",
+        "imgPaths": [
+            "/opt/files/img/1.jpg",
+            "/opt/files/img/2.png",
+            "/opt/files/img/3.gif"
+        ]
+    }
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-process-uploadimgs">
+                            uploadImgs(上传图片)
+                            <a href="#request-process-uploadimgs"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-process-uploadimgs-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-process-uploadimgs-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-process-uploadimgs-example-curl">
+                                    <pre><code class="hljs curl">curl -X POST -H "Authorization: {{admin_token}}" "{{url}}/process/upload"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-process-uploadimgs-example-http">
+                                    <pre><code class="hljs http">POST %7B%7Burl%7D%7D/process/upload HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-process-uploadimgs-responses-38c6d7ba-30a8-4eb0-a7b2-d76166cdbe4e" data-toggle="tab">
+                                        
+                                            文件目录初始化失败
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-process-uploadimgs-responses-f5f27579-6c35-4402-8691-0a99a63f2b24" data-toggle="tab">
+                                        
+                                            无图片上传
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li role="presentation">
+                                    <a href="#request-process-uploadimgs-responses-29eddfa6-76bd-4421-a4d3-8b04d1458a4d" data-toggle="tab">
+                                        
+                                            图片上传成功
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-process-uploadimgs-responses-38c6d7ba-30a8-4eb0-a7b2-d76166cdbe4e">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Thu, 14 Jul 2022 09:47:11 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 0,
+    "flag": false,
+    "msg": "文件目录初始化失败:/home/flyme/file_system/graduate/img/Process",
+    "data": null
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-process-uploadimgs-responses-f5f27579-6c35-4402-8691-0a99a63f2b24">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Thu, 14 Jul 2022 09:52:43 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 0,
+    "flag": false,
+    "msg": "图片内容为空，上传失败 -_-",
+    "data": null
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                                <div class="tab-pane" id="request-process-uploadimgs-responses-29eddfa6-76bd-4421-a4d3-8b04d1458a4d">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:55:04 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "图片上传成功 ^_^",
+    "data": [
+        "172.20.0.4:80/graduate/img/Process/1657875304104540.png",
+        "172.20.0.4:80/graduate/img/Process/1657875304113887.png",
+        "172.20.0.4:80/graduate/img/Process/1657875304113761.jpg"
+    ]
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-process-save">
+                            save(添加新流程信息)
+                            <a href="#request-process-save"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-process-save-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-process-save-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-process-save-example-curl">
+                                    <pre><code class="hljs curl">curl -X PUT -H "Authorization: {{admin_token}}" -d '{
+    "title":"test1",
+    "content":"test1",
+    "phone":"17390201035",
+    "note":"test",
+    "address":"tes1t",
+    "type":1,
+    "imgPaths":[
+        "/home/flyme/file_system/graduate/img/Process/1658339349630183.png",
+        "/home/flyme/file_system/graduate/img/Process/1658339349636147.png",
+        "/home/flyme/file_system/graduate/img/Process/1658339349636750.jpg"
+    ]
+}' "{{url}}/process/save"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-process-save-example-http">
+                                    <pre><code class="hljs http">PUT %7B%7Burl%7D%7D/process/save HTTP/1.1
+Host: 
+Authorization: {{admin_token}}
+
+{
+    "title":"test1",
+    "content":"test1",
+    "phone":"17390201035",
+    "note":"test",
+    "address":"tes1t",
+    "type":1,
+    "imgPaths":[
+        "/home/flyme/file_system/graduate/img/Process/1658339349630183.png",
+        "/home/flyme/file_system/graduate/img/Process/1658339349636147.png",
+        "/home/flyme/file_system/graduate/img/Process/1658339349636750.jpg"
+    ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-process-save-responses-569c9cad-3e9e-42b3-a814-ba8b1acea655" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-process-save-responses-569c9cad-3e9e-42b3-a814-ba8b1acea655">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:51:28 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "添加成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-process-updatebyid-id">
+                            updateById(按流程Id更新流程信息)
+                            <a href="#request-process-updatebyid-id"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-process-updatebyid-id-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-process-updatebyid-id-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-process-updatebyid-id-example-curl">
+                                    <pre><code class="hljs curl">curl -X POST -H "Authorization: {{admin_token}}" -d '{
+    "id":25,
+    "title":"test",
+    "imgPaths":[
+        "/home/flyme/file_system/graduate/img/Process/1657768353885627.png",
+        "/home/flyme/file_system/graduate/img/Process/1657768353885442.png",
+        "/home/flyme/file_system/graduate/img/Process/1657768353886292.jpg"
+    ]
+}' "{{url}}/process/update"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-process-updatebyid-id-example-http">
+                                    <pre><code class="hljs http">POST %7B%7Burl%7D%7D/process/update HTTP/1.1
+Host: 
+Authorization: {{admin_token}}
+
+{
+    "id":25,
+    "title":"test",
+    "imgPaths":[
+        "/home/flyme/file_system/graduate/img/Process/1657768353885627.png",
+        "/home/flyme/file_system/graduate/img/Process/1657768353885442.png",
+        "/home/flyme/file_system/graduate/img/Process/1657768353886292.jpg"
+    ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-process-updatebyid-id-responses-794bbd72-0a82-422e-a0b4-f3819bd8d73d" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-process-updatebyid-id-responses-794bbd72-0a82-422e-a0b4-f3819bd8d73d">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:52:24 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "修改成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-process-deletebyid-id">
+                            deleteById(按流程id删除流程信息)
+                            <a href="#request-process-deletebyid-id"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-process-deletebyid-id-example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-process-deletebyid-id-example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-process-deletebyid-id-example-curl">
+                                    <pre><code class="hljs curl">curl -X DELETE -H "Authorization: {{admin_token}}" "{{url}}/process/delete/25"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-process-deletebyid-id-example-http">
+                                    <pre><code class="hljs http">DELETE %7B%7Burl%7D%7D/process/delete/25 HTTP/1.1
+Host: 
+Authorization: {{admin_token}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-process-deletebyid-id-responses-fbb7bb8b-6224-4950-9986-151e042c7da0" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-process-deletebyid-id-responses-fbb7bb8b-6224-4950-9986-151e042c7da0">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-XSS-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Wed, 20 Jul 2022 17:53:04 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Keep-Alive</th><td>timeout=60</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>keep-alive</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "删除成功 ^_^"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+
+                </div>
+                
+                
+                <div class="endpoints-group">
+                    <h3 id="folder-export">
+                        export 导出数据
+                        <a href="#folder-export"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <div></div>
+
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-export-">
+                            导出学生信息
+                            <a href="#request-export-"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-export--example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-export--example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-export--example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/sys/export/student?fileName=StudentData&sheetName=student"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-export--example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/sys/export/student?fileName=StudentData&sheetName=student HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-export--responses-402d59cb-1eeb-469b-a376-c892d37e4e44" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-export--responses-402d59cb-1eeb-469b-a376-c892d37e4e44">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:58:41 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "172.20.0.4:80/graduate/excel/StudentData.xls"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-export-">
+                            导出离校流程信息
+                            <a href="#request-export-"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-export--example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-export--example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-export--example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/sys/export/process?fileName=ProcessData&sheetName=process"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-export--example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/sys/export/process?fileName=ProcessData&sheetName=process HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-export--responses-ec95c568-534b-446e-9243-92a51d9de9d2" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-export--responses-ec95c568-534b-446e-9243-92a51d9de9d2">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:59:08 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "172.20.0.4:80/graduate/excel/ProcessData.xls"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-export-">
+                            导出菜单信息
+                            <a href="#request-export-"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-export--example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-export--example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-export--example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/sys/export/menu?fileName=MenuData&sheetName=menu"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-export--example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/sys/export/menu?fileName=MenuData&sheetName=menu HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-export--responses-9d6a3575-856d-43bb-9890-9f80b391ac0c" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-export--responses-9d6a3575-856d-43bb-9890-9f80b391ac0c">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:59:22 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "172.20.0.4:80/graduate/excel/MenuData.xls"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-export-">
+                            导出用户信息
+                            <a href="#request-export-"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-export--example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-export--example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-export--example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/sys/export/user?fileName=UserData&sheetName=user"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-export--example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/sys/export/user?fileName=UserData&sheetName=user HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-export--responses-4d9c5616-6427-42f8-9a57-b0c385720685" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-export--responses-4d9c5616-6427-42f8-9a57-b0c385720685">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:59:36 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "172.20.0.4:80/graduate/excel/UserData.xls"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+                    
+                    <div class="request">
+
+                        <h4 id="request-export-">
+                            导出权限信息
+                            <a href="#request-export-"><i class="glyphicon glyphicon-link"></i></a>
+                        </h4>
+
+                        <div></div>
+
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#request-export--example-curl" data-toggle="tab">Curl</a></li>
+                                <li role="presentation"><a href="#request-export--example-http" data-toggle="tab">HTTP</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="request-export--example-curl">
+                                    <pre><code class="hljs curl">curl -X GET "{{url}}/sys/export/role?fileName=RoleData&sheetName=role"</code></pre>
+                                </div>
+                                <div class="tab-pane" id="request-export--example-http">
+                                    <pre><code class="hljs http">GET %7B%7Burl%7D%7D/sys/export/role?fileName=RoleData&sheetName=role HTTP/1.1
+Host: </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                <li role="presentation" class="active">
+                                    <a href="#request-export--responses-704bee34-f367-4086-a3d0-90a1c0a523b0" data-toggle="tab">
+                                        
+                                            Response
+                                        
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                
+                                <div class="tab-pane active" id="request-export--responses-704bee34-f367-4086-a3d0-90a1c0a523b0">
+                                    <table class="table table-bordered">
+                                        <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Connection</th><td>close</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Transfer-Encoding</th><td>chunked</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Cache-Control</th><td>no-cache, no-store, max-age=0, must-revalidate</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Date</th><td>Fri, 15 Jul 2022 08:59:50 GMT</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Expires</th><td>0</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Pragma</th><td>no-cache</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Origin</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Method</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">Vary</th><td>Access-Control-Request-Headers</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Frame-Options</th><td>DENY</td></tr>
+                                        
+                                        <tr><th style="width: 20%;">X-Xss-Protection</th><td>1; mode=block</td></tr>
+                                        
+                                        
+                                            
+                                            <tr><td class="response-text-sample" colspan="2">
+                                                <pre><code>{
+    "code": 200,
+    "flag": true,
+    "msg": "172.20.0.4:80/graduate/excel/RoleData.xls"
+}</code></pre>
+                                            </td></tr>
+                                            
+                                        
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <hr>
+                    </div>
+                    
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("table:not(.table)").addClass('table table-bordered');
+    });
+</script>
+</body>
+</html>

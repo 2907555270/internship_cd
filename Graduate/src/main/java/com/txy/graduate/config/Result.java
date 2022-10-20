@@ -10,7 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result implements Serializable {
-    private int code;
+    private Integer code;
     private boolean flag;
     private String msg;
     private Object data;

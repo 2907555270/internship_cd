@@ -1,0 +1,3 @@
+1658470367123|24|statement|connection 0|url jdbc:p6spy:mysql://mysql_master:3306/graduate|select 1|select 1
+1658470367190|1|statement|connection 1|url jdbc:p6spy:mysql://mysql_master:3306/graduate|select 1|select 1
+1658470367236|0|statement|connection 2|url jdbc:p6spy:mysql://mysql_master:3306/graduate|select 1|select 1

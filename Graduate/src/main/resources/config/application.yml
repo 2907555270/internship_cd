@@ -1,12 +1,13 @@
 # 开发和生产环境的切换
 spring:
   profiles:
-    active: dev
+    active: pro
 
 
 # 开发和生产的通用环境
   application:
     name: graduate
+
 
 
 #  mysql数据源
@@ -42,26 +43,26 @@ spring:
         #      连接保持空闲不被回收的最小时间
         min-evictable-idle-time-millis: 300000
 
-
-#      配置数据源
+  #      配置数据源
       datasource:
+#        主数据源需要记录sql增删改的日志
         master:
           driver-class-name: com.p6spy.engine.spy.P6SpyDriver
           url: jdbc:p6spy:mysql://mysql_master:3306/graduate
           username: root
           password: root
 
-        slave_1:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://mysql_slave1:3306/graduate
-          username: root
-          password: root
-
-        slave_2:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://mysql_slave2:3306/graduate
-          username: root
-          password: root
+#        slave_1:
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#          url: jdbc:mysql://mysql_slave1:3306/graduate
+#          username: root
+#          password: root
+#
+#        slave_2:
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#          url: jdbc:mysql://mysql_slave2:3306/graduate
+#          username: root
+#          password: root
 
 
   #  redis配置
@@ -78,17 +79,6 @@ spring:
         min-idle: 0
         #连接超时时间
     timeout: 10000
-
-
-# server日志
-logging:
-  logback:
-    rollingpolicy:
-      max-file-size: 30KB
-      file-name-pattern: log/server/server.%d{yyyy-MM-dd}.%i.log
-  file:
-    path: log/server
-
 
 # mybatis-plus别名
 mybatis-plus:

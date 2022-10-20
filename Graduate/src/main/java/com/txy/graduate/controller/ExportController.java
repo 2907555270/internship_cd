@@ -37,12 +37,12 @@ public class ExportController {
 
     @GetMapping("/student")
     public Result StudentDataExport(String fileName,String sheetName) {
-        return fileUtil.exportDataToExcel(studentService.queryAll(), fileName,sheetName);
+        return fileUtil.exportDataToExcel(studentService.queryAll("sc1010"), fileName,sheetName);
     }
 
     @GetMapping("/process")
     public Result ProcessDataExport(String fileName,String sheetName) {
-        return fileUtil.exportDataToExcel(processService.queryAll(), fileName,sheetName);
+        return fileUtil.exportDataToExcel(processService.queryAll("sc1010"), fileName,sheetName);
     }
 
     @GetMapping("/menu")

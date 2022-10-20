@@ -1,22 +1,22 @@
 package com.txy.graduate.mapper;
 
-import com.txy.graduate.config.Page;
 import com.txy.graduate.domain.dto.StudentDto;
+import com.txy.graduate.domain.po.StudentInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
+import java.util.*;
 
 
 @SpringBootTest
 public class StudentMapperTest {
     @Autowired
-    private StudentMapper studentMapper;
+    private StudentInfoMapper studentMapper;
 
     @Test
     public void testSelectAll(){
-        List<StudentDto> studentDTOS = studentMapper.selectAll();
+        List<StudentDto> studentDTOS = studentMapper.selectAll("sc1010");
         for (StudentDto studentDTO:studentDTOS ) {
             System.out.println(studentDTO);
         }
@@ -24,28 +24,32 @@ public class StudentMapperTest {
 
     @Test
     public void testSelectAllByPage(){
-        Page<StudentDto> page = new Page<>();
-        page.setStart(0);
-        page.setPageSize(3);
-        List<StudentDto> studentDTOS = studentMapper.selectAllByPage(page);
-        for (StudentDto studentDTO:studentDTOS ) {
-            System.out.println(studentDTO);
-        }
-    }
 
-    @Test
-    public void testSelectAmount(){
-        System.out.println(studentMapper.selectAmount());
-        System.out.println(studentMapper.selectAmountQuick());
     }
 
     @Test
     public void testSelectConditionsAndPage(){
-        StudentDto dto = new StudentDto();
-        Page<StudentDto> page = new Page<>(1,3);
-        dto.setPage(page);
-        dto.setStudentName("张三四");
-        List<StudentDto> studentDTO = studentMapper.selectByConditionsAndPage(dto);
-        System.out.println(studentDTO);
+
+    }
+
+    @Test
+    public void testSelectNav() {
+        Map<String ,Object> map = new HashMap<>();
+        HashSet<String> setDep = new HashSet<>();
+        HashSet<String> setPre = new HashSet<>();
+        HashSet<String> setClass = new HashSet<>();
+
+        List<StudentInfo> studentInfos = studentMapper.selectNav("sc1010");
+        studentInfos.forEach(s->{
+            setDep.add(s.getStudentDep());
+            setPre.add(s.getStudentPre());
+            setClass.add(s.getStudentClass());
+        });
+
+        map.put("studentDep",setDep);
+        map.put("studentPre",setPre);
+        map.put("studentClass",setClass);
+
+        System.out.println(map);
     }
 }

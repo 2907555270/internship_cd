@@ -93,7 +93,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //.addFilterBefore(jwtFilter(), LogoutFilter.class) //需要在LogoutFilter之前配置上下文信息
                 .addFilter(jwtFilter())
-                .addFilterBefore(captcheFilter, UsernamePasswordAuthenticationFilter.class)
+                //.addFilterBefore(captcheFilter, UsernamePasswordAuthenticationFilter.class)
         ;
     }
 

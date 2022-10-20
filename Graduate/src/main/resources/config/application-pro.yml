@@ -4,11 +4,19 @@ spring:
   #  redis
   redis:
     database: 0
-    host: 172.20.0.1
+    host: localhost
     port: 6379
 
+# server日志
+#logging:
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 30KB
+#      file-name-pattern: log/server/server.%d{yyyy-MM-dd}.%i.log
+#  file:
+#    path: log/server
 
 server:
-  port: 8000
+  port: 82
   servlet:
     context-path: /
